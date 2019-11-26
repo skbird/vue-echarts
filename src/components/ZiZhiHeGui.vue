@@ -76,7 +76,8 @@
         var makeSeries = function() {
           var series = [];
           dataAll.forEach(function(item, index) {
-            let style = getStyle(item[1]);
+            let style = getStyle(item[index]);
+            console.log(style)
             series.push({
               name: item[index],
               left: 0,
@@ -152,7 +153,7 @@
               endAngle: style.endAngle,
               radius: '33.3%', //图表尺寸
               axisLine: {
-                show: true,
+                show: false,
                 lineStyle: {
                   width: 2,
                   shadowBlur: 0,
@@ -160,7 +161,7 @@
                 }
               },
               axisTick: {
-                show: true,
+                show: false,
                 lineStyle: {
                   color: 'auto',
                   width: 1
@@ -169,7 +170,7 @@
                 splitNumber: 5
               },
               splitLine: {
-                show: true,
+                show: false,
                 length: 12,
                 lineStyle: {
                   color: 'auto',
@@ -180,8 +181,8 @@
               },
               pointer: { //仪表盘指针
                 show: 1,
-                length: '70%',
-                width: 2
+                length: '100%',
+                width: 4
               },
               detail: {
                 borderColor: '#fff',
