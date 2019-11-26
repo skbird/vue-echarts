@@ -20,6 +20,8 @@ import GongYingShangShenHe from '@/components/GongYingShangShenHe'
 import ZhengJianGengXinShenHe from '@/components/ZhengJianGengXinShenHe'
 import ZhengJianYuQiLv from '@/components/ZhengJianYuQiLv'
 import XinPinFuShenLv from  '@/components/XinPinFuShenLv'
+import ZhanQuChengJi from '@/components/ZhanQuChengJi'
+import MenDianChengJi from '@/components/MenDianChengJi'
 
 Vue.use(Router)
 
@@ -124,6 +126,16 @@ export default new Router({
       path: '/xinPinFuShenLv',
       name: 'XinPinFuShenLv',
       component: XinPinFuShenLv
+    },
+    {
+      path: '/zhanQuChengJi',
+      name: 'ZhanQuChengJi',
+      component: ZhanQuChengJi
+    },
+    {
+      path: '/menDianChengJi',
+      name: 'MenDianChengJi',
+      component: MenDianChengJi
     }
   ]
 })
