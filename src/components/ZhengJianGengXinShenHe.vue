@@ -228,6 +228,33 @@
         })
       },
       myChart2(){
+        let dataStyle = {
+          normal: {
+            label: {
+              show: false
+            },
+            labelLine: {
+              show: false
+            },
+            // shadowBlur: 15,
+            // shadowColor: 'white',
+          }
+        };
+        let placeHolderStyle = {
+          normal: {
+            color: 'rgba(0,0,0,0)',
+            label: {
+              show: false
+            },
+            labelLine: {
+              show: false
+            }
+          },
+          emphasis: {
+            color: 'rgba(0,0,0,0)'
+          }
+        };
+
         // 基于准备好的dom，初始化echarts实例
         let myChart2 = echarts.init(document.getElementById('myChart2'), 'dark');
 
@@ -242,10 +269,24 @@
             }
           },
           legend: {
-            data: ["食百", "生鲜"],
-            top: "15%"
+            top: "10%",
+            x: 'right',
+            left: "38%",
+            itemWidth:0,itemHeight:0,
+            data: ['已婚已育','已婚未育','未婚' ,'学生'],
+            itemGap: 38,
+            textStyle: {
+              color: '#fff',
+              align:'right',
+              x: 'right',
+              textAlign:'right'
+            },
+
+            selectedMode: true,
+            orient: "vertical",
           },
           backgroundColor: '#0B284C',
+          color: ['#4DFFE3','#4DE0FF','#4DFF8F','#ADFF4D'],
           tooltip: {
             show: false
           },
@@ -256,75 +297,80 @@
             bottom: '25%',
             // containLabel: true
           },
-          xAxis: [{
-            type: 'category',
-            boundaryGap: true,
-            axisLabel: { //坐标轴刻度标签的相关设置
-              textStyle: {
-                color: '#d1e6eb',
-                margin: 15,
-              },
-            },
-            axisTick: 'none',
-            axisLine: 'none',
-            data: ['福建', '河北', '重庆', '上海', '江苏', '江西','河南'],
-          }],
-          yAxis: {
-            show: false
-          },
           series: [{
-            name: '食百',
-            type: 'line',
-            smooth: true, //是否平滑曲线显示
-            symbol:'circle',
-            showAllSymbol: false,
-            symbolSize: 8,
-            lineStyle: {
-              normal: {
-                color: "#53fdfe", // 线条颜色
-              },
-              borderColor: '#f0f'
-            },
-            label: {
-              show: true,
-              position: 'top',
-              textStyle: {
-                color: '#fff',
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "rgba(255,255,255,1)",
-              }
-            },
-            data: [58, 62, 78, 56, 81, 63, 86]
-          },{
-            name: '生鲜',
-            type: 'line',
-            smooth: true, //是否平滑曲线显示
-            symbol:'circle',
-            showAllSymbol: false,
-            symbolSize: 8,
-            lineStyle: {
-              normal: {
-                color: "#FFBF53", // 线条颜色
-              },
-              borderColor: '#f0f'
-            },
-            label: {
-              show: true,
-              position: 'top',
-              textStyle: {
-                color: '#fff',
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "rgba(255,255,255,1)",
-              }
-            },
-            data: [38, 42, 58, 36, 61, 43, 66]
-          }]
+              name: 'Line 4',
+              type: 'pie',
+              clockWise: true,
+              hoverAnimation: false,
+              radius: ['65%', '75%'],
+              itemStyle: dataStyle,
+              data: [{
+                value: 7645434,
+                name: '已婚已育'
+              }, {
+                value: 3612343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: placeHolderStyle
+              }]
+            }, {
+              name: 'Line 3',
+              type: 'pie',
+              clockWise: true,
+              radius: ['50%', '60%'],
+              itemStyle: dataStyle,
+              hoverAnimation: false,
+              data: [{
+                value: 2632321,
+                name: '已婚未育'
+              }, {
+                value: 2212343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: placeHolderStyle
+              }]
+            }, {
+              name: 'Line 2',
+              type: 'pie',
+              clockWise: true,
+              hoverAnimation: false,
+              radius: ['35%', '45%'],
+              itemStyle: dataStyle,
+              data: [{
+                value: 1823323,
+                name: '未婚'
+              }, {
+                value: 1812343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: placeHolderStyle
+              }]
+            }, {
+              name: 'Line 1',
+              type: 'pie',
+              clockWise: true,
+              radius: ['20%', '30%'],
+              itemStyle: dataStyle,
+              hoverAnimation: false,
+              data: [ {
+                value: 1342221,
+                name: '学生'
+              },{
+                value:1912343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: placeHolderStyle
+              }]
+            }
+          ]
         });
       },
       myChart3(){

@@ -17,6 +17,7 @@ import YueGaoWeiShangPin from  '@/components/YueGaoWeiShangPin'
 import YueGaoWeiGongYingShang from '@/components/YueGaoWeiGongYingShang'
 import XinPinYinRuShenHe from '@/components/XinPinYinRuShenHe'
 import GongYingShangShenHe from '@/components/GongYingShangShenHe'
+import ZhengJianGengXinShenHe from '@/components/ZhengJianGengXinShenHe'
 
 Vue.use(Router)
 
@@ -106,6 +107,11 @@ export default new Router({
       path: '/gongYingShangShenHe',
       name: 'GongYingShangShenHe',
       component: GongYingShangShenHe
+    },
+    {
+      path: '/zhengJianGengXinShenHe',
+      name: 'ZhengJianGengXinShenHe',
+      component: ZhengJianGengXinShenHe
     }
   ]
 })
