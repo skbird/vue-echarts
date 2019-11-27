@@ -1,14 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
-import ShiAnZiXun from '@/components/ShiAnZiXun'
-import ShiAnFaGui from '@/components/ShiAnFaGui'
-import ChinaScatterDemo from '@/components/ChinaScatterDemo'
+import ContainerTop from '@/components/ContainerTop'
 import JianYanJianCe from '@/components/JianYanJianCe'
 import JianCePiCi from '@/components/JianCePiCi'
-import YueChouShengQu1 from '@/components/YueChouShengQu1'
-import YueChouShengQu2 from '@/components/YueChouShengQu2'
-import YueShuiGuoGW from '@/components/YueShuiGuoGW'
 import FengXianJianCe from '@/components/FengXianJianCe'
 import YueLiWaiShangPin from '@/components/YueLiWaiShangPin'
 import YueLiWaiAnJian from '@/components/YueLiWaiAnJian'
@@ -37,19 +32,9 @@ export default new Router({
       component: Index
     },
     {
-      path: '/shiAnZiXun',
-      name: 'ShiAnZiXun',
-      component: ShiAnZiXun
-    },
-    {
-      path: '/shiAnFaGui',
-      name: 'ShiAnFaGui',
-      component: ShiAnFaGui
-    },
-    {
-      path: '/chinaScatterDemo',
-      name: 'ChinaScatterDemo',
-      component: ChinaScatterDemo
+      path: '/containerTop',
+      name: 'ContainerTop',
+      component: ContainerTop
     },
     {
       path: '/jianCePiCi',
@@ -62,24 +47,9 @@ export default new Router({
       component: JianYanJianCe
     },
     {
-      path: '/yueShuiGuoGW',
-      name: 'YueShuiGuoGW',
-      component: YueShuiGuoGW
-    },
-    {
       path: '/fengXianJianCe',
       name: 'FengXianJianCe',
       component: FengXianJianCe
-    },
-    {
-      path: '/yueChouShengQu1',
-      name: 'YueChouShengQu1',
-      component: YueChouShengQu1
-    },
-    {
-      path: '/yueChouShengQu2',
-      name: 'YueChouShengQu2',
-      component: YueChouShengQu2
     },
     {
       path: '/yueLiWaiShangPin',

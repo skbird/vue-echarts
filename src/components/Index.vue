@@ -8,13 +8,7 @@
 
     <div id="panel_1" class="box-1">
       <div class="box-item">
-        <ShiAnZiXun></ShiAnZiXun>
-      </div>
-      <div class="box-item" style="background-color: #001E44">
-        <ChinaScatterDemo></ChinaScatterDemo>
-      </div>
-      <div class="box-item">
-        <ShiAnFaGui></ShiAnFaGui>
+        <ContainerTop></ContainerTop>
       </div>
     </div>
 
@@ -26,21 +20,11 @@
       <div class="box-item">
         <JianCePiCi></JianCePiCi>
       </div>
-      <div class="box-item">
-        月果蔬高危风险商品TOP10
-      </div>
-      <div class="box-item">月水产高危风险商品TOP10</div>
     </div>
 
     <div id="panel_4" class="box-1">
       <div class="box-item">
         <FengXianJianCe></FengXianJianCe>
-      </div>
-      <div class="box-item">
-        <!--<YueChouShengQu1></YueChouShengQu1>-->
-      </div>
-      <div class="box-item">
-
       </div>
     </div>
 
@@ -83,15 +67,10 @@
 </template>
 
 <script>
-  import ShiAnZiXun from '@/components/ShiAnZiXun'
-  import ChinaScatterDemo from '@/components/ChinaScatterDemo'
-  import ShiAnFaGui from '@/components/ShiAnFaGui'
+  import ContainerTop from '@/components/ContainerTop'
   import JianYanJianCe from '@/components/JianYanJianCe'
   import JianCePiCi from '@/components/JianCePiCi'
-  import YueShuiGuoGW from '@/components/YueShuiGuoGW'
   import FengXianJianCe from '@/components/FengXianJianCe'
-  import YueChouShengQu1 from '@/components/YueChouShengQu1'
-  import YueChouShengQu2 from '@/components/YueChouShengQu2'
   import YueLiWaiShangPin from '@/components/YueLiWaiShangPin'
   import YueLiWaiAnJian from '@/components/YueLiWaiAnJian'
   import YueShangPinTouSu from '@/components/YueShangPinTouSu'
@@ -111,15 +90,10 @@
   export default {
     name: "index",
     components: {
-      ShiAnZiXun,
-      ChinaScatterDemo,
-      ShiAnFaGui,
+      ContainerTop,
       JianYanJianCe,
       JianCePiCi,
-      YueShuiGuoGW,
-      FengXianJianCe,
-      YueChouShengQu1,
-      YueChouShengQu2
+      FengXianJianCe
     }
   }
 </script>

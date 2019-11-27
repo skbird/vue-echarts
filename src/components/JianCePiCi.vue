@@ -1,6 +1,10 @@
 <template>
-  <div class="flex">
-    <div id="myChart" :style="{width: '520px', height: '400px'}"></div>
+  <div>
+    <div class="flex">
+      <div class="flex-column" id="myChart1" :style="{width: '520px', height: '400px'}"></div>
+      <div class="flex-column" id="myChart2" :style="{width: '520px', height: '400px'}"></div>
+      <div class="flex-column" id="myChart3" :style="{width: '520px', height: '400px'}"></div>
+    </div>
   </div>
 </template>
 
@@ -9,6 +13,8 @@
   let echarts = require('echarts/lib/echarts')
   // 引入柱状图组件
   require('echarts/lib/chart/bar')
+  // 引入漏斗图组件
+  require('echarts/lib/chart/funnel')
   // 引入提示框和title组件
   require('echarts/lib/component/tooltip')
   require('echarts/lib/component/title')
@@ -17,15 +23,17 @@
   export default {
     name: "jianCePiCi",
     mounted() {
-      this.drawLine();
+      this.myChart1();
+      this.myChart2();
+      this.myChart3();
     },
     methods: {
-      drawLine() {
+      myChart1() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart = echarts.init(document.getElementById('myChart'), 'dark');
+        let myChart1 = echarts.init(document.getElementById('myChart1'), 'dark');
 
         // 绘制图表
-        myChart.setOption({
+        myChart1.setOption({
           title: {
             text: '实时检测批次分布',
             left: '20px',
@@ -139,15 +147,191 @@
             }
           }]
         });
-      }
-    },
+      },
+      myChart2() {
+        // 基于准备好的dom，初始化echarts实例
+        let myChart2 = echarts.init(document.getElementById('myChart2'), 'dark');
 
+        // 绘制图表
+        myChart2.setOption({
+          title: {
+            text: '月果蔬高危风险商品TOP10'
+          },
+          backgroundColor: '#0B284C',
+          legend: {
+            show: false
+          },
+          calculable: true,
+          series: [{
+            name: '漏斗图',
+            type: 'funnel',
+            left: '10%',
+            top: 60,
+            bottom: 60,
+            width: '80%',
+            min: 0,
+            max: 30,
+            minSize: '0%',
+            maxSize: '100%',
+            sort: 'descending',
+            gap: 2,
+            label: {
+              normal: {
+                show: true,
+                formatter: "{b}/{c}",
+                position: 'inside'
+              },
+              emphasis: {
+                textStyle: {
+                  fontSize: 20
+                }
+              }
+            },
+            labelLine: {
+              normal: {
+                length: 10,
+                lineStyle: {
+                  width: 1,
+                  type: 'solid'
+                }
+              }
+            },
+            itemStyle: {
+              normal: {
+                borderColor: '#fff',
+                borderWidth: 1
+              }
+            },
+            data: [{
+              value: 90,
+              name: '韭菜'
+            }, {
+              value: 45,
+              name: '芹菜'
+            }, {
+              value: 34,
+              name: '菠菜'
+            }, {
+              value: 22,
+              name: '黄瓜'
+            }, {
+              value: 10,
+              name: '韭菜'
+            }, {
+              value: 8,
+              name: '芹菜'
+            }, {
+              value: 5,
+              name: '菠菜'
+            }, {
+              value: 3,
+              name: '黄瓜'
+            }, {
+              value: 2,
+              name: '黄瓜'
+            }
+            ]
+          }]
+        });
+      },
+      myChart3() {
+        // 基于准备好的dom，初始化echarts实例
+        let myChart3 = echarts.init(document.getElementById('myChart3'), 'dark');
+
+        // 绘制图表
+        myChart3.setOption({
+          title: {
+            text: '月果蔬高危风险商品TOP10'
+          },
+          backgroundColor: '#0B284C',
+          legend: {
+            show: false
+          },
+          calculable: true,
+          series: [{
+            name: '漏斗图',
+            type: 'funnel',
+            left: '10%',
+            top: 60,
+            bottom: 60,
+            width: '80%',
+            min: 0,
+            max: 30,
+            minSize: '0%',
+            maxSize: '100%',
+            sort: 'descending',
+            gap: 2,
+            label: {
+              normal: {
+                show: true,
+                formatter: "{b}/{c}",
+                position: 'inside'
+              },
+              emphasis: {
+                textStyle: {
+                  fontSize: 20
+                }
+              }
+            },
+            labelLine: {
+              normal: {
+                length: 10,
+                lineStyle: {
+                  width: 1,
+                  type: 'solid'
+                }
+              }
+            },
+            itemStyle: {
+              normal: {
+                borderColor: '#fff',
+                borderWidth: 1
+              }
+            },
+            data: [{
+              value: 90,
+              name: '韭菜'
+            }, {
+              value: 45,
+              name: '芹菜'
+            }, {
+              value: 34,
+              name: '菠菜'
+            }, {
+              value: 22,
+              name: '黄瓜'
+            }, {
+              value: 10,
+              name: '韭菜'
+            }, {
+              value: 8,
+              name: '芹菜'
+            }, {
+              value: 5,
+              name: '菠菜'
+            }, {
+              value: 3,
+              name: '黄瓜'
+            }, {
+              value: 2,
+              name: '黄瓜'
+            }
+            ]
+          }]
+        });
+      }
+    }
   }
 </script>
 
 <style scoped>
   .flex{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+  }
+  .flex-column{
+    font-size: 18px;
+    color: white;
+    text-align: left;
   }
 </style>
