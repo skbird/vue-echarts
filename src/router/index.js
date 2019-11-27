@@ -4,7 +4,7 @@ import Index from '@/components/Index'
 import ContainerTop from '@/components/ContainerTop'
 import JianYanJianCe from '@/components/JianYanJianCe'
 import JianCePiCi from '@/components/JianCePiCi'
-import FengXianJianCe from '@/components/FengXianJianCe'
+import fengXianJianCeLevel1 from '@/components/fengXianJianCeLevel1'
 import YueLiWaiShangPin from '@/components/YueLiWaiShangPin'
 import YueLiWaiAnJian from '@/components/YueLiWaiAnJian'
 import YueShangPinTouSu from '@/components/YueShangPinTouSu'
@@ -47,9 +47,9 @@ export default new Router({
       component: JianYanJianCe
     },
     {
-      path: '/fengXianJianCe',
-      name: 'FengXianJianCe',
-      component: FengXianJianCe
+      path: '/fengXianJianCeLevel1',
+      name: 'fengXianJianCeLevel1',
+      component: fengXianJianCeLevel1
     },
     {
       path: '/yueLiWaiShangPin',

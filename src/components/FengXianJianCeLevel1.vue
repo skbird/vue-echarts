@@ -1,141 +1,142 @@
 <template>
   <div>
-    <div class="flex" style="background: #001E44;color: #fff;height: 100%">
-      <table>
-        <tr>
-          <td style="padding-right: 45px">
-            <div class="leftpart">风险监测</div>
-          </td>
-          <td>
-            <div class="rightpart">
-              实时上报量
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              月至今上报量
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              年至今上报量
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="rightpart">
-              抽检上报
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              181
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              298
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              780
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="rightpart">
-              例外案件
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              181
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              298
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              780
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="rightpart">
-              商品投诉
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              181
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              298
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              780
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="rightpart">
-              诉讼案件
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              181
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              298
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              780
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="rightpart">
-              食安舆情
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              181
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              298
-            </div>
-          </td>
-          <td>
-            <div class="rightpart">
-              780
-            </div>
-          </td>
-        </tr>
-      </table>
-
-      <div class="flex-column" id="myChart1" :style="{width: '520px', height: '400px'}"></div>
-      <div class="flex-column" id="myChart2" :style="{width: '520px', height: '400px'}"></div>
+    <div class="flex">
+      <div style="background: #001E44;color: #fff;">
+        <table>
+          <tr>
+            <td style="padding-right: 45px">
+              <div class="leftpart">风险监测</div>
+            </td>
+            <td>
+              <div class="rightpart">
+                实时上报量
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                月至今上报量
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                年至今上报量
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="rightpart">
+                抽检上报
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                181
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                298
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                780
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="rightpart">
+                例外案件
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                181
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                298
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                780
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="rightpart">
+                商品投诉
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                181
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                298
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                780
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="rightpart">
+                诉讼案件
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                181
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                298
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                780
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="rightpart">
+                食安舆情
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                181
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                298
+              </div>
+            </td>
+            <td>
+              <div class="rightpart">
+                780
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="myChart_ycjsqsb" :style="{width: '520px', height: '400px'}"></div>
+      <div id="myChart_ycjsqtb" :style="{width: '520px', height: '400px'}"></div>
     </div>
   </div>
 </template>
@@ -153,16 +154,16 @@ require('echarts/theme/dark');
 export default {
   name: "feng-xian-jian-ce",
   mounted() {
-    this.myChart1();
-    this.myChart2();
+    this.myChart_ycjsqsb();
+    this.myChart_ycjsqtb();
   },
   methods: {
-    myChart1(){
+    myChart_ycjsqsb(){
       // 基于准备好的dom，初始化echarts实例
-      let myChart1 = echarts.init(document.getElementById('myChart1'), 'dark');
+      let myChart = echarts.init(document.getElementById('myChart_ycjsqsb'), 'dark');
 
       // 绘制图表
-      myChart1.setOption({
+      myChart.setOption({
         tooltip: {
           trigger: 'axis',
           axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -215,12 +216,12 @@ export default {
         ]
       });
     },
-    myChart2(){
+    myChart_ycjsqtb(){
       // 基于准备好的dom，初始化echarts实例
-      let myChart2 = echarts.init(document.getElementById('myChart2'), 'dark');
+      let myChart = echarts.init(document.getElementById('myChart_ycjsqtb'), 'dark');
 
       // 绘制图表
-      myChart2.setOption({
+      myChart.setOption({
         tooltip: {
           trigger: 'axis',
           axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -344,6 +345,7 @@ export default {
 <style scoped>
   .flex{
     display: flex;
+    flex-direction: row;
   }
   .leftpart{
     font-size: 28px;

@@ -24,7 +24,7 @@
 
     <div id="panel_4" class="box-1">
       <div class="box-item">
-        <FengXianJianCe></FengXianJianCe>
+        <FengXianJianCeLevel1></FengXianJianCeLevel1>
       </div>
     </div>
 
@@ -70,7 +70,7 @@
   import ContainerTop from '@/components/ContainerTop'
   import JianYanJianCe from '@/components/JianYanJianCe'
   import JianCePiCi from '@/components/JianCePiCi'
-  import FengXianJianCe from '@/components/FengXianJianCe'
+  import FengXianJianCeLevel1 from '@/components/FengXianJianCeLevel1'
   import YueLiWaiShangPin from '@/components/YueLiWaiShangPin'
   import YueLiWaiAnJian from '@/components/YueLiWaiAnJian'
   import YueShangPinTouSu from '@/components/YueShangPinTouSu'
@@ -93,7 +93,7 @@
       ContainerTop,
       JianYanJianCe,
       JianCePiCi,
-      FengXianJianCe
+      FengXianJianCeLevel1
     }
   }
 </script>
