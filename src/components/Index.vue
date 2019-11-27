@@ -26,14 +26,22 @@
       <div class="box-item">
         <JianCePiCi></JianCePiCi>
       </div>
-      <div class="box-item">月果蔬高危风险商品TOP10</div>
+      <div class="box-item">
+        月果蔬高危风险商品TOP10
+      </div>
       <div class="box-item">月水产高危风险商品TOP10</div>
     </div>
 
     <div id="panel_4" class="box-1">
-      <div class="box-item">风险监测</div>
-      <div class="box-item">月抽检省区上报量TOP10</div>
-      <div class="box-item">月抽检省区通报量TOP10</div>
+      <div class="box-item">
+        <FengXianJianCe></FengXianJianCe>
+      </div>
+      <div class="box-item">
+        <!--<YueChouShengQu1></YueChouShengQu1>-->
+      </div>
+      <div class="box-item">
+        <!--<YueChouShengQu2></YueChouShengQu2>-->
+      </div>
     </div>
 
     <div id="panel_5" class="box-1">
@@ -80,10 +88,10 @@
   import ShiAnFaGui from '@/components/ShiAnFaGui'
   import JianYanJianCe from '@/components/JianYanJianCe'
   import JianCePiCi from '@/components/JianCePiCi'
-  import YueChouShengQu1 from '@/components/YueChouShengQu1'
-  import YueChouShengQu2 from '@/components/YueChouShengQu2'
   import YueShuiGuoGW from '@/components/YueShuiGuoGW'
   import FengXianJianCe from '@/components/FengXianJianCe'
+  import YueChouShengQu1 from '@/components/YueChouShengQu1'
+  import YueChouShengQu2 from '@/components/YueChouShengQu2'
   import YueLiWaiShangPin from '@/components/YueLiWaiShangPin'
   import YueLiWaiAnJian from '@/components/YueLiWaiAnJian'
   import YueShangPinTouSu from '@/components/YueShangPinTouSu'
@@ -107,7 +115,11 @@
       ChinaScatterDemo,
       ShiAnFaGui,
       JianYanJianCe,
-      JianCePiCi
+      JianCePiCi,
+      YueShuiGuoGW,
+      FengXianJianCe,
+      YueChouShengQu1,
+      YueChouShengQu2
     }
   }
 </script>

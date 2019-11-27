@@ -1,5 +1,7 @@
 <template>
-  <div id="myChart" :style="{width: '800px', height: '600px'}"></div>
+  <div class="flex">
+    <div id="myChart" :style="{width: '520px', height: '400px'}"></div>
+  </div>
 </template>
 
 <script>
@@ -27,20 +29,8 @@
 
         // 绘制图表
         myChart.setOption({
-          tooltip: {
-            trigger: 'item',
-            show: false
-          },
-          toolbox: {
-            feature: {
-              dataView: {
-                readOnly: false
-              },
-              show: false
-            }
-          },
           title:{
-            text: '月抽检省区通报量TOP10'
+            text: '月果蔬高危风险商品TOP10'
           },
           backgroundColor: '#0B284C',
           legend: {
@@ -123,3 +113,9 @@
 
   }
 </script>
+<style scoped>
+  .flex{
+    display: flex;
+    flex-direction: column;
+  }
+</style>

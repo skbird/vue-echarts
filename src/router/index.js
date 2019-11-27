@@ -62,16 +62,6 @@ export default new Router({
       component: JianYanJianCe
     },
     {
-      path: '/yueChouShengQu1',
-      name: 'YueChouShengQu1',
-      component: YueChouShengQu1
-    },
-    {
-      path: '/yueChouShengQu2',
-      name: 'YueChouShengQu2',
-      component: YueChouShengQu2
-    },
-    {
       path: '/yueShuiGuoGW',
       name: 'YueShuiGuoGW',
       component: YueShuiGuoGW
@@ -80,6 +70,16 @@ export default new Router({
       path: '/fengXianJianCe',
       name: 'FengXianJianCe',
       component: FengXianJianCe
+    },
+    {
+      path: '/yueChouShengQu1',
+      name: 'YueChouShengQu1',
+      component: YueChouShengQu1
+    },
+    {
+      path: '/yueChouShengQu2',
+      name: 'YueChouShengQu2',
+      component: YueChouShengQu2
     },
     {
       path: '/yueLiWaiShangPin',

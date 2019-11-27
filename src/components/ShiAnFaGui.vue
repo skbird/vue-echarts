@@ -42,7 +42,6 @@
     flex-direction: column;
   }
   .flex-column{
-    width: 100%;
     height: 100%;
     font-size: 18px;
     color: white;

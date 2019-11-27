@@ -1,5 +1,7 @@
 <template>
-  <div id="myChart" :style="{width: '520px', height: '400px'}"></div>
+  <div class="flex">
+    <div id="myChart" :style="{width: '520px', height: '400px'}"></div>
+  </div>
 </template>
 
 <script>
@@ -144,6 +146,8 @@
 </script>
 
 <style scoped>
-
-
+  .flex{
+    display: flex;
+    flex-direction: column;
+  }
 </style>

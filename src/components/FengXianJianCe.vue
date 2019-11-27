@@ -1,5 +1,5 @@
 <template>
-  <div style="background: #001E44;color: #fff;width: 900px">
+  <div style="background: #001E44;color: #fff;width: 100%">
     <table>
       <tr>
         <td style="padding-right: 45px">
@@ -139,7 +139,6 @@
   import ElAside from "element-ui/packages/aside/src/main";
 
   export default {
-    components: {ElAside},
     name: "feng-xian-jian-ce"
   }
 </script>
