@@ -1,7 +1,7 @@
 <template>
 
   <div style="width: 100%;height: 100%;background: #0B284C">
-    <div style="margin-bottom: 10px;color: #fff;margin-left: 40px;padding-top: 10px">食安最新资讯</div>
+    <div style="margin-bottom: 10px;color: #fff;margin-left: 40px;padding-top: 10px">食安法规标准</div>
     <ul class="new-list">
       <li v-for="item in listData" style="list-style-type: none;font-size: 14px;text-decoration: underline;text-align: left;margin-left: 40px">
         <a class="title" v-text="item.title"></a>

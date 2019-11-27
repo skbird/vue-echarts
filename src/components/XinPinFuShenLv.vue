@@ -1,5 +1,24 @@
 <template>
-  <div id="myChart" :style="{width: '800px', height: '600px'}"></div>
+  <div class="div-box" style="background-color:#0B284C;color: #fff;width: 24%;padding: 5px">
+    <span>
+      <el-popover
+        placement="bottom"
+        width="200"
+        title="数据"
+        trigger="click" class="popover-style">
+        <div>
+          <el-checkbox v-model="checked1" label="备选项1" border />
+        </div>
+        <div>
+          <el-checkbox v-model="checked2" label="备选项2" border />
+        </div>
+        <el-image slot="reference" style="margin-left: 10px;margin-top: 10px;" :src="url"/>
+      </el-popover>
+
+      <span style="float: right;margin-top: 10px;margin-right: 20px;font-size: 20px">新品审核复审率TOP10</span>
+    </span>
+    <div id="myChart" :style="{width: '95%', height: '600px'}"></div>
+  </div>
 </template>
 
 <script>
@@ -16,8 +35,8 @@
     name: "echarts-demo",
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
-      }
+        url: '../assets/tool-button.png'
+      };
     },
     mounted() {
       this.drawLine();
@@ -36,14 +55,14 @@
             }
           },
           title:{
-            text: '证件更新逾期率TOP10',
+            show: false
           },
           backgroundColor: '#0B284C',
           grid: {
-            left: '3%',
+            left: '10%',
             right: '4%',
             bottom: '3%',
-            containLabel: true
+            top:'3%'
           },
           xAxis: {
             show: false,
@@ -80,13 +99,17 @@
             }
           ]
         });
+      },
+      searchDilog() {
+        console.log("xi")
       }
-    },
-
+    }
   }
 </script>
 
 <style scoped>
-
+  .popover-style{
+    background-color: #242640;
+  }
 
 </style>

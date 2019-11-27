@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import ShiAnZiXun from '@/components/ShiAnZiXun'
+import ShiAnFaGui from '@/components/ShiAnFaGui'
 import ChinaScatterDemo from '@/components/ChinaScatterDemo'
 import JianYanJianCe from '@/components/JianYanJianCe'
 import JianCePiCi from '@/components/JianCePiCi'
@@ -24,6 +25,7 @@ import XinPinFuShenLv from  '@/components/XinPinFuShenLv'
 import ZhanQuChengJi from '@/components/ZhanQuChengJi'
 import MenDianChengJi from '@/components/MenDianChengJi'
 import ZhanQuChengJiMingXi from '@/components/ZhanQuChengJiMingXi'
+import FlexDemo from '@/components/FlexDemo'
 
 Vue.use(Router)
 
@@ -38,6 +40,11 @@ export default new Router({
       path: '/shiAnZiXun',
       name: 'ShiAnZiXun',
       component: ShiAnZiXun
+    },
+    {
+      path: '/shiAnFaGui',
+      name: 'ShiAnFaGui',
+      component: ShiAnFaGui
     },
     {
       path: '/chinaScatterDemo',
@@ -148,6 +155,11 @@ export default new Router({
       path: '/zhanQuChengJiMingXi',
       name: 'ZhanQuChengJiMingXi',
       component: ZhanQuChengJiMingXi
+    },
+    {
+      path: '/flexDemo',
+      name: FlexDemo,
+      component: FlexDemo,
     }
   ]
 })

@@ -89,7 +89,6 @@
           return res;
         };
         let option = {
-          backgroundColor: '#020933',
           /*提示框组件*/
           tooltip: {
             /*触发类型*/
