@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Index from '@/components/Index'
 import ShiAnZiXun from '@/components/ShiAnZiXun'
-import chinaScatterDemo from '@/components/chinaScatterDemo'
+import ChinaScatterDemo from '@/components/ChinaScatterDemo'
 import JianYanJianCe from '@/components/JianYanJianCe'
 import JianCePiCi from '@/components/JianCePiCi'
 import YueChouShengQu1 from '@/components/YueChouShengQu1'
@@ -29,14 +30,19 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'Index',
+      component: Index
+    },
+    {
       path: '/shiAnZiXun',
       name: 'ShiAnZiXun',
       component: ShiAnZiXun
     },
     {
       path: '/chinaScatterDemo',
-      name: 'chinaScatterDemo',
-      component: chinaScatterDemo
+      name: 'ChinaScatterDemo',
+      component: ChinaScatterDemo
     },
     {
       path: '/jianCePiCi',

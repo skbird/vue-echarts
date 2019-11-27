@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color:#0B284C;color: #fff;width: 53%;padding: 10px">
+  <div class="div-box" style="background-color:#0B284C;color: #fff;width: 53%;padding: 10px">
     <h3>战区成绩明细</h3>
     <el-table :data="tableData" :highlight-current-row="false"
               :header-cell-style="{background:'#2398D7',color:'#fff'}" show-summary border :row-class-name="tableRowClassName"
@@ -83,6 +83,12 @@
 </script>
 
 <style>
+  .div-box {
+    background-image: url("../assets/back-icon.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid #0A5270;
+  }
   .el-table .warning-row {
     background: #0B284C;
   }
