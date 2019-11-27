@@ -23,7 +23,9 @@
     </div>
 
     <div id="panel_3" class="box-1">
-      <div class="box-item">实时检测批次分布</div>
+      <div class="box-item">
+        <JianCePiCi></JianCePiCi>
+      </div>
       <div class="box-item">月果蔬高危风险商品TOP10</div>
       <div class="box-item">月水产高危风险商品TOP10</div>
     </div>
@@ -104,7 +106,8 @@
       ShiAnZiXun,
       ChinaScatterDemo,
       ShiAnFaGui,
-      JianYanJianCe
+      JianYanJianCe,
+      JianCePiCi
     }
   }
 </script>
@@ -122,6 +125,7 @@
   }
   #main{
     background-color: #001E44;
+    padding: 15px;
   }
   /*  justify-content是主轴的对齐方式 值有flex-start | flex-end | center | space-between | space-around;
         这里用的space-around  控制了登陆按钮和导航的位置  其他属性下边有图*/

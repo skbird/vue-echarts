@@ -1,5 +1,5 @@
 <template>
-  <div id="myChart" :style="{width: '800px', height: '600px'}"></div>
+  <div id="myChart" :style="{width: '520px', height: '400px'}"></div>
 </template>
 
 <script>
@@ -35,7 +35,7 @@
           grid: {
             left: '4%',
             right: '4%',
-            bottom: '4%',
+            bottom: '10%',
             top:'4%',
           },
           tooltip: {
@@ -53,6 +53,11 @@
             },
             axisTick: 'none',
             axisLine: 'none',
+            axisLabel: {
+              interval:0,
+              rotate:0
+            },
+            max: 11
           },
           yAxis: {
             show: false
@@ -115,7 +120,7 @@
             name: '蛋品',
             type: 'bar',
             stack: 'stack',
-            barWidth: '30',
+            barWidth: '25',
             data: [40, 22, 18, 35, 42, 40, 40, 22, 18, 35, 42, 40],
             itemStyle: {
               normal: {color: "#3FBB49", barBorderRadius: 1,},
