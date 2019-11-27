@@ -1,5 +1,7 @@
 <template>
-  <div id="myChart" :style="{width: '800px', height: '600px'}"></div>
+  <div class="flex">
+    <div id="myChart" :style="{width: '800px', height: '600px'}"></div>
+  </div>
 </template>
 
 <script>
@@ -87,6 +89,8 @@
 </script>
 
 <style scoped>
-
+  .flex{
+    display: flex;
+  }
 
 </style>

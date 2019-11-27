@@ -1,5 +1,5 @@
 <template>
-  <div style="background: #001E44;color: #fff;width: 100%">
+  <div class="flex" style="background: #001E44;color: #fff;height: 100%">
     <table>
       <tr>
         <td style="padding-right: 45px">
@@ -144,6 +144,9 @@
 </script>
 
 <style scoped>
+  .flex{
+    display: flex;
+  }
   .leftpart{
     font-size: 28px;
     background: #0066FF;
@@ -155,7 +158,6 @@
     padding: 2px;
     margin: 2px;
     text-align: center;
-    width: 200px;
     height: 40px;
   }
 </style>
