@@ -1,5 +1,5 @@
 <template>
-    <div style="background: #001E44;color: #fff;width: 1200px">
+    <div style="background: #001E44;color: #fff;width: 100%">
       <table>
         <tr>
           <td rowspan="2" style="padding-right: 45px">

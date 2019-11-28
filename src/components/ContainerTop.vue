@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="flex" style="background: #0B284C">
+  <div style="width: 100%">
+    <div class="flex" style="background: #0B284C;width: 33%">
       <div class="flex-column" style="margin-left: 20px">食安最新资讯</div>
       <div class="flex-column">
         <ul class="new-list">
@@ -11,11 +11,11 @@
       </div>
     </div>
 
-    <div class="flex" id="s-map"style="background-color: #001E44">
-      <div id="chartMap" class="chartGauge" :style="{width: '517px', height: '400px'}"></div>
+    <div class="flex" id="s-map"style="background-color: #001E44;width: 33%">
+      <div id="chartMap" class="chartGauge" :style="{width: '100%', height: '400px'}"></div>
     </div>
 
-    <div class="flex" style="background: #0B284C">
+    <div class="flex" style="background: #0B284C;width: 33%">
       <div class="flex-column" style="margin-left: 20px">食安安全法规</div>
       <div class="flex-column">
         <ul class="new-list">

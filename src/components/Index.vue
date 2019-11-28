@@ -41,14 +41,24 @@
     </div>
 
     <div id="panel_7" class="box-1">
-      <div class="box-2">
-        <div class="box-item">新品引入审核</div>
-        <div class="box-item">供应商审核</div>
-        <div class="box-item">证件更新审核</div>
+      <div class="box-2" style="width: 75%">
+        <div class="box-item">
+          <XinPinYinRuShenHe></XinPinYinRuShenHe>
+        </div>
+        <div class="box-item">
+          <GongYingShangShenHe></GongYingShangShenHe>
+        </div>
+        <div class="box-item">
+          <ZhengJianGengXinShenHe></ZhengJianGengXinShenHe>
+        </div>
       </div>
-      <div class="box-2">
-        <div class="box-item">新品审核复审率TOP10</div>
-        <div class="box-item">证件更新逾期率TOP10</div>
+      <div class="box-2"  style="width: 25%">
+        <div class="box-item">
+          <XinPinFuShenLv></XinPinFuShenLv>
+        </div>
+        <div class="box-item">
+          <ZhengJianYuQiLv></ZhengJianYuQiLv>
+        </div>
       </div>
     </div>
 
@@ -75,8 +85,8 @@
   import XinPinYinRuShenHe from '@/components/XinPinYinRuShenHe'
   import GongYingShangShenHe from '@/components/GongYingShangShenHe'
   import ZhengJianGengXinShenHe from '@/components/ZhengJianGengXinShenHe'
-  import ZhengJianYuQiLv from '@/components/ZhengJianYuQiLv'
   import XinPinFuShenLv from  '@/components/XinPinFuShenLv'
+  import ZhengJianYuQiLv from '@/components/ZhengJianYuQiLv'
   import ZhanQuChengJi from '@/components/ZhanQuChengJi'
   import MenDianChengJi from '@/components/MenDianChengJi'
   import ZhanQuChengJiMingXi from '@/components/ZhanQuChengJiMingXi'
@@ -89,7 +99,12 @@
       JianCePiCi,
       FengXianJianCeLevel1,
       FengXianJianCeLevel2,
-      FengXianJianCeLevel3
+      FengXianJianCeLevel3,
+      XinPinYinRuShenHe,
+      GongYingShangShenHe,
+      ZhengJianGengXinShenHe,
+      XinPinFuShenLv,
+      ZhengJianYuQiLv
     }
   }
 </script>

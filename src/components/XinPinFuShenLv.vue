@@ -1,5 +1,5 @@
 <template>
-  <div class="div-box" style="background-color:#0B284C;color: #fff;width: 24%;padding: 5px">
+  <div class="flex" style="background-color:#0B284C;color: #fff;width: 100%;padding: 5px">
     <span>
       <el-popover
         placement="bottom"
@@ -17,7 +17,7 @@
 
       <span style="float: right;margin-top: 10px;margin-right: 20px;font-size: 20px">新品审核复审率TOP10</span>
     </span>
-    <div id="myChart" :style="{width: '95%', height: '600px'}"></div>
+    <div id="myChart_xpfsl" :style="{width: '95%', height: '600px'}"></div>
   </div>
 </template>
 
@@ -44,7 +44,7 @@
     methods: {
       drawLine() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart = echarts.init(document.getElementById('myChart'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_xpfsl'), 'dark');
 
         // 绘制图表
         myChart.setOption({
@@ -108,8 +108,11 @@
 </script>
 
 <style scoped>
+  .flex{
+    display: flex;
+    flex-direction: row;
+  }
   .popover-style{
     background-color: #242640;
   }
-
 </style>

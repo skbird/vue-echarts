@@ -1,8 +1,8 @@
 <template>
-  <div style="background-color:#0B284C">
-    <div class="box" id="myChart1" :style="{width: '450px', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart2" :style="{width: '500px', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart3" :style="{width: '500px', height: '400px',margin:'0',padding:'0'}"></div>
+  <div style="background-color:#0B284C;width: 100%">
+    <div class="box" id="myChart_xpyr_1" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
+    <div class="box" id="myChart_xpyr_2" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
+    <div class="box" id="myChart_xpyr_3" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
   </div>
 </template>
 
@@ -21,12 +21,12 @@
   export default {
       name: "zi-zhi-he-gui",
     mounted() {
-      this.myChart1();
-      this.myChart2();
-      this.myChart3();
+      this.myChart_xpyr_1();
+      this.myChart_xpyr_2();
+      this.myChart_xpyr_3();
     },
     methods: {
-      myChart1(){
+      myChart_xpyr_1(){
         var dataAll = [
           ["油耗", 230],
           ["行车距离", 450],
@@ -208,8 +208,8 @@
         var list = makeSeries();
 
         // 基于准备好的dom，初始化echarts实例
-        let myChart1 = echarts.init(document.getElementById('myChart1'), 'dark');
-        myChart1.setOption({
+        let myChart = echarts.init(document.getElementById('myChart_xpyr_1'), 'dark');
+        myChart.setOption({
           backgroundColor: '#0B284C',
           tooltip: {
             formatter: "{a} {b} : {c}"
@@ -228,12 +228,12 @@
           series: list
         })
       },
-      myChart2(){
+      myChart_xpyr_2(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart2 = echarts.init(document.getElementById('myChart2'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_xpyr_2'), 'dark');
 
         // 绘制图表
-        myChart2.setOption({
+        myChart.setOption({
           title: {
             text: '实时审核总量',
             left: '20px',
@@ -313,7 +313,7 @@
             itemStyle: {
               normal: {color: "#436EEE", barBorderRadius: 12,}
             },
-            barWidth : 25,//柱图宽度
+            barWidth : 20,//柱图宽度
             label: {
               normal: {
                 show: true,
@@ -327,12 +327,12 @@
           }]
         });
       },
-      myChart3(){
+      myChart_xpyr_3(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart3 = echarts.init(document.getElementById('myChart3'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_xpyr_3'), 'dark');
 
         // 绘制图表
-        myChart3.setOption({
+        myChart.setOption({
           title: {
             text: '实时审核总量',
             left: '20px',
@@ -412,7 +412,7 @@
             itemStyle: {
               normal: {color: "#436EEE", barBorderRadius: 12,}
             },
-            barWidth : 25,//柱图宽度
+            barWidth : 20,//柱图宽度
             label: {
               normal: {
                 show: true,

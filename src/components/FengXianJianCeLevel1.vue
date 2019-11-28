@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <div class="flex">
-      <div style="background: #001E44;color: #fff;">
+    <div class=""flex style="width: 100%">
+      <div style="background: #001E44;color: #fff;width: 45%">
         <table>
           <tr>
             <td style="padding-right: 45px">
@@ -135,10 +134,9 @@
           </tr>
         </table>
       </div>
-      <div id="myChart_ycjsqsb" :style="{width: '520px', height: '400px'}"></div>
-      <div id="myChart_ycjsqtb" :style="{width: '520px', height: '400px'}"></div>
+      <div id="myChart_ycjsqsb" :style="{width: '32%', height: '400px'}"></div>
+      <div id="myChart_ycjsqtb" :style="{width: '32%', height: '400px'}"></div>
     </div>
-  </div>
 </template>
 
 <script>

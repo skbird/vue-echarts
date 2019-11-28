@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <div class="flex">
-      <div id="myChart_ylwsp" :style="{width: '520px', height: '400px'}"></div>
-      <div id="myChart_ylwwt" :style="{width: '520px', height: '400px'}"></div>
-      <div id="myChart_ylwts" :style="{width: '520px', height: '400px'}"></div>
-      <div id="myChart_ylwaj" :style="{width: '520px', height: '400px'}"></div>
-    </div>
+  <div class="flex" style="width: 100%">
+    <div id="myChart_ylwsp" :style="{width: '25%', height: '400px'}"></div>
+    <div id="myChart_ylwwt" :style="{width: '25%', height: '400px'}"></div>
+    <div id="myChart_ylwts" :style="{width: '25%', height: '400px'}"></div>
+    <div id="myChart_ylwaj" :style="{width: '25%', height: '400px'}"></div>
   </div>
 </template>
 

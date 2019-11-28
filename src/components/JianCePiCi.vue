@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div class="flex">
-      <div class="flex-column" id="myChart1" :style="{width: '520px', height: '400px'}"></div>
-      <div class="flex-column" id="myChart2" :style="{width: '520px', height: '400px'}"></div>
-      <div class="flex-column" id="myChart3" :style="{width: '520px', height: '400px'}"></div>
-    </div>
+  <div class="flex" style="width: 100%">
+    <div class="flex-column" id="myChart1" :style="{width: '33%', height: '400px'}"></div>
+    <div class="flex-column" id="myChart2" :style="{width: '33%', height: '400px'}"></div>
+    <div class="flex-column" id="myChart3" :style="{width: '33%', height: '400px'}"></div>
   </div>
 </template>
 

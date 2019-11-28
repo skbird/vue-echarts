@@ -1,15 +1,16 @@
 <template>
-  <div class="flex">
-    <div id="myChart_yyqwt" :style="{width: '320px', height: '400px'}"></div>
-    <div id="myChart_ygwfxsp" :style="{width: '320px', height: '400px'}">
+  <div class="flex" style="width: 100%">
+    <div id="myChart_yyqwt" :style="{width: '30%', height: '400px'}"></div>
+    <div id="myChart_ygwfxsp" :style="{width: '30%', height: '400px'}">
+      <h4 style="color: #fff">月高危风险商品</h4>
       <el-table :data="tableData" :highlight-current-row="false"
                 :header-cell-style="{background:'#2398D7',color:'#fff'}"
                 border :row-class-name="tableRowClassName"
                 :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
-        <el-table-column prop="product" label="商品" width="180"></el-table-column>
-        <el-table-column prop="times" label="问題次數" width="180"></el-table-column>
-        <el-table-column prop="category" label="问题大类" width="180"></el-table-column>
-        <el-table-column prop="detail" label="具体问题" width="180"></el-table-column>
+        <el-table-column prop="product" label="商品" width="105"></el-table-column>
+        <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
+        <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
+        <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
       </el-table>
 
       <div class="block">
@@ -23,14 +24,15 @@
         </el-pagination>
       </div>
     </div>
-    <div id="myChart_ygwfxgys" :style="{width: '320px', height: '400px'}">
+    <div id="myChart_ygwfxgys" :style="{width: '30%', height: '400px'}">
+      <h4 style="color: #fff">月高危风险供应商</h4>
       <el-table :data="tableData" :highlight-current-row="false"
                 :header-cell-style="{background:'#2398D7',color:'#fff'}" border :row-class-name="tableRowClassName"
                 :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
-        <el-table-column prop="product" label="供应商" width="300"></el-table-column>
-        <el-table-column prop="times" label="问題次數" width="100"></el-table-column>
-        <el-table-column prop="category" label="问题大类" width="140"></el-table-column>
-        <el-table-column prop="detail" label="具体问题" width="180"></el-table-column>
+        <el-table-column prop="product" label="供应商" width="105"></el-table-column>
+        <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
+        <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
+        <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
       </el-table>
 
       <div class="block">
