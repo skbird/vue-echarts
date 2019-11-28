@@ -5,13 +5,8 @@ import ContainerTop from '@/components/ContainerTop'
 import JianYanJianCe from '@/components/JianYanJianCe'
 import JianCePiCi from '@/components/JianCePiCi'
 import FengXianJianCeLevel1 from '@/components/FengXianJianCeLevel1'
-import YueLiWaiShangPin from '@/components/YueLiWaiShangPin'
-import YueLiWaiAnJian from '@/components/YueLiWaiAnJian'
-import YueShangPinTouSu from '@/components/YueShangPinTouSu'
-import YueSuSongAnJian from '@/components/YueSuSongAnJian'
-import YuQingWenTi from '@/components/YuQingWenTi'
-import YueGaoWeiShangPin from  '@/components/YueGaoWeiShangPin'
-import YueGaoWeiGongYingShang from '@/components/YueGaoWeiGongYingShang'
+import FengXianJianCeLevel2 from '@/components/FengXianJianCeLevel2'
+import FengXianJianCeLevel3 from '@/components/FengXianJianCeLevel3'
 import XinPinYinRuShenHe from '@/components/XinPinYinRuShenHe'
 import GongYingShangShenHe from '@/components/GongYingShangShenHe'
 import ZhengJianGengXinShenHe from '@/components/ZhengJianGengXinShenHe'
@@ -52,39 +47,14 @@ export default new Router({
       component: FengXianJianCeLevel1
     },
     {
-      path: '/yueLiWaiShangPin',
-      name: 'YueLiWaiShangPin',
-      component: YueLiWaiShangPin
+      path: '/fengXianJianCeLevel2',
+      name: 'FengXianJianCeLevel2',
+      component: FengXianJianCeLevel2
     },
     {
-      path: '/yueLiWaiAnJian',
-      name: 'YueLiWaiAnJian',
-      component: YueLiWaiAnJian
-    },
-    {
-      path: '/yueShangPinTouSu',
-      name: 'YueShangPinTouSu',
-      component: YueShangPinTouSu
-    },
-    {
-      path: '/yueSuSongAnJian',
-      name: 'YueSuSongAnJian',
-      component: YueSuSongAnJian
-    },
-    {
-      path: '/yuQingWenTi',
-      name: 'YuQingWenTi',
-      component: YuQingWenTi
-    },
-    {
-      path: '/yueGaoWeiShangPin',
-      name: 'YueGaoWeiShangPin',
-      component: YueGaoWeiShangPin
-    },
-    {
-      path: '/yueGaoWeiGongYingShang',
-      name: 'YueGaoWeiGongYingShang',
-      component: YueGaoWeiGongYingShang
+      path: '/fengXianJianCeLevel3',
+      name: 'FengXianJianCeLevel3',
+      component: FengXianJianCeLevel3
     },
     {
       path: '/xinPinYinRuShenHe',

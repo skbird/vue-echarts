@@ -29,16 +29,15 @@
     </div>
 
     <div id="panel_5" class="box-1">
-      <div class="box-item">月例外商品分布</div>
-      <div class="box-item">月例外案件问题分布</div>
-      <div class="box-item">月商品投诉问题分布</div>
-      <div class="box-item">月诉讼案件门店分布</div>
+      <div class="box-item">
+        <FengXianJianCeLevel2></FengXianJianCeLevel2>
+      </div>
     </div>
 
     <div id="panel_6" class="box-1">
-      <div class="box-item">月食安舆情问题分布</div>
-      <div class="box-item">月高危风险商品</div>
-      <div class="box-item">月高危风险供应商</div>
+      <div class="box-item">
+        <FengXianJianCeLevel3></FengXianJianCeLevel3>
+      </div>
     </div>
 
     <div id="panel_7" class="box-1">
@@ -71,13 +70,8 @@
   import JianYanJianCe from '@/components/JianYanJianCe'
   import JianCePiCi from '@/components/JianCePiCi'
   import FengXianJianCeLevel1 from '@/components/FengXianJianCeLevel1'
-  import YueLiWaiShangPin from '@/components/YueLiWaiShangPin'
-  import YueLiWaiAnJian from '@/components/YueLiWaiAnJian'
-  import YueShangPinTouSu from '@/components/YueShangPinTouSu'
-  import YueSuSongAnJian from '@/components/YueSuSongAnJian'
-  import YuQingWenTi from '@/components/YuQingWenTi'
-  import YueGaoWeiShangPin from  '@/components/YueGaoWeiShangPin'
-  import YueGaoWeiGongYingShang from '@/components/YueGaoWeiGongYingShang'
+  import FengXianJianCeLevel2 from '@/components/FengXianJianCeLevel2'
+  import FengXianJianCeLevel3 from '@/components/FengXianJianCeLevel3'
   import XinPinYinRuShenHe from '@/components/XinPinYinRuShenHe'
   import GongYingShangShenHe from '@/components/GongYingShangShenHe'
   import ZhengJianGengXinShenHe from '@/components/ZhengJianGengXinShenHe'
@@ -93,7 +87,9 @@
       ContainerTop,
       JianYanJianCe,
       JianCePiCi,
-      FengXianJianCeLevel1
+      FengXianJianCeLevel1,
+      FengXianJianCeLevel2,
+      FengXianJianCeLevel3
     }
   }
 </script>
