@@ -34,7 +34,6 @@
         myChart1.setOption({
           title: {
             text: '实时检测批次分布',
-            left: '20px',
             textStyle: {
               fontSize: 16,
             }
@@ -50,9 +49,8 @@
             trigger: "axis",
           },
           legend: {
-            itemWidth: 15,
             itemHeight: 15,
-            data: ['水果', '蔬菜','水产','蛋品'],
+            data: ['\n','\n','水果', '蔬菜','水产','蛋品'],
           },
           xAxis: {
             data: ["一区", "二区", "三区", "四区", "五区", "六区", "七区", "八区", "九区", "十区", "产地", "彩食鲜"],

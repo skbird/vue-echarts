@@ -150,76 +150,10 @@ export default {
           }
         },
         series : [{
-          name: '商品质量',
-          type:'pie',
-          startAngle: 160,
-          radius : [90, 142],
-          center: [300, 390],
-          roseType : 'radius',
-          itemStyle: {
-            color: 'transparent'
-          },
-          labelLine: {
-            show: true,
-          },
-          data: [
-            {
-              value:28,
-              labelLine: {
-                lineStyle: {
-                  color: colors[0]
-                }
-              },
-              itemStyle: {
-              }
-            },
-            {
-              value:22,
-              labelLine: {
-                lineStyle: {
-                  color: colors[1]
-                }
-              }
-            },
-            {
-              value:16,
-              labelLine: {
-                lineStyle: {
-                  color: colors[2]
-                }
-              }
-            },
-            {
-              value:20,
-              labelLine: {
-                lineStyle: {
-                  color: colors[3]
-                }
-              }
-            },
-            {
-              value:14,
-              labelLine: {
-                lineStyle: {
-                  color: colors[4]
-                }
-              }
-            },
-            {
-              value:16,
-              labelLine: {
-                lineStyle: {
-                  color: colors[5]
-                }
-              }
-            }
-          ]
-        },{
           type: 'pie',
           z: 10,
           startAngle: 160,
-          radius : [90, 142],
-          center: [300, 390],
+          radius: ['60', '80'],
           roseType : 'radius',
           color: [],
           label: {
@@ -228,13 +162,13 @@ export default {
               rich: {
                 c: {
                   color: '#ffffff',
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: 'bold',
                   lineHeight: 5
                 },
                 b: {
                   color: '#ffffff',
-                  fontSize: 20,
+                  fontSize: 16,
                   height: 40
                 },
               },
@@ -332,7 +266,7 @@ export default {
         series : [{
           name:'访问来源',
           type:'pie',
-          radius: ['100', '140'],
+          radius: ['60', '80'],
           hoverAnimation: false,
           avoidLabelOverlap: false,
           label: {
@@ -341,13 +275,13 @@ export default {
               rich: {
                 c: {
                   color: '#ffffff',
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: 'bold',
                   lineHeight: 5
                 },
                 b: {
                   color: '#ffffff',
-                  fontSize: 20,
+                  fontSize: 16,
                   height: 40
                 },
               },
