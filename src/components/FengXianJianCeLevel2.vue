@@ -1,9 +1,20 @@
 <template>
   <div class="flex" style="width: 100%">
-    <div id="myChart_ylwsp" :style="{width: '25%', height: '400px'}"></div>
-    <div id="myChart_ylwwt" :style="{width: '25%', height: '400px'}"></div>
-    <div id="myChart_ylwts" :style="{width: '25%', height: '400px'}"></div>
-    <div id="myChart_ylwaj" :style="{width: '25%', height: '400px'}"></div>
+
+    <Border style="width: 25%;height: 400px">
+      <div id="myChart_ylwsp" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
+    <Border style="width: 25%;height: 400px">
+      <div id="myChart_ylwwt" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
+
+    <Border style="width: 25%;height: 400px">
+      <div id="myChart_ylwts" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
+
+    <Border style="width: 25%;height: 400px">
+      <div id="myChart_ylwaj" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
   </div>
 </template>
 
@@ -16,6 +27,9 @@ require('echarts/lib/chart/pie')
 require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
 require('echarts/theme/dark');
+
+import Border from '@/components/Border'
+
 export default {
   name: "feng-xian-jian-ce-level2",
   mounted() {
@@ -23,6 +37,9 @@ export default {
     this.myChart_ylwwt();
     this.myChart_ylwts();
     this.myChart_ylwaj();
+  },
+  components: {
+    Border
   },
   methods: {
     myChart_ylwsp() {
@@ -38,6 +55,7 @@ export default {
         title: {
           text: '月例外商品分布',
           left: '20px',
+          top: '10px',
           textStyle: {
             fontSize: 16,
           }
@@ -134,6 +152,7 @@ export default {
         title: {
           text: '月例外案件问题分布',
           left: '20px',
+          top: '10px',
           textStyle: {
             fontSize: 16,
           }
@@ -271,6 +290,7 @@ export default {
         title: {
           text: '月商品投诉问题分布',
           left: '20px',
+          top: '10px',
           textStyle: {
             fontSize: 16,
           }
@@ -354,6 +374,7 @@ export default {
         title: {
           text: '月诉讼案件门店分布',
           left: '20px',
+          top: '10px',
           textStyle: {
             fontSize: 16,
           }

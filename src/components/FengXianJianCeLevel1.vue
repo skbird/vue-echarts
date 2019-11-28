@@ -134,8 +134,15 @@
           </tr>
         </table>
       </div>
-      <div id="myChart_ycjsqsb" :style="{width: '32%', height: '400px'}"></div>
-      <div id="myChart_ycjsqtb" :style="{width: '32%', height: '400px'}"></div>
+
+      <Border style="width: 33%;height: 400px">
+        <div id="myChart_ycjsqsb" :style="{width: '100%', height: '400px'}"></div>
+      </Border>
+
+      <Border style="width: 33%;height: 400px">
+        <div id="myChart_ycjsqtb" :style="{width: '100%', height: '400px'}"></div>
+      </Border>
+
     </div>
 </template>
 
@@ -149,11 +156,16 @@ require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
 require('echarts/theme/dark');
 
+import Border from '@/components/Border'
+
 export default {
   name: "feng-xian-jian-ce",
   mounted() {
     this.myChart_ycjsqsb();
     this.myChart_ycjsqtb();
+  },
+  components: {
+    Border
   },
   methods: {
     myChart_ycjsqsb(){
@@ -170,6 +182,8 @@ export default {
         },
         title:{
           text: '月抽检省区上报量TOP10',
+          left: '20px',
+          top: '10px',
           textStyle: {
             color: '#ffffff',
             fontSize: '16',
@@ -210,6 +224,7 @@ export default {
                 }
               }
             },
+            barWidth : 25,//柱图宽度
             data: [150, 212, 201, 154, 190, 330, 410, 212, 201, 154],
             itemStyle: {
               normal: {color: "#5A9F46", barBorderRadius: 10,}
@@ -232,6 +247,8 @@ export default {
         },
         title:{
           text: '月抽检省区通报量TOP10',
+          left: '20px',
+          top: '10px',
           textStyle: {
             color: '#ffffff',
             fontSize: '16',
@@ -246,7 +263,7 @@ export default {
         },
         legend:{
           x: 'center',
-          data: ['\n','\n','例外案件', '商品投诉','诉讼案件','食安舆情']
+          data: ['\n','\n','\n','例外案件', '商品投诉','诉讼案件','食安舆情']
         },
         xAxis: {
           show: false,
@@ -263,7 +280,7 @@ export default {
           axisLabel: {
             textStyle: {
               color: '#fff',
-              fontSize: '20'
+              fontSize: '14'
             }
           }
         },
@@ -278,13 +295,13 @@ export default {
                 position: 'inside',
                 textStyle: {
                   color: '#ffffff',
-                  fontSize: '16',
+                  fontSize: '14',
                 }
               }
             },
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
-              normal: {color: "#A35156", barBorderRadius: 28}
+              normal: {color: "#A35156", barBorderRadius: 20}
             }
           },{
             name: '商品投诉',
@@ -302,7 +319,7 @@ export default {
             },
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
-              normal: {color: "#AA594B", barBorderRadius: 28}
+              normal: {color: "#AA594B", barBorderRadius: 20}
             }
           },{
             name: '诉讼案件',
@@ -336,6 +353,7 @@ export default {
                 }
               }
             },
+            barWidth : 25,//柱图宽度
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
               normal: {color: "#E6CBC6", barBorderRadius: 28}

@@ -1,51 +1,59 @@
 <template>
   <div class="flex" style="width: 100%">
-    <div id="myChart_yyqwt" :style="{width: '33%', height: '400px'}"></div>
-    <div id="myChart_ygwfxsp" :style="{width: '33%', height: '400px'}">
-      <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险商品</div>
-      <el-table :data="tableData" :highlight-current-row="false"
-                :header-cell-style="{background:'#2398D7',color:'#fff'}"
-                border :row-class-name="tableRowClassName"
-                :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
-        <el-table-column prop="product" label="商品" width="105"></el-table-column>
-        <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
-        <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
-        <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
-      </el-table>
+    <Border style="width: 33%;height: 400px">
+      <div id="myChart_yyqwt" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
 
-      <div class="block">
-        <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page.sync="currentPage1"
-          :page-size="10"
-          layout="total,jumper,prev,next"
-          :total="total">
-        </el-pagination>
-      </div>
-    </div>
-    <div id="myChart_ygwfxgys" :style="{width: '33%', height: '400px'}">
-      <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险供应商</div>
-      <el-table :data="tableData" :highlight-current-row="false"
-                :header-cell-style="{background:'#2398D7',color:'#fff'}" border :row-class-name="tableRowClassName"
-                :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
-        <el-table-column prop="product" label="供应商" width="105"></el-table-column>
-        <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
-        <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
-        <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
-      </el-table>
+    <Border style="width: 33%;height: 400px">
+      <div id="myChart_ygwfxsp" :style="{width: '100%', height: '100%'}">
+        <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险商品</div>
+        <el-table :data="tableData" :highlight-current-row="false"
+                  :header-cell-style="{background:'#2398D7',color:'#fff'}"
+                  border :row-class-name="tableRowClassName"
+                  :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
+          <el-table-column prop="product" label="商品" width="105"></el-table-column>
+          <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
+          <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
+          <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
+        </el-table>
 
-      <div class="block">
-        <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page.sync="currentPage1"
-          :page-size="10"
-          layout="total,jumper,prev,next"
-          :total="total">
-        </el-pagination>
+        <div class="block">
+          <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page.sync="currentPage1"
+            :page-size="10"
+            layout="total,jumper,prev,next"
+            :total="total">
+          </el-pagination>
+        </div>
       </div>
-    </div>
+    </Border>
+
+    <Border style="width: 33%;height: 400px">
+      <div id="myChart_ygwfxgys" :style="{width: '100%', height: '100%'}">
+        <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险供应商</div>
+        <el-table :data="tableData" :highlight-current-row="false"
+                  :header-cell-style="{background:'#2398D7',color:'#fff'}" border :row-class-name="tableRowClassName"
+                  :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
+          <el-table-column prop="product" label="供应商" width="105"></el-table-column>
+          <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
+          <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
+          <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
+        </el-table>
+
+        <div class="block">
+          <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page.sync="currentPage1"
+            :page-size="10"
+            layout="total,jumper,prev,next"
+            :total="total">
+          </el-pagination>
+        </div>
+      </div>
+    </Border>
   </div>
 </template>
 
@@ -59,6 +67,8 @@ require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
 require('echarts/theme/dark');
 
+import Border from '@/components/Border'
+
 export default {
 
   name: "feng-xian-jian-ce-level3",
@@ -66,6 +76,9 @@ export default {
     this.myChart_yyqwt();
     this.myChart_ygwfxsp();
     this.myChart_ygwfxgys();
+  },
+  components: {
+    Border
   },
   data() {
     return {
@@ -104,6 +117,7 @@ export default {
         title: {
           text: '月食安舆情问题分布',
           left: '20px',
+          top: '10px',
           textStyle: {
             fontSize: 16
           }
@@ -115,7 +129,7 @@ export default {
         grid: {
           left: '2%',
           right: '2%',
-          bottom: '6%',
+          bottom: '10%',
           top:'0%',
         },
         xAxis: {
@@ -125,7 +139,7 @@ export default {
           axisLabel: {
             show: true,
             textStyle: {
-              fontSize: 20
+              fontSize: 14
             },
             formatter:function(val){
               var strs = val.split(''); //字符串数组

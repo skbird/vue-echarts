@@ -1,9 +1,11 @@
 <template>
-  <div style="background-color:#0B284C;width: 100%">
-    <div class="box" id="myChart_xpyr_1" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart_xpyr_2" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart_xpyr_3" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
-  </div>
+  <Border class="flex" style="width: 100%;height: 400px">
+    <div class="flex" style="width: 100%;height: 100%">
+        <div id="myChart_xpyr_1" :style="{width: '33%', height: '100%',margin:'0',padding:'0'}"></div>
+        <div id="myChart_xpyr_2" :style="{width: '33%', height: '100%',margin:'0',padding:'0'}"></div>
+        <div id="myChart_xpyr_3" :style="{width: '33%', height: '100%',margin:'0',padding:'0'}"></div>
+    </div>
+  </Border>
 </template>
 
 <script>
@@ -18,12 +20,17 @@
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
 
+  import Border from '@/components/Border'
+
   export default {
       name: "zi-zhi-he-gui",
     mounted() {
       this.myChart_xpyr_1();
       this.myChart_xpyr_2();
       this.myChart_xpyr_3();
+    },
+    components: {
+      Border
     },
     methods: {
       myChart_xpyr_1(){
@@ -219,7 +226,7 @@
             left: '20px',
             top: '10px',
             textStyle: {
-              fontSize: 16,
+              fontSize: 25,
             }
           },
           tooltip: {
@@ -313,7 +320,7 @@
             itemStyle: {
               normal: {color: "#436EEE", barBorderRadius: 12,}
             },
-            barWidth : 20,//柱图宽度
+            barWidth : 25,//柱图宽度
             label: {
               normal: {
                 show: true,
@@ -431,8 +438,9 @@
 </script>
 
 <style scoped>
-  .box{
-    display: inline-block;
+  .flex{
+    display: flex;
+    flex-direction: row;
   }
 
 </style>

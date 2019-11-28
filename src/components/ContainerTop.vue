@@ -1,30 +1,35 @@
 <template>
   <div style="width: 100%">
-    <div class="flex" style="background: #0B284C;width: 33%">
-      <div class="flex-column" style="margin-left: 20px;font-size: 16px;font-weight: bold">食安最新资讯</div>
-      <div class="flex-column">
-        <ul class="new-list">
-          <li v-for="item in listData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">
-            <a class="title" v-text="item.title"></a>
-          </li>
-        </ul>
+    <Border class="flex" style="width: 33%;height: 400px;">
+      <div style="width: 100%">
+        <div class="flex-column" style="margin-left: 20px;font-size: 16px;font-weight: bold">食安最新资讯</div>
+        <div class="flex-column">
+          <ul class="new-list">
+            <li v-for="item in listData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">
+              <a class="title" v-text="item.title"></a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </Border>
 
-    <div class="flex" id="s-map"style="background-color: #001E44;width: 33%">
+    <div class="flex" id="s-map"style="width: 33%">
       <div id="chartMap" class="chartGauge" :style="{width: '100%', height: '400px'}"></div>
     </div>
 
-    <div class="flex" style="background: #0B284C;width: 33%">
-      <div class="flex-column" style="margin-left: 20px;font-size: 16px;font-weight: bold">食安安全法规</div>
-      <div class="flex-column">
-        <ul class="new-list">
-          <li v-for="item in listData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">
-            <a class="title" v-text="item.title"></a>
-          </li>
-        </ul>
+    <Border class="flex" style="width: 33%;height: 400px;">
+      <div style="width: 100%">
+        <div class="flex-column" style="margin-left: 20px;font-size: 16px;font-weight: bold">食安安全法规</div>
+        <div class="flex-column">
+          <ul class="new-list">
+            <li v-for="item in listData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">
+              <a class="title" v-text="item.title"></a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </Border>
+
   </div>
 </template>
 
@@ -33,9 +38,13 @@
 let echarts = require('echarts/lib/echarts')
 //引入地图组件
 import china from 'echarts/map/js/china'
+import Border from '@/components/Border'
 
 export default {
   name: "container-top",
+  components: {
+    Border
+  },
   props: {
     width: {
       type: String,

@@ -1,7 +1,7 @@
 <template>
-  <div class="flex" style="width: 100%">
+  <Border class="flex" style="width: 100%;height: 100%">
     <div id="myChart" :style="{width: '100%', height: '600px'}"></div>
-  </div>
+  </Border>
 </template>
 
 <script>
@@ -13,9 +13,13 @@
   require('echarts/lib/component/tooltip')
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
+  import Border from '@/components/Border'
 
   export default {
     name: "echarts-demo",
+    components: {
+      Border
+    },
     data() {
       return {
         msg: 'Welcome to Your Vue.js App'

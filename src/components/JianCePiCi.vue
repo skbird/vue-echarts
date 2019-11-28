@@ -1,8 +1,16 @@
 <template>
   <div class="flex" style="width: 100%">
-    <div class="flex-column" id="myChart1" :style="{width: '33%', height: '400px'}"></div>
-    <div class="flex-column" id="myChart2" :style="{width: '33%', height: '400px'}"></div>
-    <div class="flex-column" id="myChart3" :style="{width: '33%', height: '400px'}"></div>
+    <Border style="width: 33%;height: 400px">
+        <div class="flex-column" id="myChart1" style="width: 100%;height: 100%"></div>
+    </Border>
+
+    <Border style="width: 33%;height: 400px">
+      <div class="flex-column" id="myChart2" style="width: 100%;height: 100%"></div>
+    </Border>
+
+    <Border style="width: 33%;height: 400px">
+      <div class="flex-column" id="myChart3" style="width: 100%;height: 100%"></div>
+    </Border>
   </div>
 </template>
 
@@ -18,12 +26,17 @@
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
 
+  import Border from '@/components/Border'
+
   export default {
     name: "jianCePiCi",
     mounted() {
       this.myChart1();
       this.myChart2();
       this.myChart3();
+    },
+    components: {
+      Border
     },
     methods: {
       myChart1() {

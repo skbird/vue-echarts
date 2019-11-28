@@ -40,8 +40,8 @@
       </div>
     </div>
 
-    <div id="panel_7" class="box-1">
-      <div class="box-2" style="width: 75%">
+    <div id="panel_7" style="height: 1300px" class="box-1">
+      <div class="box-2" style="height: 100%;width: 76.6%">
         <div class="box-item">
           <XinPinYinRuShenHe></XinPinYinRuShenHe>
         </div>
@@ -52,7 +52,7 @@
           <ZhengJianGengXinShenHe></ZhengJianGengXinShenHe>
         </div>
       </div>
-      <div class="box-2"  style="width: 25%">
+      <div class="box-2"  style="height: 100%;width: 22.8%">
         <div class="box-item">
           <XinPinFuShenLv></XinPinFuShenLv>
         </div>
@@ -144,12 +144,11 @@
   .box-1{
     flex-direction: row;
     width: 100%;
-    border: red 1px solid;
+    margin: 8px;
   }
 
   .box-2{
     flex-direction: column;
-    border: red 1px solid;
   }
 
   .box-item {
@@ -160,7 +159,6 @@
     font-size: 30px;
     color: white;
     text-align: center;
-    background-color: #0B284C;
   }
 
 </style>

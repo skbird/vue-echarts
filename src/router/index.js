@@ -16,6 +16,7 @@ import ZhanQuChengJi from '@/components/ZhanQuChengJi'
 import MenDianChengJi from '@/components/MenDianChengJi'
 import ZhanQuChengJiMingXi from '@/components/ZhanQuChengJiMingXi'
 import FlexDemo from '@/components/FlexDemo'
+import Border from '@/components/Border'
 
 Vue.use(Router)
 
@@ -100,6 +101,11 @@ export default new Router({
       path: '/flexDemo',
       name: FlexDemo,
       component: FlexDemo,
+    },
+    {
+      path: '/border',
+      name: Border,
+      component: Border,
     }
   ]
 })

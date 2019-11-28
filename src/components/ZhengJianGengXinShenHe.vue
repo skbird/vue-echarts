@@ -1,9 +1,11 @@
 <template>
-  <div style="background-color:#0B284C;width: 100%">
-    <div class="box" id="myChart_zjgxsh_1" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart_zjgxsh_2" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart_zjgxsh_3" :style="{width: '33%', height: '400px',margin:'0',padding:'0'}"></div>
-  </div>
+  <Border class="flex" style="width: 100%;height: 100%">
+    <div class="flex" style="width: 100%;height: 100%">
+      <div id="myChart_zjgxsh_1" :style="{width: '100%', height: '100%',margin:'0',padding:'0'}"></div>
+      <div id="myChart_zjgxsh_2" :style="{width: '100%', height: '100%',margin:'0',padding:'0'}"></div>
+      <div id="myChart_zjgxsh_3" :style="{width: '100%', height: '100%',margin:'0',padding:'0'}"></div>
+    </div>
+  </Border>
 </template>
 
 <script>
@@ -18,8 +20,13 @@
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
 
+  import Border from '@/components/Border'
+
   export default {
-      name: "zi-zhi-he-gui",
+    name: "zi-zhi-he-gui",
+    components: {
+      Border
+    },
     mounted() {
       this.myChart_zjgxsh_1();
       this.myChart_zjgxsh_2();
@@ -214,7 +221,7 @@
             formatter: "{a} {b} : {c}"
           },
           title: {
-            text: '新品引入审核',
+            text: '证件更新审核',
             left: '20px',
             top: '10px',
             textStyle: {
@@ -478,8 +485,9 @@
 </script>
 
 <style scoped>
-  .box{
-    display: inline-block;
+  .flex{
+    display: flex;
+    flex-direction: row;
   }
 
 </style>

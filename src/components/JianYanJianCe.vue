@@ -1,10 +1,11 @@
 <template>
-    <div style="background: #001E44;color: #fff;width: 100%">
+  <div class="flex" style="background: #001E44;color: #fff;width: 100%">
+    <div style="margin: 10px 10px 10px 10px">
+      <div class="leftpart">检测检验</div>
+    </div>
+    <div>
       <table>
         <tr>
-          <td rowspan="2" style="padding-right: 45px">
-            <div class="leftpart">检测检验</div>
-          </td>
           <td>
             <div class="rightpart">
               检测站点分布
@@ -34,7 +35,7 @@
           </td>
           <td>
             <div class="rightpart">
-            298
+              298
             </div>
           </td>
           <td>
@@ -45,11 +46,12 @@
           <td>
             <div class="rightpart">
               780190
-           </div>
+            </div>
           </td>
         </tr>
       </table>
     </div>
+  </div>
 </template>
 
 <script>
@@ -62,6 +64,10 @@
 </script>
 
 <style scoped>
+  .flex{
+    display: flex;
+    flex-direction: row;
+  }
   .leftpart{
     font-size: 28px;
     background: #0066FF;
