@@ -41,17 +41,18 @@
         myChart.setOption({
           backgroundColor: '#0B284C',
           title:{
+            left: '20px',
+            top: '10px',
             text: '战区成绩分布',
           },
           tooltip: {
             show: false
           },
           grid: {
-            top: '5%',
-            left: '5%',
-            right: '5%',
-            bottom: '5%',
-            containLabel: true
+            top: '20%',
+            left: '0%',
+            right: '0%',
+            bottom: '10%'
           },
           xAxis: [{
             type: 'category',
@@ -67,7 +68,7 @@
             axisTick: {
               show: false,
             },
-            data: ['一区', '二区', '三区', '四区', '五区', '六区', '七区', '八区'],
+            data: ['一区', '二区', '三区', '四区', '五区', '六区', '七区', '八区', '九区', '十区'],
           }],
           yAxis: {
             show: false
@@ -114,7 +115,7 @@
                 ], false)
               }
             },
-            data: [150, 200, 259, 360, 378, 450, 450,330]
+            data: [60, 65, 78, 65, 81, 63, 86,65,90,73]
           }]
         })
       },
@@ -124,17 +125,18 @@
         myChart.setOption({
           backgroundColor: '#0B284C',
           title:{
+            left: '20px',
+            top: '10px',
             text: '省区成绩分布',
           },
           tooltip: {
             show: false
           },
           grid: {
-            top: '5%',
-            left: '5%',
-            right: '5%',
-            bottom: '5%',
-            containLabel: true
+            top: '20%',
+            left: '0%',
+            right: '0%',
+            bottom: '10%'
           },
           xAxis: [{
             type: 'category',
@@ -150,7 +152,7 @@
             axisTick: {
               show: false,
             },
-            data: ['一区', '二区', '三区', '四区', '五区', '六区', '七区', '八区'],
+            data: ['江西', '江苏', '广西', '广东', '河南', '河北', '安徽'],
           }],
           yAxis: {
             show: false
@@ -197,7 +199,7 @@
                 ], false)
               }
             },
-            data: [150, 200, 259, 360, 378, 450, 450,330]
+            data: [73, 78, 82, 78, 84, 79, 86]
           }]
         })
       },
@@ -207,17 +209,18 @@
         myChart.setOption({
           backgroundColor: '#0B284C',
           title:{
+            left: '20px',
+            top: '10px',
             text: '区域成绩分布',
           },
           tooltip: {
             show: false
           },
           grid: {
-            top: '5%',
-            left: '5%',
-            right: '5%',
-            bottom: '5%',
-            containLabel: true
+            top: '20%',
+            left: '0%',
+            right: '0%',
+            bottom: '10%'
           },
           xAxis: [{
             type: 'category',
@@ -233,7 +236,7 @@
             axisTick: {
               show: false,
             },
-            data: ['一区', '二区', '三区', '四区', '五区', '六区', '七区', '八区'],
+            data: ['闽东', '闽南', '泉州', '鼓楼', '仓山', '莆田', '台江'],
           }],
           yAxis: {
             show: false
@@ -280,7 +283,7 @@
                 ], false)
               }
             },
-            data: [150, 200, 259, 360, 378, 450, 450,330]
+            data: [73, 78, 82, 78, 84, 79, 86]
           }]
         })
       }

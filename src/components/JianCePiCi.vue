@@ -1,14 +1,14 @@
 <template>
   <div class="flex" style="width: 100%">
-    <Border style="width: 33%;height: 400px">
+    <Border class="flex" style="width: 33%;height: 400px">
         <div class="flex-column" id="myChart1" style="width: 100%;height: 100%"></div>
     </Border>
 
-    <Border style="width: 33%;height: 400px">
+    <Border class="flex" style="width: 33%;height: 400px">
       <div class="flex-column" id="myChart2" style="width: 100%;height: 100%"></div>
     </Border>
 
-    <Border style="width: 33%;height: 400px">
+    <Border class="flex" style="width: 33%;height: 400px">
       <div class="flex-column" id="myChart3" style="width: 100%;height: 100%"></div>
     </Border>
   </div>
@@ -163,12 +163,13 @@
 
         // 绘制图表
         myChart2.setOption({
+          backgroundColor: "#0B284C",
+          tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c}%"
+          },
           title: {
             text: '月果蔬高危风险商品TOP10'
-          },
-          backgroundColor: '#0B284C',
-          legend: {
-            show: false
           },
           calculable: true,
           series: [{
@@ -178,8 +179,9 @@
             top: 60,
             bottom: 60,
             width: '80%',
+
             min: 0,
-            max: 30,
+            max: 100,
             minSize: '0%',
             maxSize: '100%',
             sort: 'descending',
@@ -215,33 +217,32 @@
               value: 90,
               name: '韭菜'
             }, {
-              value: 45,
+              value: 88,
               name: '芹菜'
             }, {
-              value: 34,
+              value: 78,
               name: '菠菜'
             }, {
-              value: 22,
+              value: 66,
               name: '黄瓜'
             }, {
-              value: 10,
+              value: 63,
               name: '韭菜'
             }, {
-              value: 8,
+              value: 56,
               name: '芹菜'
             }, {
-              value: 5,
+              value: 50,
               name: '菠菜'
             }, {
-              value: 3,
+              value: 45,
               name: '黄瓜'
             }, {
-              value: 2,
+              value: 40,
               name: '黄瓜'
-            }
-            ]
+            }]
           }]
-        });
+        })
       },
       myChart3() {
         // 基于准备好的dom，初始化echarts实例
@@ -249,12 +250,13 @@
 
         // 绘制图表
         myChart3.setOption({
-          title: {
-            text: '月果蔬高危风险商品TOP10'
+          backgroundColor: "#0B284C",
+          tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c}%"
           },
-          backgroundColor: '#0B284C',
-          legend: {
-            show: false
+          title: {
+            text: '月水产高危风险商品TOP10'
           },
           calculable: true,
           series: [{
@@ -264,8 +266,9 @@
             top: 60,
             bottom: 60,
             width: '80%',
+
             min: 0,
-            max: 30,
+            max: 100,
             minSize: '0%',
             maxSize: '100%',
             sort: 'descending',
@@ -301,33 +304,32 @@
               value: 90,
               name: '韭菜'
             }, {
-              value: 45,
+              value: 88,
               name: '芹菜'
             }, {
-              value: 34,
+              value: 78,
               name: '菠菜'
             }, {
-              value: 22,
+              value: 66,
               name: '黄瓜'
             }, {
-              value: 10,
+              value: 63,
               name: '韭菜'
             }, {
-              value: 8,
+              value: 56,
               name: '芹菜'
             }, {
-              value: 5,
+              value: 50,
               name: '菠菜'
             }, {
-              value: 3,
+              value: 45,
               name: '黄瓜'
             }, {
-              value: 2,
+              value: 40,
               name: '黄瓜'
-            }
-            ]
+            }]
           }]
-        });
+        })
       }
     }
   }

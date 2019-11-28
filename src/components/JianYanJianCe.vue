@@ -1,9 +1,9 @@
 <template>
-  <div class="flex" style="background: #001E44;color: #fff;width: 100%">
-    <div style="margin: 10px 10px 10px 10px">
+  <div class="flex" style="color: #fff;width: 100%">
+    <div style="width: 14%">
       <div class="leftpart">检测检验</div>
     </div>
-    <div>
+    <div style="width: 86%">
       <table>
         <tr>
           <td>
@@ -69,17 +69,22 @@
     flex-direction: row;
   }
   .leftpart{
-    font-size: 28px;
+    font-size: 45px;
     background: #0066FF;
-    padding: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 50px;
+    text-align: center;
+    border: 2px #797979 solid;
   }
+
   .rightpart{
     background: #0B284C;
-    font-size: 20px;
+    font-size: 30px;
     padding: 2px;
     margin: 2px;
     text-align: center;
-    width: 200px;
+    width: 250px;
     height: 40px;
   }
 </style>
