@@ -139,7 +139,7 @@
                 show: 0
               },
               title: {
-                offsetCenter: [0, '90%']
+                show: false
               },
               detail: {
                 show: false
@@ -218,9 +218,6 @@
         let myChart = echarts.init(document.getElementById('myChart_xpyr_1'), 'dark');
         myChart.setOption({
           backgroundColor: '#0B284C',
-          tooltip: {
-            formatter: "{a} {b} : {c}"
-          },
           title: {
             text: '新品引入审核',
             left: '20px',
@@ -230,7 +227,8 @@
             }
           },
           tooltip: {
-            show: true
+            show: true,
+            formatter: "{a} {b} : {c}"
           },
           series: list
         })

@@ -1,9 +1,16 @@
 <template>
   <div id="main" class="box">
+
     <div id="top" class="head">
-      <img class="flex" src="../assets/u4.png"/>
-      <h1 class="flex" style="color: #fff;font-size: 40px;">食安云网驾驶舱</h1>
-      <img class="flex" src="../assets/u5.png"/>
+      <div width="40%">
+        <img class="flex" width="100%" src="../assets/u4.png"/>
+      </div>
+      <div width="20%">
+        <h1 class="flex" width="100%"  style="color: #fff;font-size: 50px;">食安云网驾驶舱</h1>
+      </div>
+      <div width="40%">
+        <img class="flex" width="100%" src="../assets/u5.png"/>
+      </div>
     </div>
 
     <div id="panel_1" class="box-1">
@@ -119,6 +126,7 @@
 <style scoped>
   /*  flex-direction是子元素的主轴方向  默认是row  是横向的下边有图  */
   .box {
+    display: flex;
     flex-direction: column;
   }
   .flex {
@@ -129,12 +137,15 @@
   }
   #main{
     background-color: #001E44;
-    padding: 15px;
+    padding-top: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   /*  justify-content是主轴的对齐方式 值有flex-start | flex-end | center | space-between | space-around;
         这里用的space-around  控制了登陆按钮和导航的位置  其他属性下边有图*/
   /*  align-items 是交叉轴的对齐方式   如果定义了direction的话  主轴和交叉轴是会变的*/
   .head {
+    display: flex;
     height: 50px;
     width: 100%;
     justify-content: space-around;

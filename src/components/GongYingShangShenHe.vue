@@ -138,7 +138,7 @@
                 show: 0
               },
               title: {
-                offsetCenter: [0, '90%']
+                show: false
               },
               detail: {
                 show: false
