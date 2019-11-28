@@ -1,5 +1,5 @@
 <template>
-  <div class="div-box" style="background-color:#0B284C;color: #fff;width: 53%;padding: 10px">
+  <div class="div-box" style="background-color:#0B284C;color: #fff;width: 100%;height: 500px;padding: 10px">
     <h3>战区成绩明细</h3>
     <el-table :data="tableData" :highlight-current-row="false"
               :header-cell-style="{background:'#2398D7',color:'#fff'}" show-summary border :row-class-name="tableRowClassName"

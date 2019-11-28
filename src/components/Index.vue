@@ -63,14 +63,18 @@
     </div>
 
     <div id="panel_8" class="box-1">
-      <div class="box-item">战区成绩分布</div>
-      <div class="box-item">省区成绩分布</div>
-      <div class="box-item">区域成绩分布</div>
+      <div class="box-item">
+        <ZhanQuChengJi></ZhanQuChengJi>
+      </div>
     </div>
 
     <div id="panel_9" class="box-1">
-      <div class="box-item">门店成绩TOP5</div>
-      <div class="box-item">战区成绩明细</div>
+      <div class="box-item" style="width: 33%">
+        <MenDianChengJi></MenDianChengJi>
+      </div>
+      <div class="box-item" style="width: 66%">
+        <ZhanQuChengJiMingXi></ZhanQuChengJiMingXi>
+      </div>
     </div>
   </div>
 </template>
@@ -104,7 +108,10 @@
       GongYingShangShenHe,
       ZhengJianGengXinShenHe,
       XinPinFuShenLv,
-      ZhengJianYuQiLv
+      ZhengJianYuQiLv,
+      ZhanQuChengJi,
+      MenDianChengJi,
+      ZhanQuChengJiMingXi
     }
   }
 </script>

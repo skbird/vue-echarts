@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div id="myChart1" :style="{width: '450px', height: '400px',margin:'0',padding:'0'}"></div>
-    <div id="myChart2" :style="{width: '450px', height: '400px',margin:'0',padding:'0'}"></div>
+  <div class="flex" style="background-color:#0B284C;width: 100%">
+    <div id="myChart_mdcj_1" :style="{width: '100%', height: '250px',margin:'0',padding:'0'}"></div>
+    <div id="myChart_mdcj_2" :style="{width: '100%', height: '250px',margin:'0',padding:'0'}"></div>
   </div>
 </template>
 
@@ -18,14 +18,14 @@
   export default {
     name: "men-dian-cheng-ji",
     mounted() {
-      this.myChart1();
-      this.myChart2();
+      this.myChart_mdcj_1();
+      this.myChart_mdcj_2();
     },
     methods: {
-      myChart1() {
+      myChart_mdcj_1() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart1 = echarts.init(document.getElementById('myChart1'), 'dark');
-        myChart1.setOption({
+        let myChart = echarts.init(document.getElementById('myChart_mdcj_1'), 'dark');
+        myChart.setOption({
           backgroundColor:'#0B284C',
           title: {
             text: '门店成绩TOP5'
@@ -54,6 +54,7 @@
             itemStyle:{
               normal:{color:'#F8BB52'},
             },
+            barWidth: 50,
             label: {
               show: true,
               position: 'inside',
@@ -71,10 +72,10 @@
           }]
         })
       },
-      myChart2() {
+      myChart_mdcj_2() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart2 = echarts.init(document.getElementById('myChart2'), 'dark');
-        myChart2.setOption({
+        let myChart = echarts.init(document.getElementById('myChart_mdcj_2'), 'dark');
+        myChart.setOption({
           backgroundColor:'#0B284C',
           title: {
             text: '门店成绩BOTTOM5'
@@ -102,6 +103,7 @@
             itemStyle:{
               normal:{color:'#AE5557'},
             },
+            barWidth: 50,
             label: {
               show: true,
               position: 'inside',
@@ -124,5 +126,8 @@
 </script>
 
 <style scoped>
-
+  .flex{
+    display: flex;
+    flex-direction: column;
+  }
 </style>

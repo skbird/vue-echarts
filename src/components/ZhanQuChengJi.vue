@@ -1,8 +1,8 @@
 <template>
-  <div style="background-color:#0B284C">
-    <div class="box" id="myChart1" :style="{width: '450px', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart2" :style="{width: '450px', height: '400px',margin:'0',padding:'0'}"></div>
-    <div class="box" id="myChart3" :style="{width: '450px', height: '400px',margin:'0',padding:'0'}"></div>
+  <div class="flex" style="background-color:#0B284C;width: 100%">
+    <div id="myChart_zqcj_1" :style="{width: '30%', height: '500px',margin:'0',padding:'0'}"></div>
+    <div id="myChart_zqcj_2" :style="{width: '30%', height: '500px',margin:'0',padding:'0'}"></div>
+    <div id="myChart_zqcj_3" :style="{width: '30%', height: '500px',margin:'0',padding:'0'}"></div>
   </div>
 </template>
 
@@ -19,15 +19,15 @@
   export default {
       name: "zhan-qu-cheng-ji",
     mounted() {
-      this.myChart1();
-      this.myChart2();
-      this.myChart3();
+      this.myChart_zqcj_1();
+      this.myChart_zqcj_2();
+      this.myChart_zqcj_3();
     },
     methods: {
-      myChart1(){
+      myChart_zqcj_1(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart1 = echarts.init(document.getElementById('myChart1'), 'dark');
-        myChart1.setOption({
+        let myChart = echarts.init(document.getElementById('myChart_zqcj_1'), 'dark');
+        myChart.setOption({
           backgroundColor: '#0B284C',
           title:{
             text: '战区成绩分布',
@@ -107,10 +107,10 @@
           }]
         })
       },
-      myChart2(){
+      myChart_zqcj_2(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart2 = echarts.init(document.getElementById('myChart2'), 'dark');
-        myChart2.setOption({
+        let myChart = echarts.init(document.getElementById('myChart_zqcj_2'), 'dark');
+        myChart.setOption({
           backgroundColor: '#0B284C',
           title:{
             text: '省区成绩分布',
@@ -190,10 +190,10 @@
           }]
         })
       },
-      myChart3(){
+      myChart_zqcj_3(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart3 = echarts.init(document.getElementById('myChart3'), 'dark');
-        myChart3.setOption({
+        let myChart = echarts.init(document.getElementById('myChart_zqcj_3'), 'dark');
+        myChart.setOption({
           backgroundColor: '#0B284C',
           title:{
             text: '区域成绩分布',
@@ -278,7 +278,8 @@
 </script>
 
 <style scoped>
-  .box{
-    display: inline-block;
+  .flex{
+    display: flex;
+    flex-direction: row;
   }
 </style>
