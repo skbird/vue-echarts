@@ -6,7 +6,7 @@
 
     <Border style="width: 33%;height: 400px">
       <div id="myChart_ygwfxsp" :style="{width: '100%', height: '100%'}">
-        <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险商品</div>
+        <div class="table-title">月高危风险商品</div>
         <el-table :data="tableData" :highlight-current-row="false"
                   :header-cell-style="{background:'#2398D7',color:'#fff'}"
                   border :row-class-name="tableRowClassName"
@@ -32,7 +32,7 @@
 
     <Border style="width: 33%;height: 400px">
       <div id="myChart_ygwfxgys" :style="{width: '100%', height: '100%'}">
-        <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险供应商</div>
+        <div class="table-title">月高危风险供应商</div>
         <el-table :data="tableData" :highlight-current-row="false"
                   :header-cell-style="{background:'#2398D7',color:'#fff'}" border :row-class-name="tableRowClassName"
                   :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
@@ -232,5 +232,13 @@ export default {
   .flex{
     display: flex;
     flex-direction: row;
+  }
+  .table-title{
+    margin-left:20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left
   }
 </style>

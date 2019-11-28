@@ -1,8 +1,10 @@
 <template>
-  <div class="flex" style="background-color:#0B284C;width: 100%">
-    <div id="myChart_mdcj_1" :style="{width: '100%', height: '250px',margin:'0',padding:'0'}"></div>
-    <div id="myChart_mdcj_2" :style="{width: '100%', height: '250px',margin:'0',padding:'0'}"></div>
-  </div>
+  <Border class="flex" style="width: 100%;height: 550px">
+    <div class="flex" style="width: 100%;height: 100%">
+      <div id="myChart_mdcj_1" :style="{width: '100%', height: '100%'}"></div>
+      <div id="myChart_mdcj_2" :style="{width: '100%', height: '100%'}"></div>
+    </div>
+  </Border>
 </template>
 
 <script>
@@ -15,8 +17,13 @@
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
 
+  import Border from '@/components/Border'
+
   export default {
     name: "men-dian-cheng-ji",
+    components: {
+      Border
+    },
     mounted() {
       this.myChart_mdcj_1();
       this.myChart_mdcj_2();
@@ -28,6 +35,8 @@
         myChart.setOption({
           backgroundColor:'#0B284C',
           title: {
+            left: 20,
+            top: 10,
             text: '门店成绩TOP5'
           },
           grid: {
@@ -54,7 +63,7 @@
             itemStyle:{
               normal:{color:'#F8BB52'},
             },
-            barWidth: 50,
+            barWidth: 60,
             label: {
               show: true,
               position: 'inside',
@@ -78,6 +87,8 @@
         myChart.setOption({
           backgroundColor:'#0B284C',
           title: {
+            left: 20,
+            top: 10,
             text: '门店成绩BOTTOM5'
           },
           grid: {
@@ -103,7 +114,7 @@
             itemStyle:{
               normal:{color:'#AE5557'},
             },
-            barWidth: 50,
+            barWidth: 60,
             label: {
               show: true,
               position: 'inside',

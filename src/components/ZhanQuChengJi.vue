@@ -1,8 +1,14 @@
 <template>
-  <div class="flex" style="background-color:#0B284C;width: 100%">
-    <div id="myChart_zqcj_1" :style="{width: '30%', height: '400px',margin:'0',padding:'0'}"></div>
-    <div id="myChart_zqcj_2" :style="{width: '30%', height: '400px',margin:'0',padding:'0'}"></div>
-    <div id="myChart_zqcj_3" :style="{width: '30%', height: '400px',margin:'0',padding:'0'}"></div>
+  <div class="flex" style="width: 100%">
+    <Border style="width: 33%;height: 400px">
+      <div id="myChart_zqcj_1" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
+    <Border style="width: 33%;height: 400px">
+      <div id="myChart_zqcj_2" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
+    <Border style="width: 33%;height: 400px">
+      <div id="myChart_zqcj_3" :style="{width: '100%', height: '100%'}"></div>
+    </Border>
   </div>
 </template>
 
@@ -16,8 +22,13 @@
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
 
+  import Border from '@/components/Border'
+
   export default {
-      name: "zhan-qu-cheng-ji",
+    name: "zhan-qu-cheng-ji",
+    components: {
+      Border
+    },
     mounted() {
       this.myChart_zqcj_1();
       this.myChart_zqcj_2();
