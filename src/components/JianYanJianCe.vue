@@ -69,7 +69,7 @@
     flex-direction: row;
   }
   .leftpart{
-    font-size: 45px;
+    font-size: 30px;
     background: #0066FF;
     margin-left: 10px;
     margin-top: 10px;

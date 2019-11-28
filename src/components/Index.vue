@@ -47,6 +47,10 @@
       </div>
     </div>
 
+    <div class="tag">
+      <span style="font-size: 30px;color: #fff;">资质合规</span>
+    </div>
+
     <div id="panel_7" style="height: 1300px" class="box-1">
       <div class="box-2" style="height: 100%;width: 76.6%">
         <div class="box-item">
@@ -67,6 +71,10 @@
           <ZhengJianYuQiLv></ZhengJianYuQiLv>
         </div>
       </div>
+    </div>
+
+    <div class="tag">
+      <span style="font-size: 30px;color: #fff;">营运标准</span>
     </div>
 
     <div id="panel_8" class="box-1">

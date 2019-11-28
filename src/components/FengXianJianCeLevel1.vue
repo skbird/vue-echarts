@@ -3,7 +3,7 @@
       <div style="background: #001E44;color: #fff;width: 45%">
         <table>
           <tr>
-            <td style="padding-right: 45px">
+            <td>
               <div class="leftpart">风险监测</div>
             </td>
             <td>
@@ -372,16 +372,21 @@ export default {
     flex-direction: row;
   }
   .leftpart{
-    font-size: 28px;
+    font-size: 30px;
     background: #0066FF;
-    padding: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border: 2px #797979 solid;
   }
+
   .rightpart{
     background: #0B284C;
-    font-size: 20px;
+    font-size: 25px;
     padding: 2px;
     margin: 2px;
     text-align: center;
-    height: 40px;
+    height: 50px;
+    width: 180px;
   }
 </style>
