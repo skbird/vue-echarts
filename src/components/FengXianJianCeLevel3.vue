@@ -1,8 +1,8 @@
 <template>
   <div class="flex" style="width: 100%">
-    <div id="myChart_yyqwt" :style="{width: '30%', height: '400px'}"></div>
-    <div id="myChart_ygwfxsp" :style="{width: '30%', height: '400px'}">
-      <h4 style="color: #fff">月高危风险商品</h4>
+    <div id="myChart_yyqwt" :style="{width: '33%', height: '400px'}"></div>
+    <div id="myChart_ygwfxsp" :style="{width: '33%', height: '400px'}">
+      <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险商品</div>
       <el-table :data="tableData" :highlight-current-row="false"
                 :header-cell-style="{background:'#2398D7',color:'#fff'}"
                 border :row-class-name="tableRowClassName"
@@ -24,8 +24,8 @@
         </el-pagination>
       </div>
     </div>
-    <div id="myChart_ygwfxgys" :style="{width: '30%', height: '400px'}">
-      <h4 style="color: #fff">月高危风险供应商</h4>
+    <div id="myChart_ygwfxgys" :style="{width: '33%', height: '400px'}">
+      <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left">月高危风险供应商</div>
       <el-table :data="tableData" :highlight-current-row="false"
                 :header-cell-style="{background:'#2398D7',color:'#fff'}" border :row-class-name="tableRowClassName"
                 :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
@@ -102,10 +102,10 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: '月诉讼案件门店分布',
+          text: '月食安舆情问题分布',
           left: '20px',
           textStyle: {
-            fontSize: 24
+            fontSize: 16
           }
         },
         backgroundColor: '#0B284C',

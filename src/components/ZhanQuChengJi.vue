@@ -1,8 +1,8 @@
 <template>
   <div class="flex" style="background-color:#0B284C;width: 100%">
-    <div id="myChart_zqcj_1" :style="{width: '30%', height: '500px',margin:'0',padding:'0'}"></div>
-    <div id="myChart_zqcj_2" :style="{width: '30%', height: '500px',margin:'0',padding:'0'}"></div>
-    <div id="myChart_zqcj_3" :style="{width: '30%', height: '500px',margin:'0',padding:'0'}"></div>
+    <div id="myChart_zqcj_1" :style="{width: '30%', height: '400px',margin:'0',padding:'0'}"></div>
+    <div id="myChart_zqcj_2" :style="{width: '30%', height: '400px',margin:'0',padding:'0'}"></div>
+    <div id="myChart_zqcj_3" :style="{width: '30%', height: '400px',margin:'0',padding:'0'}"></div>
   </div>
 </template>
 
@@ -36,11 +36,11 @@
             show: false
           },
           grid: {
-            top: '18%',
-            left: '0%',
-            right: '0%',
-            bottom: '25%',
-            // containLabel: true
+            top: '5%',
+            left: '5%',
+            right: '5%',
+            bottom: '5%',
+            containLabel: true
           },
           xAxis: [{
             type: 'category',
@@ -50,7 +50,7 @@
             axisLabel: {
               textStyle: {
                 color: '#d1e6eb',
-                margin: 15,
+                margin: 5,
               },
             },
             axisTick: {
@@ -119,11 +119,11 @@
             show: false
           },
           grid: {
-            top: '18%',
-            left: '0%',
-            right: '0%',
-            bottom: '25%',
-            // containLabel: true
+            top: '5%',
+            left: '5%',
+            right: '5%',
+            bottom: '5%',
+            containLabel: true
           },
           xAxis: [{
             type: 'category',
@@ -133,7 +133,7 @@
             axisLabel: {
               textStyle: {
                 color: '#d1e6eb',
-                margin: 15,
+                margin: 5,
               },
             },
             axisTick: {
@@ -202,11 +202,11 @@
             show: false
           },
           grid: {
-            top: '18%',
-            left: '0%',
-            right: '0%',
-            bottom: '25%',
-            // containLabel: true
+            top: '5%',
+            left: '5%',
+            right: '5%',
+            bottom: '5%',
+            containLabel: true
           },
           xAxis: [{
             type: 'category',
@@ -216,7 +216,7 @@
             axisLabel: {
               textStyle: {
                 color: '#d1e6eb',
-                margin: 15,
+                margin: 5,
               },
             },
             axisTick: {

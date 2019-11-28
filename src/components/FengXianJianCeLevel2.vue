@@ -94,14 +94,13 @@ export default {
               formatter: ['{c|{b}}', '{b|{d}}',].join('\n'),
               rich: {
                 c: {
-                  color: '#ffffff',
-                  fontSize: 20,
-                  fontWeight: 'bold',
+                  color: '#fff',
+                  fontSize: 14,
                   lineHeight: 5
                 },
                 b: {
-                  color: '#ffffff',
-                  fontSize: 20,
+                  color: '#fff',
+                  fontSize: 14,
                   height: 40
                 },
               },
@@ -132,6 +131,13 @@ export default {
         legend: {
           show: false
         },
+        title: {
+          text: '月例外案件问题分布',
+          left: '20px',
+          textStyle: {
+            fontSize: 16,
+          }
+        },
         tooltip: {
           trigger: 'item',
           formatter: function (params) {
@@ -153,7 +159,7 @@ export default {
           type: 'pie',
           z: 10,
           startAngle: 160,
-          radius: ['60', '80'],
+          radius: ['60', '90'],
           roseType : 'radius',
           color: [],
           label: {
@@ -161,14 +167,13 @@ export default {
               formatter: ['{c|{b}}', '{b|{d}}',].join('\n'),
               rich: {
                 c: {
-                  color: '#ffffff',
-                  fontSize: 16,
-                  fontWeight: 'bold',
+                  color: '#fff',
+                  fontSize: 14,
                   lineHeight: 5
                 },
                 b: {
-                  color: '#ffffff',
-                  fontSize: 16,
+                  color: '#fff',
+                  fontSize: 14,
                   height: 40
                 },
               },
@@ -263,6 +268,13 @@ export default {
         legend: {
           show: false
         },
+        title: {
+          text: '月商品投诉问题分布',
+          left: '20px',
+          textStyle: {
+            fontSize: 16,
+          }
+        },
         series : [{
           name:'访问来源',
           type:'pie',
@@ -275,13 +287,12 @@ export default {
               rich: {
                 c: {
                   color: '#ffffff',
-                  fontSize: 16,
-                  fontWeight: 'bold',
+                  fontSize: 14,
                   lineHeight: 5
                 },
                 b: {
                   color: '#ffffff',
-                  fontSize: 16,
+                  fontSize: 14,
                   height: 40
                 },
               },
@@ -344,7 +355,7 @@ export default {
           text: '月诉讼案件门店分布',
           left: '20px',
           textStyle: {
-            fontSize: 24,
+            fontSize: 16,
           }
         },
         backgroundColor: '#0B284C',
@@ -364,7 +375,7 @@ export default {
           axisLabel: {
             show: true,
             textStyle: {
-              fontSize: 20
+              fontSize: 14
             }
           }
         },
@@ -386,7 +397,7 @@ export default {
               position: 'top',
               textStyle: {
                 color: '#ffffff',
-                fontSize: 24,
+                fontSize: 14,
               }
             }
           }

@@ -39,6 +39,10 @@
           },
           title:{
             text: '证件更新逾期率TOP10',
+            textStyle: {
+              color: '#ffffff',
+              fontSize: '16',
+            }
           },
           backgroundColor: '#0B284C',
           grid: {

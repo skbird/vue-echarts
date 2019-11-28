@@ -1,16 +1,18 @@
 <template>
-  <div class="div-box" style="background-color:#0B284C;color: #fff;width: 100%;height: 500px;padding: 10px">
-    <h3>战区成绩明细</h3>
-    <el-table :data="tableData" :highlight-current-row="false"
-              :header-cell-style="{background:'#2398D7',color:'#fff'}" show-summary border :row-class-name="tableRowClassName"
-              :cell-style="{color:'#8E97A0'}">
-      <el-table-column prop="date" label="时间"></el-table-column>
-      <el-table-column prop="zone" label="战区"></el-table-column>
-      <el-table-column prop="province" label="省区"></el-table-column>
-      <el-table-column prop="area" label="区域"></el-table-column>
-      <el-table-column prop="store" label="门店"></el-table-column>
-      <el-table-column prop="score" label="成绩"></el-table-column>
-    </el-table>
+  <div class="flex" style="background-color:#0B284C;color: #fff;width: 100%;height: 100%;padding: 10px">
+    <div style="color: #fff;font-size: 16px;font-weight: bold;text-align: left;height: 20%">战区成绩明细</div>
+    <div style="height: 80%">
+      <el-table :data="tableData" :highlight-current-row="false"
+                :header-cell-style="{background:'#2398D7',color:'#fff'}" show-summary border :row-class-name="tableRowClassName"
+                :cell-style="{color:'#8E97A0'}">
+        <el-table-column prop="date" label="时间"></el-table-column>
+        <el-table-column prop="zone" label="战区"></el-table-column>
+        <el-table-column prop="province" label="省区"></el-table-column>
+        <el-table-column prop="area" label="区域"></el-table-column>
+        <el-table-column prop="store" label="门店"></el-table-column>
+        <el-table-column prop="score" label="成绩"></el-table-column>
+      </el-table>
+    </div>
   </div>
 </template>
 
@@ -83,11 +85,9 @@
 </script>
 
 <style>
-  .div-box {
-    background-image: url("../assets/back-icon.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border: 1px solid #0A5270;
+  .flex{
+    display: flex;
+    flex-direction: column;
   }
   .el-table .warning-row {
     background: #0B284C;

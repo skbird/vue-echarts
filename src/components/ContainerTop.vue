@@ -1,7 +1,7 @@
 <template>
   <div style="width: 100%">
     <div class="flex" style="background: #0B284C;width: 33%">
-      <div class="flex-column" style="margin-left: 20px">食安最新资讯</div>
+      <div class="flex-column" style="margin-left: 20px;font-size: 16px;font-weight: bold">食安最新资讯</div>
       <div class="flex-column">
         <ul class="new-list">
           <li v-for="item in listData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">
@@ -16,7 +16,7 @@
     </div>
 
     <div class="flex" style="background: #0B284C;width: 33%">
-      <div class="flex-column" style="margin-left: 20px">食安安全法规</div>
+      <div class="flex-column" style="margin-left: 20px;font-size: 16px;font-weight: bold">食安安全法规</div>
       <div class="flex-column">
         <ul class="new-list">
           <li v-for="item in listData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">

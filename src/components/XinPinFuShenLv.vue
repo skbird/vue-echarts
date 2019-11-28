@@ -1,23 +1,7 @@
 <template>
-  <div class="flex" style="background-color:#0B284C;color: #fff;width: 100%;padding: 5px">
-    <span>
-      <el-popover
-        placement="bottom"
-        width="200"
-        title="数据"
-        trigger="click" class="popover-style">
-        <div>
-          <el-checkbox v-model="checked1" label="备选项1" border />
-        </div>
-        <div>
-          <el-checkbox v-model="checked2" label="备选项2" border />
-        </div>
-        <el-image slot="reference" style="margin-left: 10px;margin-top: 10px;" :src="url"/>
-      </el-popover>
-
-      <span style="float: right;margin-top: 10px;margin-right: 20px;font-size: 20px">新品审核复审率TOP10</span>
-    </span>
-    <div id="myChart_xpfsl" :style="{width: '95%', height: '600px'}"></div>
+  <div class="flex" style="background-color:#0B284C;color: #fff;width: 100%;">
+    <div style="margin-top: 10px;margin-right: 20px;font-size: 16px;font-weight: bold;text-align: left">新品审核复审率TOP10</div>
+    <div id="myChart_xpfsl" :style="{height: '600px'}"></div>
   </div>
 </template>
 
@@ -110,7 +94,7 @@
 <style scoped>
   .flex{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .popover-style{
     background-color: #242640;

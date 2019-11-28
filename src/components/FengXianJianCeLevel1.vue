@@ -170,6 +170,10 @@ export default {
         },
         title:{
           text: '月抽检省区上报量TOP10',
+          textStyle: {
+            color: '#ffffff',
+            fontSize: '16',
+          }
         },
         backgroundColor: '#0B284C',
         grid: {
@@ -227,7 +231,11 @@ export default {
           }
         },
         title:{
-          text: '月抽检省区通报量TOP10'
+          text: '月抽检省区通报量TOP10',
+          textStyle: {
+            color: '#ffffff',
+            fontSize: '16',
+          }
         },
         backgroundColor: '#0B284C',
         grid: {
@@ -238,7 +246,7 @@ export default {
         },
         legend:{
           x: 'center',
-          data: ['例外案件', '商品投诉','诉讼案件','食安舆情']
+          data: ['\n','\n','例外案件', '商品投诉','诉讼案件','食安舆情']
         },
         xAxis: {
           show: false,

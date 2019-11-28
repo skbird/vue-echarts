@@ -219,7 +219,7 @@
             left: '20px',
             top: '10px',
             textStyle: {
-              fontSize: 25,
+              fontSize: 16,
             }
           },
           tooltip: {
