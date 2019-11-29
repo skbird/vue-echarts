@@ -1,5 +1,5 @@
 <template>
-  <div class="flex" style="width: 100%">
+  <div class="flex fxjc" style="width: 100%">
     <Border style="width: 33%;height: 400px">
       <div id="myChart_yyqwt" :style="{width: '100%', height: '100%'}"></div>
     </Border>
@@ -8,13 +8,13 @@
       <div id="myChart_ygwfxsp" :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险商品</div>
         <el-table :data="tableData" :highlight-current-row="false"
-                  :header-cell-style="{background:'#2398D7',color:'#fff'}"
+                  :header-cell-style="{background:'#2398D7',color:'#fff',textAlign:'center'}"
                   border :row-class-name="tableRowClassName"
-                  :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
-          <el-table-column prop="product" label="商品" width="105"></el-table-column>
-          <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
-          <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
-          <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
+                  :cell-style="{color:'#8E97A0',width:'25%',fontSize:'10px'}" class="el-table-class">
+          <el-table-column prop="product" label="商品"></el-table-column>
+          <el-table-column prop="times" label="问題次数" ></el-table-column>
+          <el-table-column prop="category" label="问题大类"></el-table-column>
+          <el-table-column prop="detail" label="具体问题" ></el-table-column>
         </el-table>
 
         <div class="block">
@@ -34,12 +34,13 @@
       <div id="myChart_ygwfxgys" :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险供应商</div>
         <el-table :data="tableData" :highlight-current-row="false"
-                  :header-cell-style="{background:'#2398D7',color:'#fff'}" border :row-class-name="tableRowClassName"
-                  :cell-style="{color:'#8E97A0'}" style="background: #0B284C">
-          <el-table-column prop="product" label="供应商" width="105"></el-table-column>
-          <el-table-column prop="times" label="问題次數" width="105"></el-table-column>
-          <el-table-column prop="category" label="问题大类" width="105"></el-table-column>
-          <el-table-column prop="detail" label="具体问题" width="105"></el-table-column>
+                  :header-cell-style="{background:'#2398D7',color:'#fff',textAlign:'center'}"
+                  border :row-class-name="tableRowClassName"
+                  :cell-style="{color:'#8E97A0',width:'25%',fontSize:'10px'}" class="el-table-class">
+          <el-table-column prop="product" label="供应商"></el-table-column>
+          <el-table-column prop="times" label="问題次数" ></el-table-column>
+          <el-table-column prop="category" label="问题大类"></el-table-column>
+          <el-table-column prop="detail" label="具体问题" ></el-table-column>
         </el-table>
 
         <div class="block">
@@ -83,6 +84,36 @@ export default {
   data() {
     return {
       tableData: [{
+        product: '411/上海青',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '411/上海青',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '411/上海青',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '411/上海青',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '411/上海青',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '411/上海青',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
         product: '411/上海青',
         times: '80',
         category: '商品质量',
@@ -240,5 +271,21 @@ export default {
     font-size: 16px;
     font-weight: bold;
     text-align: left
+  }
+  .el-table-class{
+    width: 95%;
+    height: 76%;
+    margin: 14px
+  }
+</style>
+
+<style>
+  .fxjc .el-input__inner{
+    background-color: #002547;
+    border-radius: 0;
+    border: 1px solid #515365;
+  }
+  .fxjc .btn-prev,.fxjc .btn-next{
+    background-color: #002547;
   }
 </style>
