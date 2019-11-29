@@ -1,15 +1,15 @@
 <template>
   <div class="flex" style="width: 100%">
     <Border class="flex" style="width: 33%;height: 400px">
-        <div class="flex-column" id="myChart1" style="width: 100%;height: 100%"></div>
+        <div class="flex-column" id="myChart_jcpc1" style="width: 100%;height: 100%"></div>
     </Border>
 
     <Border class="flex" style="width: 33%;height: 400px">
-      <div class="flex-column" id="myChart2" style="width: 100%;height: 100%"></div>
+      <div class="flex-column" id="myChart_jcpc2" style="width: 100%;height: 100%"></div>
     </Border>
 
     <Border class="flex" style="width: 33%;height: 400px">
-      <div class="flex-column" id="myChart3" style="width: 100%;height: 100%"></div>
+        <div class="flex-column" id="myChart_jcpc3" style="width: 100%;height: 100%"></div>
     </Border>
   </div>
 </template>
@@ -31,20 +31,20 @@
   export default {
     name: "jianCePiCi",
     mounted() {
-      this.myChart1();
-      this.myChart2();
-      this.myChart3();
+      this.myChart_jcpc1();
+      this.myChart_jcpc2();
+      this.myChart_jcpc3();
     },
     components: {
       Border
     },
     methods: {
-      myChart1() {
+      myChart_jcpc1() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart1 = echarts.init(document.getElementById('myChart1'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_jcpc1'), 'dark');
 
         // 绘制图表
-        myChart1.setOption({
+        myChart.setOption({
           title: {
             text: '实时检测批次分布',
             textStyle: {
@@ -159,12 +159,12 @@
           }]
         });
       },
-      myChart2() {
+      myChart_jcpc2() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart2 = echarts.init(document.getElementById('myChart2'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_jcpc2'), 'dark');
 
         // 绘制图表
-        myChart2.setOption({
+        myChart.setOption({
           backgroundColor: "#0B284C",
           tooltip: {
             trigger: 'item',
@@ -251,12 +251,12 @@
           }]
         })
       },
-      myChart3() {
+      myChart_jcpc3() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart3 = echarts.init(document.getElementById('myChart3'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_jcpc3'), 'dark');
 
         // 绘制图表
-        myChart3.setOption({
+        myChart.setOption({
           backgroundColor: "#0B284C",
           tooltip: {
             trigger: 'item',
