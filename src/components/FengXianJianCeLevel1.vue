@@ -392,7 +392,8 @@ export default {
     background: #0B284C;
     height: 50px;
     width: 90%;
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: bold;
     padding: 2px;
     margin: 2px;
     flex-direction: column;

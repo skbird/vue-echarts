@@ -50,10 +50,10 @@
           },
           backgroundColor: '#0B284C',
           grid: {
-            left: '3%',
+            left: '10%',
             right: '4%',
             bottom: '3%',
-            containLabel: true
+            top: '3%'
           },
           xAxis: {
             show: false,

@@ -47,8 +47,8 @@
       </div>
     </div>
 
-    <div class="tag">
-      <span style="font-size: 30px;color: #fff;">资质合规</span>
+    <div class="flex tag">
+      资质合规
     </div>
 
     <div id="panel_7" style="height: 1300px" class="box-1">
@@ -177,6 +177,17 @@
     font-size: 30px;
     color: white;
     text-align: center;
+  }
+  .tag{
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    background: #0066FF;
+    text-align: center;
+    border: 2px #797979 solid;
+    width: 8%;
+    margin-left: 20px;
+    padding: 2px;
   }
 
 </style>

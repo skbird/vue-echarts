@@ -1,10 +1,10 @@
 <template>
-  <div class="flex" style="color: #fff;width: 100%">
-    <div style="width: 14%">
+  <div class="flex-row" style="color: #fff;width: 100%">
+    <div class="flex" style="width: 12%">
       <div class="leftpart">检测检验</div>
     </div>
-    <div style="width: 86%">
-      <table>
+    <div class="flex" style="width: 60%">
+      <table class="flex-column" style="width: 100%">
         <tr>
           <td>
             <div class="rightpart">
@@ -55,24 +55,32 @@
 </template>
 
 <script>
-    import ElAside from "element-ui/packages/aside/src/main";
 
-    export default {
-      components: {ElAside},
-      name: "jian-yan-jian-ce"
-    }
+export default {
+  name: "jian-yan-jian-ce"
+}
+
 </script>
 
 <style scoped>
   .flex{
     display: flex;
+  }
+  .flex-row{
+    display: flex;
     flex-direction: row;
   }
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+
   .leftpart{
+    width: 100%;
+    height: 50px;
     font-size: 30px;
     background: #0066FF;
     margin-left: 10px;
-    margin-top: 10px;
     margin-right: 50px;
     text-align: center;
     border: 2px #797979 solid;
@@ -84,7 +92,17 @@
     padding: 2px;
     margin: 2px;
     text-align: center;
-    width: 250px;
+    width: 100%;
     height: 40px;
   }
+  tr{
+    width: 100%;
+  }
+  td{
+    width: 25%;
+  }
+  tr,td{
+    display: flex;
+  }
+
 </style>
