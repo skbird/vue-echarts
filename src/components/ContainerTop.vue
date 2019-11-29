@@ -1,14 +1,18 @@
 <template>
-  <div style="width: 100%;height: 440px">
+  <div class="flex-row" style="width: 100%;height: 400px">
+
     <Border class="flex" style="width: 28%;height:100%;">
-      <div style="width: 100%">
-        <div class="flex-column list-title" >食安最新资讯</div>
-        <div class="flex-column">
-          <ul class="new-list">
-            <li v-for="item in ziXunData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">
+
+      <div class="flex-column" style="width: 100%;height:100%">
+        <div class="flex list-title" style="width: 100%;height: 10%" >食安最新资讯</div>
+        <div class="flex" style="width: 100%;height: 90%">
+
+          <ul class="flex infinite-list-wrapper" v-infinite-scroll="load">
+            <li v-for="item in ziXunData" class="infinite-list-item">
               <a class="title" v-text="item.title"></a>
             </li>
           </ul>
+
         </div>
       </div>
     </Border>
@@ -17,15 +21,18 @@
       <div id="chartMap" class="chartGauge" :style="{width: '100%', height: '100%'}"></div>
     </div>
 
-    <Border class="flex" style="width: 28%;height: 100%">
-      <div style="width: 100%">
-        <div class="flex-column list-title">食安安全法规</div>
-        <div class="flex-column">
-          <ul class="new-list">
-            <li v-for="item in faGuiData" style="list-style-type: none;font-size: 15px;text-decoration: underline;text-align: left;margin-left: 20px">
+    <Border class="flex-column" style="width: 28%;height: 100%">
+
+      <div class="flex-column" style="width: 100%;height:100%">
+        <div class="flex list-title" style="width: 100%;height: 10%">食安安全法规</div>
+        <div class="flex" style="width: 100%;height: 90%">
+
+          <ul class="flex infinite-list-wrapper" v-infinite-scroll="load">
+            <li v-for="item in faGuiData" class="infinite-list-item">
               <a class="title" v-text="item.title"></a>
             </li>
           </ul>
+
         </div>
       </div>
     </Border>
@@ -59,6 +66,9 @@ export default {
     this.drawMap();
   },
   methods: {
+    load () {
+
+    },
     drawMap: function () {
       let chartMap = document.getElementById('chartMap');
       let smap = document.getElementById('s-map');　　　　　　　　　 // 动态修改图表的宽高，达到自适应的效果　
@@ -302,6 +312,24 @@ export default {
         'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
       }, {
         'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
+      }, {
+        'title': '云南抽检2大类148批次食品样品    4批次样品检出不合格'
       }],
       faGuiData: [{
         'title': 'GB 31660.9-2019 食品安全国家标准 家禽可食性组织中乙氧酰胺苯甲酯残留量的测定 高效液相色谱法'
@@ -324,9 +352,14 @@ export default {
 <style scoped>
   .flex{
     display: flex;
-    flex-direction: column;
+  }
+  .flex-row{
+    display: flex;
+    flex-direction: row;
   }
   .flex-column{
+    display: flex;
+    flex-direction: column;
     font-size: 18px;
     color: white;
     text-align: left;
@@ -334,16 +367,27 @@ export default {
   .list-title{
     margin-left: 20px;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 22px;
     font-weight: bold;
     color: #CCCCCC;
   }
   a{color:#fff;font-size: 18px}
   a:link{color:#fff;}
-  .new-list {
-    line-height: 28px;
-    transition: top 0.5s;
-    padding-left: 0px;
+
+  .infinite-list-wrapper {
+    overflow:auto;
+    margin-left: 20px;
+    padding-left: 0px
   }
+  ul::-webkit-scrollbar{
+    display:none;
+  }
+  li {
+    list-style-type: none;
+    font-size: 15px;
+    text-decoration: underline;
+    text-align: left;
+  }
+
 </style>
