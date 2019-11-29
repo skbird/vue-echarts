@@ -1,8 +1,10 @@
 <template>
   <Border class="flex" style="width: 100%;height: 100%">
-    <div class="flex" style="width: 100%;height: 100%">
-      <div style="margin-top: 10px;font-size: 16px;font-weight: bold;text-align: left">
-        新品审核复审率TOP10</div>
+    <div class="flex-column" style="width: 100%;height: 100%">
+      <div class="flex-row top">
+        <img src="../assets/tool-button.png"/>
+        <span class="top-title">新品审核复审率TOP10</span>
+      </div>
       <div id="myChart_xpfsl" :style="{height: '600px'}"></div>
     </div>
   </Border>
@@ -48,6 +50,7 @@
           title:{
             show: false
           },
+          barWidth: 40,
           backgroundColor: '#0B284C',
           grid: {
             left: '10%',
@@ -101,9 +104,31 @@
 <style scoped>
   .flex{
     display: flex;
-    flex-direction: column;
   }
-  .popover-style{
-    background-color: #242640;
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    color: white;
+    text-align: left;
+  }
+  .top{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .top-title{
+    color: #949DA7;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    text-align: right;
+    flex: 1;
   }
 </style>

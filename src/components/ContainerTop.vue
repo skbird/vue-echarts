@@ -1,13 +1,13 @@
 <template>
   <div class="flex-row" style="width: 100%;height: 400px">
 
-    <Border class="flex" style="width: 28%;height:100%;">
+    <Border class="flex-column" style="width: 28%;height:100%;">
 
       <div class="flex-column" style="width: 100%;height:100%">
         <div class="flex list-title" style="width: 100%;height: 10%" >食安最新资讯</div>
-        <div class="flex" style="width: 100%;height: 90%">
+        <div class="flex-column" style="width: 100%;height: 90%">
 
-          <ul class="flex infinite-list-wrapper" v-infinite-scroll="load">
+          <ul class="flex-column infinite-list-wrapper" v-infinite-scroll="load">
             <li v-for="item in ziXunData" class="infinite-list-item">
               <a class="title" v-text="item.title"></a>
             </li>
@@ -25,9 +25,9 @@
 
       <div class="flex-column" style="width: 100%;height:100%">
         <div class="flex list-title" style="width: 100%;height: 10%">食安安全法规</div>
-        <div class="flex" style="width: 100%;height: 90%">
+        <div class="flex-row" style="width: 100%;height: 90%">
 
-          <ul class="flex infinite-list-wrapper" v-infinite-scroll="load">
+          <ul class="flex-column infinite-list-wrapper" v-infinite-scroll="load">
             <li v-for="item in faGuiData" class="infinite-list-item">
               <a class="title" v-text="item.title"></a>
             </li>
@@ -368,11 +368,11 @@ export default {
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     color: #CCCCCC;
   }
-  a{color:#fff;font-size: 18px}
+  a{color:#fff;font-size: 14px}
   a:link{color:#fff;}
 
   .infinite-list-wrapper {
@@ -385,9 +385,9 @@ export default {
   }
   li {
     list-style-type: none;
-    font-size: 15px;
     text-decoration: underline;
     text-align: left;
+    margin-top: 5px;
   }
 
 </style>

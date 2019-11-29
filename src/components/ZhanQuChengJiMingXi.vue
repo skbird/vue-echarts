@@ -1,21 +1,23 @@
 <template>
-  <Border class="flex" style="width: 100%;height: 550px">
-    <div class="flex" style="color: #fff;width: 100%;height: 100%;">
-      <div style="font-size: 16px;font-weight: bold;text-align: left;height: 10%;margin-left: 20px;margin-top: 10px">战区成绩明细</div>
-      <div style="height: 90%;padding: 10px">
-        <el-table :data="tableData" :highlight-current-row="false"
-                  :header-cell-style="{background:'#2398D7',color:'#fff'}" show-summary border :row-class-name="tableRowClassName"
-                  :cell-style="{color:'#8E97A0'}">
-          <el-table-column prop="date" label="时间"></el-table-column>
-          <el-table-column prop="zone" label="战区"></el-table-column>
-          <el-table-column prop="province" label="省区"></el-table-column>
-          <el-table-column prop="area" label="区域"></el-table-column>
-          <el-table-column prop="store" label="门店"></el-table-column>
-          <el-table-column prop="score" label="成绩"></el-table-column>
-        </el-table>
+  <div class="zqcjmx" style="width: 100%;height: 550px">
+    <Border class="flex" style="width: 100%;height: 100%">
+      <div class="flex" style="color: #fff;width: 100%;height: 100%;">
+        <div style="font-size: 16px;font-weight: bold;text-align: left;height: 10%;margin-left: 20px;margin-top: 10px">战区成绩明细</div>
+        <div style="height: 90%;padding: 10px">
+          <el-table :data="tableData" :highlight-current-row="false"
+                    :header-cell-style="{background:'#2398D7',color:'#fff'}" show-summary border :row-class-name="tableRowClassName"
+                    :cell-style="{color:'#8E97A0'}">
+            <el-table-column prop="date" label="时间"></el-table-column>
+            <el-table-column prop="zone" label="战区"></el-table-column>
+            <el-table-column prop="province" label="省区"></el-table-column>
+            <el-table-column prop="area" label="区域"></el-table-column>
+            <el-table-column prop="store" label="门店"></el-table-column>
+            <el-table-column prop="score" label="成绩"></el-table-column>
+          </el-table>
+        </div>
       </div>
-    </div>
-  </Border>
+    </Border>
+  </div>
 </template>
 
 <script>
@@ -91,16 +93,18 @@
   }
 </script>
 
-<style>
+<style scoped>
   .flex{
     display: flex;
     flex-direction: column;
   }
-  .el-table .warning-row {
-    background: #0B284C;
-  }
+</style>
 
-  .el-table .success-row {
-    background: #2D4665;
-  }
+<style>
+.zqcjmx .el-table .warning-row {
+  background: #0B284C;
+}
+.zqcjmx .el-table .success-row {
+  background: #2D4665;
+}
 </style>

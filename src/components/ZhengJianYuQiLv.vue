@@ -1,7 +1,14 @@
 <template>
+
   <Border class="flex" style="width: 100%;height: 100%">
-    <div id="myChart" :style="{width: '100%', height: '600px'}"></div>
+    <div class="flex-column" style="width: 100%;height: 100%">
+      <div class="flex-row top">
+        <span class="top-title">证件更新逾期率TOP10</span>
+      </div>
+      <div id="myChart_zjyql" :style="{height: '600px'}"></div>
+    </div>
   </Border>
+
 </template>
 
 <script>
@@ -31,7 +38,7 @@
     methods: {
       drawLine() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart = echarts.init(document.getElementById('myChart'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_zjyql'), 'dark');
 
         // 绘制图表
         myChart.setOption({
@@ -39,13 +46,6 @@
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
               type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-          },
-          title:{
-            text: '证件更新逾期率TOP10',
-            textStyle: {
-              color: '#ffffff',
-              fontSize: '16',
             }
           },
           backgroundColor: '#0B284C',
@@ -99,6 +99,31 @@
 <style scoped>
   .flex{
     display: flex;
+  }
+  .flex-row{
+    display: flex;
     flex-direction: row;
+  }
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    color: white;
+    text-align: left;
+  }
+  .top{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .top-title{
+    color: #949DA7;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    text-align: right;
+    flex: 1;
   }
 </style>

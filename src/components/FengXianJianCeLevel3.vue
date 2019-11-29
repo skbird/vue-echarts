@@ -7,17 +7,15 @@
     <Border style="width: 33%;height: 400px">
       <div id="myChart_ygwfxsp" :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险商品</div>
-        <el-table :data="tableData" :highlight-current-row="false"
-                  :header-cell-style="{background:'#2398D7',color:'#fff',textAlign:'center'}"
-                  border :row-class-name="tableRowClassName"
-                  :cell-style="{color:'#8E97A0',width:'25%',fontSize:'10px'}" class="el-table-class">
+        <el-table :data="gwfxspData" :highlight-current-row="false"
+                  border :row-class-name="tableRowClassName" class="el-table-class">
           <el-table-column prop="product" label="商品"></el-table-column>
           <el-table-column prop="times" label="问題次数" ></el-table-column>
           <el-table-column prop="category" label="问题大类"></el-table-column>
           <el-table-column prop="detail" label="具体问题" ></el-table-column>
         </el-table>
 
-        <div class="block">
+        <div class="block" style="text-align: right;margin-right: 13px">
           <el-pagination
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
@@ -33,17 +31,15 @@
     <Border style="width: 33%;height: 400px">
       <div id="myChart_ygwfxgys" :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险供应商</div>
-        <el-table :data="tableData" :highlight-current-row="false"
-                  :header-cell-style="{background:'#2398D7',color:'#fff',textAlign:'center'}"
-                  border :row-class-name="tableRowClassName"
-                  :cell-style="{color:'#8E97A0',width:'25%',fontSize:'10px'}" class="el-table-class">
-          <el-table-column prop="product" label="供应商"></el-table-column>
-          <el-table-column prop="times" label="问題次数" ></el-table-column>
-          <el-table-column prop="category" label="问题大类"></el-table-column>
-          <el-table-column prop="detail" label="具体问题" ></el-table-column>
+        <el-table :data="gwfxgysData"
+                  border :row-class-name="tableRowClassName" class="el-table-class">
+          <el-table-column min-width="50%" prop="product" label="供应商"></el-table-column>
+          <el-table-column min-width="16%" prop="times" label="问題次数" ></el-table-column>
+          <el-table-column min-width="17%" prop="category" label="问题大类"></el-table-column>
+          <el-table-column min-width="17%" prop="detail" label="具体问题" ></el-table-column>
         </el-table>
 
-        <div class="block">
+        <div class="block" style="text-align: right;margin-right: 13px">
           <el-pagination
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
@@ -83,7 +79,7 @@ export default {
   },
   data() {
     return {
-      tableData: [{
+      gwfxspData: [{
         product: '411/上海青',
         times: '80',
         category: '商品质量',
@@ -135,7 +131,58 @@ export default {
         detail: '农残'
       }],
       currentPage1: 2,
-      total: 100
+      total: 100,
+      gwfxgysData: [{
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }, {
+        product: '20001524/福建百利达食品有限公司',
+        times: '80',
+        category: '商品质量',
+        detail: '农残'
+      }],
     }
   },
   methods: {
@@ -240,9 +287,9 @@ export default {
     },
     tableRowClassName({row, rowIndex}) {
       if (rowIndex%2==0) {
-        return 'warning-row';
+        return 'even-row';
       } else {
-        return 'success-row';
+        return 'odd-row';
       }
       return '';
     },
@@ -273,10 +320,11 @@ export default {
     text-align: left
   }
   .el-table-class{
-    width: 95%;
-    height: 76%;
-    margin: 14px
-  }
+       width: 95%;
+       height: 76%;
+       margin: 14px
+     }
+
 </style>
 
 <style>
@@ -284,8 +332,39 @@ export default {
     background-color: #002547;
     border-radius: 0;
     border: 1px solid #515365;
+    color: #fff;
   }
+
   .fxjc .btn-prev,.fxjc .btn-next{
     background-color: #002547;
+    border-radius: 0;
+    border: 1px solid #515365;
+  }
+  .fxjc .el-table .even-row {
+    background: #0B284C;
+  }
+
+  .fxjc .el-table .odd-row {
+    background: #2D4665;
+  }
+  .fxjc .el-table th {
+    background: #2398D7;
+    color: #fff;
+    text-align:center
+  }
+  .fxjc .el-table td {
+    text-align:center;
+    color: #8E97A0;
+    width: auto;
+    font-size:10px
+  }
+  .fxjc .el-table td,.fxjc .el-table th{
+    padding: 2.7px;
+  }
+  .fxjc .el-pagination__total{
+    color: #fff;
+  }
+  .fxjc .el-pagination__jump{
+    color: #fff;
   }
 </style>
