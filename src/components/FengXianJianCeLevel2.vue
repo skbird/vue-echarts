@@ -407,7 +407,7 @@ export default {
           name: '月诉讼案件',
           type: 'bar',
           stack: 'stack',
-          barWidth: 35,
+          barMinWidth: 1,
           data: [20, 40, 78, 50, 30],
           itemStyle: {
             normal: {color: "#0DEDEE", barBorderRadius: 40}

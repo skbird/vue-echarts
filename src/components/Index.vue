@@ -146,6 +146,7 @@
   #main{
     background-color: #001E44;
     padding-top: 35px;
+    padding-left: 10px;
     padding-right: 10px;
   }
   /*  justify-content是主轴的对齐方式 值有flex-start | flex-end | center | space-between | space-around;
@@ -162,7 +163,6 @@
   .box-1{
     flex-direction: row;
     width: 100%;
-    margin: 8px;
   }
 
   .box-2{

@@ -63,7 +63,7 @@
             itemStyle:{
               normal:{color:'#F8BB52'},
             },
-            barWidth: 60,
+            barMinWidth: 1,
             label: {
               show: true,
               position: 'inside',
@@ -120,7 +120,7 @@
             itemStyle:{
               normal:{color:'#AE5557'},
             },
-            barWidth: 60,
+            barMinWidth: 1,
             label: {
               show: true,
               position: 'inside',

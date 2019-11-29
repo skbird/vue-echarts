@@ -139,7 +139,7 @@
             name: '蛋品',
             type: 'bar',
             stack: 'stack',
-            barWidth: '25',
+            barMinWidth: 1,
             data: [40, 22, 18, 35, 42, 40, 40, 22, 18, 35, 42, 40],
             itemStyle: {
               normal: {color: "#3FBB49", barBorderRadius: 1,},

@@ -50,7 +50,7 @@
           title:{
             show: false
           },
-          barWidth: 40,
+          barMinWidth: 1,
           backgroundColor: '#0B284C',
           grid: {
             left: '10%',

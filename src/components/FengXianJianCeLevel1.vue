@@ -224,7 +224,7 @@ export default {
                 }
               }
             },
-            barWidth : 25,//柱图宽度
+            barMinWidth: 1,
             data: [150, 212, 201, 154, 190, 330, 410, 212, 201, 154],
             itemStyle: {
               normal: {color: "#5A9F46", barBorderRadius: 10,}
@@ -353,7 +353,7 @@ export default {
                 }
               }
             },
-            barWidth : 25,//柱图宽度
+            barMinWidth: 1,
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
               normal: {color: "#E6CBC6", barBorderRadius: 28}
