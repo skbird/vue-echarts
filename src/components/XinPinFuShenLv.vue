@@ -53,7 +53,7 @@
           barMinWidth: 1,
           backgroundColor: '#0B284C',
           grid: {
-            left: '10%',
+            left: '15%',
             right: '4%',
             bottom: '3%',
             top:'3%'

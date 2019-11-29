@@ -284,7 +284,7 @@
             name: '食百',
             type: 'bar',
             stack: 'stack',
-            data: [5, 20, 36, 10, 10, 20, 5, 20],
+            data: [5, 20, 36, 10, 10, 20, 5],
             itemStyle: {
               normal: {color: "#ffd840", barBorderRadius: 12,}
             },
@@ -344,12 +344,18 @@
 
         // 绘制图表
         myChart.setOption({
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
           title: {
-            text: '实时审核总量',
+            text: '实时审核通过量',
             left: '20px',
             top: '10px',
             textStyle: {
-              fontSize: 16,
+              fontSize: 16
             }
           },
           backgroundColor: '#0B284C',
@@ -358,9 +364,6 @@
             right: '4%',
             bottom: '10%',
             top:'4%',
-          },
-          tooltip: {
-            trigger: "axis",
           },
           legend: {
             itemWidth: 15,
@@ -383,10 +386,11 @@
             name: '食百',
             type: 'bar',
             stack: 'stack',
-            data: [5, 20, 36, 10, 10, 20, 5, 20],
+            data: [5, 20, 36, 10, 10, 20, 5],
             itemStyle: {
               normal: {color: "#ffd840", barBorderRadius: 12,}
             },
+            barMinWidth: 1,
             label: {
               normal: {
                 show: true,
@@ -405,6 +409,7 @@
             itemStyle: {
               normal: {color: "#0BB2CA", barBorderRadius: 12,}
             },
+            barMinWidth: 1,
             label: {
               normal: {
                 show: true,

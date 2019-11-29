@@ -260,8 +260,7 @@
             top: '18%',
             left: '1%',
             right: '1%',
-            bottom: '25%',
-            // containLabel: true
+            bottom: '10%'
           },
           xAxis: [{
             type: 'category',
@@ -270,6 +269,7 @@
               textStyle: {
                 color: '#d1e6eb',
                 margin: 15,
+                fontSize: 16
               },
             },
             axisTick: 'none',
@@ -360,8 +360,7 @@
             top: '18%',
             left: '1%',
             right: '1%',
-            bottom: '25%',
-            // containLabel: true
+            bottom: '10%'
           },
           xAxis: [{
             type: 'category',
@@ -370,6 +369,7 @@
               textStyle: {
                 color: '#d1e6eb',
                 margin: 15,
+                fontSize: 16
               },
             },
             axisTick: 'none',
