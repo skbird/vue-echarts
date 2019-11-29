@@ -49,7 +49,9 @@
             text: '实时检测批次分布',
             textStyle: {
               fontSize: 16,
-            }
+            },
+            top:10,
+            left:20
           },
           backgroundColor: '#0B284C',
           grid: {
@@ -169,7 +171,12 @@
             formatter: "{a} <br/>{b} : {c}%"
           },
           title: {
-            text: '月果蔬高危风险商品TOP10'
+            text: '月果蔬高危风险商品TOP10',
+            textStyle: {
+              fontSize: 16,
+            },
+            top:10,
+            left:20
           },
           calculable: true,
           series: [{
@@ -256,7 +263,12 @@
             formatter: "{a} <br/>{b} : {c}%"
           },
           title: {
-            text: '月水产高危风险商品TOP10'
+            text: '月水产高危风险商品TOP10',
+            textStyle: {
+              fontSize: 16,
+            },
+            top:10,
+            left:20
           },
           calculable: true,
           series: [{

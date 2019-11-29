@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div id="panel_2" class="box-1">
+    <div id="panel_2" class="box-1" style="margin-top: 20px">
       <JianYanJianCe></JianYanJianCe>
     </div>
 
@@ -73,8 +73,8 @@
       </div>
     </div>
 
-    <div class="tag">
-      <span style="font-size: 30px;color: #fff;">营运标准</span>
+    <div class="flex tag">
+      营运标准
     </div>
 
     <div id="panel_8" class="box-1">
@@ -84,10 +84,10 @@
     </div>
 
     <div id="panel_9" class="box-1">
-      <div class="box-item" style="width: 33%">
+      <div class="box-item" style="width: 24%">
         <MenDianChengJi></MenDianChengJi>
       </div>
-      <div class="box-item" style="width: 66%">
+      <div class="box-item" style="width: 76%">
         <ZhanQuChengJiMingXi></ZhanQuChengJiMingXi>
       </div>
     </div>
@@ -185,7 +185,7 @@
     background: #0066FF;
     text-align: center;
     border: 2px #797979 solid;
-    width: 8%;
+    width: 10%;
     margin-left: 20px;
     padding: 2px;
   }

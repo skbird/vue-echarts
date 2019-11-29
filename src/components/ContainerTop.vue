@@ -368,7 +368,7 @@ export default {
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     color: #CCCCCC;
   }

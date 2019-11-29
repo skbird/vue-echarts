@@ -1,12 +1,12 @@
 <template>
   <div class="flex" style="width: 100%">
-    <Border style="width: 33%;height: 400px">
+    <Border style="width: 33%;height: 420px">
       <div id="myChart_zqcj_1" :style="{width: '100%', height: '100%'}"></div>
     </Border>
-    <Border style="width: 33%;height: 400px">
+    <Border style="width: 33%;height: 420px">
       <div id="myChart_zqcj_2" :style="{width: '100%', height: '100%'}"></div>
     </Border>
-    <Border style="width: 33%;height: 400px">
+    <Border style="width: 33%;height: 420px">
       <div id="myChart_zqcj_3" :style="{width: '100%', height: '100%'}"></div>
     </Border>
   </div>
