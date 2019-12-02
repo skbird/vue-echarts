@@ -215,6 +215,7 @@
 
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_gyssh_1'), 'dark');
+        window.addEventListener("resize",function(){myChart.resize();});
         myChart.setOption({
           backgroundColor: '#0B284C',
           tooltip: {
@@ -237,7 +238,7 @@
       myChart_gyssh_2(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_gyssh_2'), 'dark');
-
+        window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
           title: {
@@ -337,7 +338,7 @@
       myChart_gyssh_3(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_gyssh_3'), 'dark');
-
+        window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
           title: {

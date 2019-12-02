@@ -42,7 +42,7 @@
       myChart_jcpc1() {
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_jcpc1'), 'dark');
-
+        window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
           title: {
@@ -162,7 +162,7 @@
       myChart_jcpc2() {
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_jcpc2'), 'dark');
-
+        window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
           backgroundColor: "#0B284C",
@@ -254,6 +254,8 @@
       myChart_jcpc3() {
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_jcpc3'), 'dark');
+
+        window.addEventListener("resize",function(){myChart.resize();});
 
         // 绘制图表
         myChart.setOption({

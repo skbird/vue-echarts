@@ -32,6 +32,7 @@
       myChart_mdcj_1() {
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_mdcj_1'), 'dark');
+        window.addEventListener("resize",function(){myChart.resize();});
         myChart.setOption({
           backgroundColor:'#0B284C',
           title: {
@@ -90,6 +91,7 @@
       myChart_mdcj_2() {
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_mdcj_2'), 'dark');
+        window.addEventListener("resize",function(){myChart.resize();});
         myChart.setOption({
           backgroundColor:'#0B284C',
           title: {

@@ -79,6 +79,7 @@ export default {
       resizeWorldMapContainer();
       // 注册可用的地图  'light' 和 'dark'
       let myChart = echarts.init(chartMap, 'light');
+      window.addEventListener("resize",function(){myChart.resize();});
       var data = [
         {name: "北京", value: 23},
         {name: "天津", value: 12},

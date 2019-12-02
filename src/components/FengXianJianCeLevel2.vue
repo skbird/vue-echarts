@@ -43,9 +43,9 @@ export default {
   },
   methods: {
     myChart_ylwsp() {
-// 基于准备好的dom，初始化echarts实例
+      // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwsp'), 'dark');
-
+      window.addEventListener("resize",function(){myChart.resize();});
       // 绘制图表
       myChart.setOption({
         backgroundColor: '#0B284C',
@@ -142,7 +142,7 @@ export default {
       let colors = ['#EEEC0D', '#E55125', '#5EA6FE', '#F94ED2', '#67D670', '#67FFFC']
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwwt'), 'dark');
-
+      window.addEventListener("resize",function(){myChart.resize();});
       // 绘制图表
       myChart.setOption({
         backgroundColor: '#0B284C',
@@ -280,7 +280,7 @@ export default {
       let colors = ['#EEEC0D', '#E55125', '#5EA6FE', '#F94ED2', '#67D670', '#67FFFC']
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwts'), 'dark');
-
+      window.addEventListener("resize",function(){myChart.resize();});
       // 绘制图表
       myChart.setOption({
         backgroundColor: '#0B284C',
@@ -368,7 +368,7 @@ export default {
     myChart_ylwaj() {
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwaj'), 'dark');
-
+      window.addEventListener("resize",function(){myChart.resize();});
       // 绘制图表
       myChart.setOption({
         title: {

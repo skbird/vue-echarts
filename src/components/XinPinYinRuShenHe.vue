@@ -222,6 +222,7 @@
 
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_xpyr_1'), 'dark');
+        window.addEventListener("resize",function(){myChart.resize();});
         myChart.setOption({
           backgroundColor: '#0B284C',
           title: {
@@ -242,7 +243,7 @@
       myChart_xpyr_2(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_xpyr_2'), 'dark');
-
+        window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
           title: {
@@ -341,7 +342,7 @@
       myChart_xpyr_3(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_xpyr_3'), 'dark');
-
+        window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
           tooltip: {

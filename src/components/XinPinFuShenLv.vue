@@ -38,7 +38,7 @@
       drawLine() {
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_xpfsl'), 'dark');
-
+        window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
           tooltip: {
