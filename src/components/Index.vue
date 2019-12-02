@@ -6,7 +6,7 @@
         <img class="flex" width="100%" src="../assets/u4.png"/>
       </div>
       <div width="20%">
-        <h1 class="flex" width="100%"  style="color: #fff;font-size: 50px;">食安云网驾驶舱</h1>
+        <span class="top-title">食安云网驾驶舱</span>
       </div>
       <div width="40%">
         <img class="flex" width="100%" src="../assets/u5.png"/>
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="flex tag">
+    <div class="tag">
       资质合规
     </div>
 
@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    <div class="flex tag" style="margin-top: 10px">
+    <div class="tag" style="margin-top: 20px">
       营运标准
     </div>
 
@@ -149,6 +149,12 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+  .top-title{
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px;
+  }
   /*  justify-content是主轴的对齐方式 值有flex-start | flex-end | center | space-between | space-around;
         这里用的space-around  控制了登陆按钮和导航的位置  其他属性下边有图*/
   /*  align-items 是交叉轴的对齐方式   如果定义了direction的话  主轴和交叉轴是会变的*/
@@ -179,14 +185,16 @@
   }
   .tag{
     color: #fff;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     background: #0066FF;
     text-align: center;
     border: 2px #797979 solid;
     width: 10%;
-    margin-left: 20px;
-    padding: 2px;
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 </style>

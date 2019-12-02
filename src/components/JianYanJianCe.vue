@@ -1,6 +1,6 @@
 <template>
   <div class="flex-row" style="color: #fff;width: 100%">
-    <div class="flex" style="width: 12%">
+    <div class="flex" style="width: 15%">
       <div class="leftpart">检测检验</div>
     </div>
     <div class="flex" style="width: 60%">
@@ -77,12 +77,15 @@ export default {
 
   .leftpart{
     width: 100%;
-    height: 50px;
-    font-size: 28px;
+    height: 50%;
+    font-size: 30px;
     background: #0066FF;
     margin-left: 10px;
     margin-right: 50px;
-    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px #797979 solid;
   }
 

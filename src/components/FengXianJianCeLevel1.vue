@@ -171,7 +171,7 @@ export default {
     myChart_ycjsqsb(){
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ycjsqsb'), 'dark');
-
+      window.addEventListener("resize",function(){myChart.resize();});
       // 绘制图表
       myChart.setOption({
         tooltip: {
@@ -236,7 +236,7 @@ export default {
     myChart_ycjsqtb(){
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ycjsqtb'), 'dark');
-
+      window.addEventListener("resize",function(){myChart.resize();});
       // 绘制图表
       myChart.setOption({
         tooltip: {
@@ -384,7 +384,9 @@ export default {
     background: #0066FF;
     text-align: center;
     border: 2px #797979 solid;
+    margin-left: 3px;
     width: 90%;
+    font-weight: bold;
   }
 
   .rightpart{

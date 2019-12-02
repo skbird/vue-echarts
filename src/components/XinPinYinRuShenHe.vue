@@ -222,6 +222,7 @@
 
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_xpyr_1'), 'dark');
+        window.addEventListener("resize",function(){myChart.resize();});
         myChart.setOption({
           backgroundColor: '#0B284C',
           title: {

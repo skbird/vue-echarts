@@ -17,7 +17,7 @@
       </div>
     </Border>
 
-    <div class="flex" id="s-map"style="width: 44%;height: 100%">
+    <div class="flex" id="s-map"style="width: 44%;height: 100%;margin-top: 10px">
       <div id="chartMap" class="chartGauge" :style="{width: '100%', height: '100%'}"></div>
     </div>
 
