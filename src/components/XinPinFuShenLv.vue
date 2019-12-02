@@ -2,7 +2,24 @@
   <Border class="flex" style="width: 100%;height: 100%">
     <div class="flex-column" style="width: 100%;height: 100%">
       <div class="flex-row top">
-        <img src="../assets/tool-button.png"/>
+        <el-popover
+          placement="bottom-start"
+          :visible-arrow="false"
+          trigger="click">
+          <div style="color: #3F8CE8;font-size: 16px;margin-left: 10px;margin-bottom: 5px">数据</div>
+          <div style="width:30%;height:4px;margin-left: 3px;margin-bottom: 5px;overflow:hidden;background-color: #3F8CE8"></div>
+          <div ><el-image style="height: 2px;width: 100%" :src="lineImgUrl" ></el-image></div>
+          <el-tree
+            :data="data"
+            show-checkbox
+            style="color: #B9BDC3;background-color: #194473;margin: 5px;margin-bottom: 50px"
+            check-on-click-node="false"
+            node-key="id"
+            :props="defaultProps">
+          </el-tree>
+          <el-image slot="reference" :src="imgUrl" ></el-image>
+        </el-popover>
+
         <span class="top-title">新品审核复审率TOP10</span>
       </div>
       <div id="myChart_xpfsl" :style="{height: '600px'}"></div>
@@ -28,7 +45,41 @@
     },
     data() {
       return {
-        url: '././assets/tool-button.png'
+        checkList: ['选中且禁用','复选框 A'],
+        imgUrl: require("@/assets/tool-button.png"),
+        lineImgUrl: require("@/assets/u513.png"),
+        data: [{
+          id: 1,
+          label: '省区',
+          children: [{
+            id: 4,
+            label: '二级 1-1'
+          }]
+        }, {
+          id: 2,
+          label: '商行',
+          children: [{
+            id: 5,
+            label: '二级 2-1'
+          }, {
+            id: 6,
+            label: '二级 2-2'
+          }]
+        }, {
+          id: 3,
+          label: '供应商',
+          children: [{
+            id: 7,
+            label: '二级 3-1'
+          }, {
+            id: 8,
+            label: '二级 3-2'
+          }]
+        }],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
       };
     },
     mounted() {
@@ -93,9 +144,6 @@
             }
           ]
         });
-      },
-      searchDilog() {
-        console.log("xi")
       }
     }
   }
@@ -130,5 +178,18 @@
     margin-right: 10px;
     text-align: right;
     flex: 1;
+  }
+</style>
+<style>
+  .el-popover{
+    color: #fff;
+    background-color: #242640;
+    border-radius: 0;
+    border: 1px solid #797979;
+    padding: 0;
+    width:15%
+  }
+  .el-tree-node:focus > .el-tree-node__content {
+    background-color: #194473 !important;
   }
 </style>

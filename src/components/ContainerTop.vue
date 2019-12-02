@@ -1,41 +1,44 @@
 <template>
   <div class="flex-row" style="width: 100%;height: 400px">
 
-    <Border class="flex-column" style="width: 28%;height:100%;">
+    <div class="flex" style="width: 27.3%;height:100%;">
+      <Border class="flex-column" style="width: 100%;height:100%;">
+        <div class="flex-column" style="width: 100%;height:100%">
+          <div class="flex list-title" style="width: 100%;height: 10%" >食安最新资讯</div>
+          <div class="flex-column" style="width: 100%;height: 90%">
 
-      <div class="flex-column" style="width: 100%;height:100%">
-        <div class="flex list-title" style="width: 100%;height: 10%" >食安最新资讯</div>
-        <div class="flex-column" style="width: 100%;height: 90%">
+            <ul class="flex-column infinite-list-wrapper" v-infinite-scroll="load">
+              <li v-for="item in ziXunData" class="infinite-list-item">
+                <a class="title" v-text="item.title"></a>
+              </li>
+            </ul>
 
-          <ul class="flex-column infinite-list-wrapper" v-infinite-scroll="load">
-            <li v-for="item in ziXunData" class="infinite-list-item">
-              <a class="title" v-text="item.title"></a>
-            </li>
-          </ul>
-
+          </div>
         </div>
-      </div>
-    </Border>
+      </Border>
+    </div>
 
-    <div class="flex" id="s-map"style="width: 44%;height: 100%;margin-top: 10px">
+    <div class="flex" id="s-map"style="width: 44.3%;height: 100%;margin-top: 10px">
       <div id="chartMap" class="chartGauge" :style="{width: '100%', height: '100%'}"></div>
     </div>
 
-    <Border class="flex-column" style="width: 28%;height: 100%">
+    <div class="flex" style="width: 27.3%;height:100%;">
+      <Border class="flex-column" style="width: 100%;height:100%;">
 
-      <div class="flex-column" style="width: 100%;height:100%">
-        <div class="flex list-title" style="width: 100%;height: 10%">食安安全法规</div>
-        <div class="flex-row" style="width: 100%;height: 90%">
+        <div class="flex-column" style="width: 100%;height:100%">
+          <div class="flex list-title" style="width: 100%;height: 10%">食安安全法规</div>
+          <div class="flex-row" style="width: 100%;height: 90%">
 
-          <ul class="flex-column infinite-list-wrapper" v-infinite-scroll="load">
-            <li v-for="item in faGuiData" class="infinite-list-item">
-              <a class="title" v-text="item.title"></a>
-            </li>
-          </ul>
+            <ul class="flex-column infinite-list-wrapper" v-infinite-scroll="load">
+              <li v-for="item in faGuiData" class="infinite-list-item">
+                <a class="title" v-text="item.title"></a>
+              </li>
+            </ul>
 
+          </div>
         </div>
-      </div>
-    </Border>
+      </Border>
+    </div>
 
   </div>
 </template>
