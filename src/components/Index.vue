@@ -64,16 +64,16 @@
         </div>
       </div>
       <div class="box-2"  style="height: 100%;width: 22.8%">
-        <div class="box-item">
+        <div class="box-item" style="margin-bottom: 10px">
           <XinPinFuShenLv></XinPinFuShenLv>
         </div>
-        <div class="box-item">
+        <div class="box-item" style="margin-top: 10px">
           <ZhengJianYuQiLv></ZhengJianYuQiLv>
         </div>
       </div>
     </div>
 
-    <div class="flex tag">
+    <div class="flex tag" style="margin-top: 10px">
       营运标准
     </div>
 
@@ -173,7 +173,6 @@
     width: 100%;
     height: 100%;
     vertical-align: middle;
-    margin: 5px;
     font-size: 30px;
     color: white;
     text-align: center;

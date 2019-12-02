@@ -78,7 +78,7 @@ export default {
   .leftpart{
     width: 100%;
     height: 50px;
-    font-size: 30px;
+    font-size: 28px;
     background: #0066FF;
     margin-left: 10px;
     margin-right: 50px;

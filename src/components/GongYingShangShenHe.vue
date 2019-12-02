@@ -1,9 +1,9 @@
 <template>
   <Border class="flex" style="width: 100%;height: 400px">
     <div class="flex" style="width: 100%;height: 100%">
-      <div id="myChart_gyssh_1" :style="{width: '100%', height: '100%',margin:'0',padding:'0'}"></div>
-      <div id="myChart_gyssh_2" :style="{width: '100%', height: '100%',margin:'0',padding:'0'}"></div>
-      <div id="myChart_gyssh_3" :style="{width: '100%', height: '100%',margin:'0',padding:'0'}"></div>
+      <div id="myChart_gyssh_1" :style="{width: '33.3%', height: '100%',margin:'0',padding:'0'}"></div>
+      <div id="myChart_gyssh_2" :style="{width: '33.3%', height: '100%',margin:'0',padding:'0'}"></div>
+      <div id="myChart_gyssh_3" :style="{width: '33.3%', height: '100%',margin:'0',padding:'0'}"></div>
    </div>
   </Border>
 </template>

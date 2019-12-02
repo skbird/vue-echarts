@@ -1,13 +1,13 @@
 <template>
   <Border class="flex" style="width: 100%;height: 400px">
     <div class="flex" style="width: 100%;height: 100%">
-      <div :style="{width: '33%', height: '100%'}">
+      <div :style="{width: '33.3%', height: '100%'}">
         <div id="myChart_xpyr_1" :style="{width: '100%', height: '100%'}"></div>
       </div>
-      <div :style="{width: '33%', height: '100%'}">
+      <div :style="{width: '33.3%', height: '100%'}">
         <div id="myChart_xpyr_2" :style="{width: '100%', height: '100%'}"></div>
       </div>
-      <div :style="{width: '33%', height: '100%'}">
+      <div :style="{width: '33.3%', height: '100%'}">
         <div id="myChart_xpyr_3" :style="{width: '100%', height: '100%'}"></div>
       </div>
     </div>
