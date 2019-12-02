@@ -3,13 +3,13 @@
 
     <div id="top" class="head">
       <div width="40%">
-        <img class="flex" width="100%" src="../assets/u4.png"/>
+        <!--<img class="flex" width="100%" src="../assets/images/u4.png"/>-->
       </div>
       <div width="20%">
         <span class="top-title">食安云网驾驶舱</span>
       </div>
       <div width="40%">
-        <img class="flex" width="100%" src="../assets/u5.png"/>
+        <!--<img class="flex" width="100%" src="../assets/images/u5.png"/>-->
       </div>
     </div>
 
@@ -95,20 +95,20 @@
 </template>
 
 <script>
-  import ContainerTop from '@/components/ContainerTop'
-  import JianYanJianCe from '@/components/JianYanJianCe'
-  import JianCePiCi from '@/components/JianCePiCi'
-  import FengXianJianCeLevel1 from '@/components/FengXianJianCeLevel1'
-  import FengXianJianCeLevel2 from '@/components/FengXianJianCeLevel2'
-  import FengXianJianCeLevel3 from '@/components/FengXianJianCeLevel3'
-  import XinPinYinRuShenHe from '@/components/XinPinYinRuShenHe'
-  import GongYingShangShenHe from '@/components/GongYingShangShenHe'
-  import ZhengJianGengXinShenHe from '@/components/ZhengJianGengXinShenHe'
-  import XinPinFuShenLv from  '@/components/XinPinFuShenLv'
-  import ZhengJianYuQiLv from '@/components/ZhengJianYuQiLv'
-  import ZhanQuChengJi from '@/components/ZhanQuChengJi'
-  import MenDianChengJi from '@/components/MenDianChengJi'
-  import ZhanQuChengJiMingXi from '@/components/ZhanQuChengJiMingXi'
+  import ContainerTop from '@/components/report/ContainerTop'
+  import JianYanJianCe from '@/components/report/JianYanJianCe'
+  import JianCePiCi from '@/components/report/JianCePiCi'
+  import FengXianJianCeLevel1 from '@/components/report/FengXianJianCeLevel1'
+  import FengXianJianCeLevel2 from '@/components/report/FengXianJianCeLevel2'
+  import FengXianJianCeLevel3 from '@/components/report/FengXianJianCeLevel3'
+  import XinPinYinRuShenHe from '@/components/report/XinPinYinRuShenHe'
+  import GongYingShangShenHe from '@/components/report/GongYingShangShenHe'
+  import ZhengJianGengXinShenHe from '@/components/report/ZhengJianGengXinShenHe'
+  import XinPinFuShenLv from  '@/components/report/XinPinFuShenLv'
+  import ZhengJianYuQiLv from '@/components/report/ZhengJianYuQiLv'
+  import ZhanQuChengJi from '@/components/report/ZhanQuChengJi'
+  import MenDianChengJi from '@/components/report/MenDianChengJi'
+  import ZhanQuChengJiMingXi from '@/components/report/ZhanQuChengJiMingXi'
 
   export default {
     name: "index",

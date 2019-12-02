@@ -1,0 +1,300 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, input, p, input {
+  margin: 0;
+  padding: 0
+}
+
+img {
+  border: 0
+}
+
+em, i {
+  font-style: normal;
+  font-weight: normal
+}
+
+ul, ol {
+  list-style: none
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal
+}
+
+body {
+  font: 12px/1.6 arial, '黑体', "\5b8b\4f53", tahoma, sans-serif;
+  font-weight: 100;
+}
+
+.clearfix {
+  *zoom: 1
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0
+}
+
+.clearfix:after {
+  clear: both
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+img {
+  margin: 0;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-height: 1080px;
+}
+
+.red {
+  color: #d70505
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
+  height: 1012px;
+  margin: 0 auto;
+  padding-top: 10px;
+  background: url(/images/screen-bg-img.jpg) center bottom no-repeat;
+}
+
+.header {
+  width: 96%;
+  margin: 0 auto;
+  
+  .logo > img {
+    height: 120px;
+  }
+  
+  .title-right {
+    text-align: right;
+    
+    .website {
+      font-size: 20px;
+      padding-right: 6px;
+    }
+  }
+}
+
+.header .title {
+  position: relative;
+  text-align: left;
+  margin: 0 auto;
+  height: 90px;
+  font-size: 60px;
+  line-height: 90px;
+  color: #019969;
+  white-space:nowrap;
+}
+
+.wrapper .content {
+  width: 96%;
+  margin: 0 auto;
+  position: relative;
+  
+  .content-left {
+    padding-right: 200px;
+  }
+  
+  .content-right {
+    position: absolute;
+    right: 0;
+    top: 86px;
+    width: 200px;
+    
+    .qrcode, .ad {
+      margin-left: 20px;
+      margin-right: 6px;
+      
+      img {
+        width: 100%;
+      }
+    }
+    
+    .ad {
+      margin-top: 20px;
+    }
+    
+    .qrcode-title {
+      font-size: 20px;
+      line-height: 25px;
+      text-align: center;
+      font-weight: 200;
+    }
+  }
+}
+
+.content .sub-title {
+  font-size: 30px;
+  line-height: 30px;
+  color: #414040;
+  padding: 15px 250px 10px 0;
+  font-weight: 700;
+  position: relative;
+  height: 33px;
+  overflow: hidden;
+ 
+  .operator {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  
+  .date {
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+}
+
+.content .tab {
+  width: 100%;
+  min-height: 446px;
+  background: url(/images/screen-tab-bg.png);
+}
+
+.content .tab table {
+  color: #414040;
+  width: 100%;
+}
+
+.content .tab table, .content .tab table td {
+  border-collapse: collapse;
+  border: 2px solid #757575;
+  font-size: 25px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.content .tab table {
+  *border: none
+}
+
+.content .tab table tr {
+  height: 74px;
+}
+
+.content .tab table th {
+  font-size: 25px;
+  line-height: 36px;
+  border: 2px solid #fff;
+  background-color: #019969;
+  border-bottom: 0;
+  color: #fff;
+  font-weight: normal;
+  
+  &:first-child, &:last-child {
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+.wrapper .bottom {
+  margin: 6px auto 0 2%;
+  position: relative;
+  
+  .bottom-left {
+    position: absolute;
+    left: 10px;
+    
+    img {
+      height: 40px;
+    }
+  }
+  
+  .bottom-right {
+    background-color: #fff;
+  }
+  
+  .slogen {
+    margin-left: 60px;
+    padding: 0 10px;
+    background-color: #019969;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    font-family: monospace;
+  }
+}
+
+@media (max-width: 1260px) {
+  .wrapper {
+    padding-top: 0px;
+  }
+  
+  .header {
+    .logo > img {
+      height: 100px;
+    }
+  }
+  .header .title {
+    height: 70px;
+    font-size: 40px;
+    line-height: 70px;
+  }
+  
+  .content .tab {
+    min-height: 297px;
+  }
+  
+  .content .tab table tr {
+    height: 50px;  
+    
+    &:first-child {
+      height: 45px;
+    }
+  }
+  
+  .content .tab table, .content .tab table td {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  .content .tab table th {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .content .tab table td {
+    word-break: break-all;
+  }
+
+  .wrapper .content {
+
+    .content-left {
+      padding-right: 150px;
+    }
+
+    .content-right {
+      width: 150px;
+      top: 46px;
+    }
+  }
+
+  .content .sub-title {
+    padding-top: 0px;
+    
+    .date {
+      top: 0px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
-# demo02
+# screen_vue
 
-> A Vue.js project
+> Screen for vue
 
 ## Build Setup
 

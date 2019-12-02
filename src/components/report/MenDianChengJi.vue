@@ -17,7 +17,7 @@
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
 
-  import Border from '@/components/Border'
+  import Border from '@/components/report/Border'
 
   export default {
     name: "men-dian-cheng-ji",

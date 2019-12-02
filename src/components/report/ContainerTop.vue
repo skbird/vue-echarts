@@ -48,7 +48,7 @@
 let echarts = require('echarts/lib/echarts')
 //引入地图组件
 import china from 'echarts/map/js/china'
-import Border from '@/components/Border'
+import Border from '@/components/report/Border'
 
 export default {
   name: "container-top",

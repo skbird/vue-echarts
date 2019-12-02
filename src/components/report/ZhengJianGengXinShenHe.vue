@@ -1,10 +1,10 @@
 <template>
-  <Border class="flex" style="width: 100%;height: 400px">
+  <Border class="flex" style="width: 100%;height: 100%">
     <div class="flex" style="width: 100%;height: 100%">
-      <div id="myChart_gyssh_1" :style="{width: '33.3%', height: '100%',margin:'0',padding:'0'}"></div>
-      <div id="myChart_gyssh_2" :style="{width: '33.3%', height: '100%',margin:'0',padding:'0'}"></div>
-      <div id="myChart_gyssh_3" :style="{width: '33.3%', height: '100%',margin:'0',padding:'0'}"></div>
-   </div>
+      <div id="myChart_zjgxsh_1" :style="{width: '33.3%', height: '100%'}"></div>
+      <div id="myChart_zjgxsh_2" :style="{width: '33.3%', height: '100%'}"></div>
+      <div id="myChart_zjgxsh_3" :style="{width: '33.3%', height: '100%'}"></div>
+    </div>
   </Border>
 </template>
 
@@ -20,20 +20,20 @@
   require('echarts/lib/component/title')
   require('echarts/theme/dark');
 
-  import Border from '@/components/Border'
+  import Border from '@/components/report/Border'
 
   export default {
-      name: "zi-zhi-he-gui",
-    mounted() {
-      this.myChart_gyssh_1();
-      this.myChart_gyssh_2();
-      this.myChart_gyssh_3();
-    },
+    name: "zi-zhi-he-gui",
     components: {
       Border
     },
+    mounted() {
+      this.myChart_zjgxsh_1();
+      this.myChart_zjgxsh_2();
+      this.myChart_zjgxsh_3();
+    },
     methods: {
-      myChart_gyssh_1(){
+      myChart_zjgxsh_1(){
         var dataAll = [
           ["油耗", 230],
           ["行车距离", 450],
@@ -214,7 +214,7 @@
         var list = makeSeries();
 
         // 基于准备好的dom，初始化echarts实例
-        let myChart = echarts.init(document.getElementById('myChart_gyssh_1'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_zjgxsh_1'), 'dark');
         window.addEventListener("resize",function(){myChart.resize();});
         myChart.setOption({
           backgroundColor: '#0B284C',
@@ -222,7 +222,7 @@
             formatter: "{a} {b} : {c}"
           },
           title: {
-            text: '供应商审核',
+            text: '证件更新审核',
             left: '20px',
             top: '10px',
             textStyle: {
@@ -235,9 +235,39 @@
           series: list
         })
       },
-      myChart_gyssh_2(){
+      dataStyle(){
+        let style = {
+          normal: {
+            label: {
+              show: false
+            },
+            labelLine: {
+              show: false
+            }
+          }
+        }
+        return style
+      },
+      placeHolderStyle(){
+        let style = {
+          normal: {
+            color: 'rgba(0,0,0,0)',
+            label: {
+              show: false
+            },
+            labelLine: {
+              show: false
+            }
+          },
+          emphasis: {
+            color: 'rgba(0,0,0,0)'
+          }
+        }
+        return style
+      },
+      myChart_zjgxsh_2(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart = echarts.init(document.getElementById('myChart_gyssh_2'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_zjgxsh_2'), 'dark');
         window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
@@ -250,10 +280,24 @@
             }
           },
           legend: {
-            data: ["食百", "生鲜"],
-            top: "15%"
+            top: "10%",
+            x: 'right',
+            left: "38%",
+            itemWidth:0,itemHeight:0,
+            data: ['已婚已育','已婚未育','未婚' ,'学生'],
+            itemGap: 38,
+            textStyle: {
+              color: '#fff',
+              align:'right',
+              x: 'right',
+              textAlign:'right'
+            },
+
+            selectedMode: true,
+            orient: "vertical",
           },
           backgroundColor: '#0B284C',
+          color: ['#4DFFE3','#4DE0FF','#4DFF8F','#ADFF4D'],
           tooltip: {
             show: false
           },
@@ -261,83 +305,88 @@
             top: '18%',
             left: '1%',
             right: '1%',
-            bottom: '10%'
-          },
-          xAxis: [{
-            type: 'category',
-            boundaryGap: true,
-            axisLabel: { //坐标轴刻度标签的相关设置
-              textStyle: {
-                color: '#d1e6eb',
-                margin: 15,
-                fontSize: 16
-              },
-            },
-            axisTick: 'none',
-            axisLine: 'none',
-            data: ['福建', '河北', '重庆', '上海', '江苏', '江西','河南'],
-          }],
-          yAxis: {
-            show: false
+            bottom: '25%',
+            // containLabel: true
           },
           series: [{
-            name: '食百',
-            type: 'line',
-            smooth: true, //是否平滑曲线显示
-            symbol:'circle',
-            showAllSymbol: false,
-            symbolSize: 8,
-            lineStyle: {
-              normal: {
-                color: "#53fdfe", // 线条颜色
-              },
-              borderColor: '#f0f'
-            },
-            label: {
-              show: true,
-              position: 'top',
-              textStyle: {
-                color: '#fff',
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "rgba(255,255,255,1)",
-              }
-            },
-            data: [58, 62, 78, 56, 81, 63, 86]
-          },{
-            name: '生鲜',
-            type: 'line',
-            smooth: true, //是否平滑曲线显示
-            symbol:'circle',
-            showAllSymbol: false,
-            symbolSize: 8,
-            lineStyle: {
-              normal: {
-                color: "#FFBF53", // 线条颜色
-              },
-              borderColor: '#f0f'
-            },
-            label: {
-              show: true,
-              position: 'top',
-              textStyle: {
-                color: '#fff',
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "rgba(255,255,255,1)",
-              }
-            },
-            data: [38, 42, 58, 36, 61, 43, 66]
-          }]
+              name: 'Line 4',
+              type: 'pie',
+              clockWise: true,
+              hoverAnimation: false,
+              radius: ['65%', '75%'],
+              itemStyle: this.dataStyle(),
+              data: [{
+                value: 7645434,
+                name: '已婚已育'
+              }, {
+                value: 3612343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: this.placeHolderStyle()
+              }]
+            }, {
+              name: 'Line 3',
+              type: 'pie',
+              clockWise: true,
+              radius: ['50%', '60%'],
+              itemStyle: this.dataStyle(),
+              hoverAnimation: false,
+              data: [{
+                value: 2632321,
+                name: '已婚未育'
+              }, {
+                value: 2212343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: this.placeHolderStyle()
+              }]
+            }, {
+              name: 'Line 2',
+              type: 'pie',
+              clockWise: true,
+              hoverAnimation: false,
+              radius: ['35%', '45%'],
+              itemStyle: this.dataStyle(),
+              data: [{
+                value: 1823323,
+                name: '未婚'
+              }, {
+                value: 1812343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: this.placeHolderStyle()
+              }]
+            }, {
+              name: 'Line 1',
+              type: 'pie',
+              clockWise: true,
+              radius: ['20%', '30%'],
+              itemStyle: this.dataStyle(),
+              hoverAnimation: false,
+              data: [ {
+                value: 1342221,
+                name: '学生'
+              },{
+                value:1912343,
+                name: '总数',
+                tooltip: {
+                  show: false
+                },
+                itemStyle: this.placeHolderStyle()
+              }]
+            }
+          ]
         });
       },
-      myChart_gyssh_3(){
+      myChart_zjgxsh_3(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart = echarts.init(document.getElementById('myChart_gyssh_3'), 'dark');
+        let myChart = echarts.init(document.getElementById('myChart_zjgxsh_3'), 'dark');
         window.addEventListener("resize",function(){myChart.resize();});
         // 绘制图表
         myChart.setOption({
@@ -350,10 +399,24 @@
             }
           },
           legend: {
-            data: ["食百", "生鲜"],
-            top: "15%"
+            top: "10%",
+            x: 'right',
+            left: "38%",
+            itemWidth:0,itemHeight:0,
+            data: ['已婚已育','已婚未育','未婚' ,'学生'],
+            itemGap: 38,
+            textStyle: {
+              color: '#fff',
+              align:'right',
+              x: 'right',
+              textAlign:'right'
+            },
+
+            selectedMode: true,
+            orient: "vertical",
           },
           backgroundColor: '#0B284C',
+          color: ['#4DFFE3','#4DE0FF','#4DFF8F','#ADFF4D'],
           tooltip: {
             show: false
           },
@@ -361,78 +424,83 @@
             top: '18%',
             left: '1%',
             right: '1%',
-            bottom: '10%'
-          },
-          xAxis: [{
-            type: 'category',
-            boundaryGap: true,
-            axisLabel: { //坐标轴刻度标签的相关设置
-              textStyle: {
-                color: '#d1e6eb',
-                margin: 15,
-                fontSize: 16
-              },
-            },
-            axisTick: 'none',
-            axisLine: 'none',
-            data: ['福建', '河北', '重庆', '上海', '江苏', '江西','河南'],
-          }],
-          yAxis: {
-            show: false
+            bottom: '25%',
+            // containLabel: true
           },
           series: [{
-            name: '食百',
-            type: 'line',
-            smooth: true, //是否平滑曲线显示
-            symbol:'circle',
-            showAllSymbol: false,
-            symbolSize: 8,
-            lineStyle: {
-              normal: {
-                color: "#53fdfe", // 线条颜色
+            name: 'Line 4',
+            type: 'pie',
+            clockWise: true,
+            hoverAnimation: false,
+            radius: ['65%', '75%'],
+            itemStyle: this.dataStyle(),
+            data: [{
+              value: 7645434,
+              name: '已婚已育'
+            }, {
+              value: 3612343,
+              name: '总数',
+              tooltip: {
+                show: false
               },
-              borderColor: '#f0f'
-            },
-            label: {
-              show: true,
-              position: 'top',
-              textStyle: {
-                color: '#fff',
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "rgba(255,255,255,1)",
-              }
-            },
-            data: [58, 62, 78, 56, 81, 63, 86]
-          },{
-            name: '生鲜',
-            type: 'line',
-            smooth: true, //是否平滑曲线显示
-            symbol:'circle',
-            showAllSymbol: false,
-            symbolSize: 8,
-            lineStyle: {
-              normal: {
-                color: "#FFBF53", // 线条颜色
+              itemStyle: this.placeHolderStyle()
+            }]
+          }, {
+            name: 'Line 3',
+            type: 'pie',
+            clockWise: true,
+            radius: ['50%', '60%'],
+            itemStyle: this.dataStyle(),
+            hoverAnimation: false,
+            data: [{
+              value: 2632321,
+              name: '已婚未育'
+            }, {
+              value: 2212343,
+              name: '总数',
+              tooltip: {
+                show: false
               },
-              borderColor: '#f0f'
-            },
-            label: {
-              show: true,
-              position: 'top',
-              textStyle: {
-                color: '#fff',
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "rgba(255,255,255,1)",
-              }
-            },
-            data: [38, 42, 58, 36, 61, 43, 66]
-          }]
+              itemStyle: this.placeHolderStyle()
+            }]
+          }, {
+            name: 'Line 2',
+            type: 'pie',
+            clockWise: true,
+            hoverAnimation: false,
+            radius: ['35%', '45%'],
+            itemStyle: this.dataStyle(),
+            data: [{
+              value: 1823323,
+              name: '未婚'
+            }, {
+              value: 1812343,
+              name: '总数',
+              tooltip: {
+                show: false
+              },
+              itemStyle: this.placeHolderStyle()
+            }]
+          }, {
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: true,
+            radius: ['20%', '30%'],
+            itemStyle: this.dataStyle(),
+            hoverAnimation: false,
+            data: [ {
+              value: 1342221,
+              name: '学生'
+            },{
+              value:1912343,
+              name: '总数',
+              tooltip: {
+                show: false
+              },
+              itemStyle: this.placeHolderStyle()
+            }]
+          }
+          ]
         });
       }
     }

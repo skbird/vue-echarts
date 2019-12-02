@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import Border from '@/components/Border'
+  import Border from '@/components/report/Border'
 
   export default {
     components: {
