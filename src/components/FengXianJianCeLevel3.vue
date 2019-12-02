@@ -323,7 +323,7 @@ export default {
        width: 95%;
        height: 76%;
        margin: 14px
-     }
+  }
 
 </style>
 
@@ -366,5 +366,8 @@ export default {
   }
   .fxjc .el-pagination__jump{
     color: #fff;
+  }
+  .fxjc .el-table th.gutter {
+    display: table-cell !important
   }
 </style>
