@@ -1,7 +1,7 @@
 <template>
   <div class="flex-row" style="color: #fff;width: 100%">
     <div class="flex" style="width: 15%">
-      <div class="leftpart">检测检验</div>
+      <div class="leftpart">检验检测</div>
     </div>
     <div class="flex" style="width: 60%">
       <table class="flex-column" style="width: 100%">
@@ -29,22 +29,22 @@
         </tr>
         <tr>
           <td>
-            <div class="rightpart">
+            <div style="color: #00FF33" class="rightpart">
               181
             </div>
           </td>
           <td>
-            <div class="rightpart">
+            <div style="color: #14F2F3" class="rightpart">
               298
             </div>
           </td>
           <td>
-            <div class="rightpart">
+            <div style="color: #F7C066" class="rightpart">
               780
             </div>
           </td>
           <td>
-            <div class="rightpart">
+            <div style="color: #FE7C72" class="rightpart">
               780190
             </div>
           </td>

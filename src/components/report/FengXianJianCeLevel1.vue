@@ -401,4 +401,14 @@ export default {
     flex-direction: column;
     justify-content: center;
   }
+
+  .blue-td{
+    color: #14F2F3;
+  }
+  .yellow-td{
+    color: #14F2F3;
+  }
+  .red-td{
+    color: #FE7C72;
+  }
 </style>

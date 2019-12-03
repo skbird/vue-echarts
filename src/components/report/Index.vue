@@ -3,13 +3,13 @@
 
     <div id="top" class="head">
       <div width="40%">
-        <!--<img class="flex" width="100%" src="../assets/images/u4.png"/>-->
+        <img class="flex" width="100%" src="../../assets/images/u4.png"/>
       </div>
       <div width="20%">
         <span class="top-title">食安云网驾驶舱</span>
       </div>
       <div width="40%">
-        <!--<img class="flex" width="100%" src="../assets/images/u5.png"/>-->
+        <img class="flex" width="100%" src="../../assets/images/u5.png"/>
       </div>
     </div>
 

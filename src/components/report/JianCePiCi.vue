@@ -65,7 +65,7 @@
           },
           legend: {
             itemHeight: 15,
-            data: ['\n','\n','水果', '蔬菜','水产','蛋品'],
+            data: ['\n','\n', '蔬菜','水果','水产','蛋品'],
           },
           xAxis: {
             data: ["一区", "二区", "三区", "四区", "五区", "六区", "七区", "八区", "九区", "十区", "产地", "彩食鲜"],
@@ -84,24 +84,6 @@
             show: false
           },
           series: [{
-            name: '水果',
-            type: 'bar',
-            stack: 'stack',
-            data: [5, 20, 36, 10, 10, 20, 5, 20, 36, 10, 10, 20],
-            itemStyle: {
-              normal: {color: "#ffd840", barBorderRadius: 1,}
-            },
-            label: {
-              normal: {
-                show: true,
-                position: 'inside',
-                textStyle: {
-                  color: '#ffffff',
-                  fontSize: '16',
-                }
-              }
-            }
-          },{
             name: '蔬菜',
             type: 'bar',
             stack: 'stack',
@@ -120,12 +102,30 @@
               }
             }
           },{
+            name: '水果',
+            type: 'bar',
+            stack: 'stack',
+            data: [5, 20, 36, 10, 10, 20, 5, 20, 36, 10, 10, 20],
+            itemStyle: {
+              normal: {color: "#F7C066", barBorderRadius: 1,}
+            },
+            label: {
+              normal: {
+                show: true,
+                position: 'inside',
+                textStyle: {
+                  color: '#ffffff',
+                  fontSize: '16',
+                }
+              }
+            }
+          },{
             name: '水产',
             type: 'bar',
             stack: 'stack',
             data: [40, 22, 18, 35, 42, 40, 40, 22, 18, 35, 42, 40],
             itemStyle: {
-              normal: {color: "#436EEE", barBorderRadius: 1,}
+              normal: {color: "#FE7C72", barBorderRadius: 1,}
             },
             label: {
               normal: {
@@ -144,7 +144,7 @@
             barMinWidth: 1,
             data: [40, 22, 18, 35, 42, 40, 40, 22, 18, 35, 42, 40],
             itemStyle: {
-              normal: {color: "#3FBB49", barBorderRadius: 1,},
+              normal: {color: "#00FF33", barBorderRadius: 1,},
             },
             label: {
               normal: {
