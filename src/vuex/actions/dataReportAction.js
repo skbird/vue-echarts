@@ -16,5 +16,13 @@ export default {
       default:
         return state;
     }
+  },
+  riskCountReportData: (state = {...initData.riskCountReportData}, action) => {
+    switch (action.type) {
+      case 'getRiskCountReport':
+        return action.response;
+      default:
+        return state;
+    }
   }
 }

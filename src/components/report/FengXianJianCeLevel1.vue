@@ -1,6 +1,6 @@
 <template>
     <div class=""flex style="width: 100%">
-      <div style="background: #001E44;color: #fff;width: 45%">
+      <div style="background: #001E44;color: #fff;width: 50%">
         <table>
           <tr>
             <td style="padding: 0;margin: 0">
@@ -29,18 +29,18 @@
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                181
+              <div class="rightpart blue-td">
+                {{riskCountList[0].todayNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                298
+              <div class="rightpart yellow-td">
+                {{riskCountList[0].monthNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                780
+              <div class="rightpart red-td">
+                {{riskCountList[0].yearNum}}
               </div>
             </td>
           </tr>
@@ -51,18 +51,18 @@
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                181
+              <div class="rightpart blue-td">
+                {{riskCountList[1].todayNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                298
+              <div class="rightpart yellow-td">
+                {{riskCountList[1].monthNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                780
+              <div class="rightpart red-td">
+                {{riskCountList[1].yearNum}}
               </div>
             </td>
           </tr>
@@ -73,18 +73,18 @@
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                181
+              <div class="rightpart blue-td">
+                {{riskCountList[2].todayNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                298
+              <div class="rightpart yellow-td">
+                {{riskCountList[2].monthNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                780
+              <div class="rightpart red-td">
+                {{riskCountList[2].yearNum}}
               </div>
             </td>
           </tr>
@@ -95,18 +95,18 @@
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                181
+              <div class="rightpart blue-td">
+                {{riskCountList[3].todayNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                298
+              <div class="rightpart yellow-td">
+                {{riskCountList[3].monthNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                780
+              <div class="rightpart red-td">
+                {{riskCountList[3].yearNum}}
               </div>
             </td>
           </tr>
@@ -117,29 +117,29 @@
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                181
+              <div class="rightpart blue-td">
+                {{riskCountList[4].todayNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                298
+              <div class="rightpart yellow-td">
+                {{riskCountList[4].monthNum}}
               </div>
             </td>
             <td>
-              <div class="rightpart">
-                780
+              <div class="rightpart red-td">
+                {{riskCountList[4].yearNum}}
               </div>
             </td>
           </tr>
         </table>
       </div>
 
-      <Border style="width: 33%;height: 400px">
+      <Border style="width: 25%;height: 400px">
         <div id="myChart_ycjsqsb" :style="{width: '100%', height: '400px'}"></div>
       </Border>
 
-      <Border style="width: 33%;height: 400px">
+      <Border style="width: 25%;height: 400px">
         <div id="myChart_ycjsqtb" :style="{width: '100%', height: '400px'}"></div>
       </Border>
 
@@ -158,16 +158,47 @@ require('echarts/theme/dark');
 
 import Border from '@/components/report/Border'
 
+let initData={
+  riskCountList:[],
+  spotCheckList:[]
+}
+
 export default {
   name: "feng-xian-jian-ce",
+  data() {
+    return initData
+  },
   mounted() {
-    this.myChart_ycjsqsb();
-    this.myChart_ycjsqtb();
+    this.refresh();
   },
   components: {
     Border
   },
   methods: {
+    async refresh(){
+      await this.getRiskCountReport();
+      this.myChart_ycjsqsb();
+      this.myChart_ycjsqtb();
+    },
+    async getRiskCountReport() {
+      try {
+        await Promise.race([
+          this.$store.dispatch("ajaxRequest", {
+            state: ['riskCountReportData'],
+            type: 'getRiskCountReport',
+            url: '/api/checking/dataReport/getRiskCountReport',
+            params: {}
+          }),
+          this.Util.timeout()
+        ]);
+        let _result = this.$store.state.riskCountReportData;
+        this.riskCountList = _result.riskCountList;
+        this.spotCheckList = _result.spotCheckList;
+      }catch (ex) {
+        this.Util.doException(this, ex)
+      } finally {
+      }
+    },
     myChart_ycjsqsb(){
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ycjsqsb'), 'dark');
@@ -191,10 +222,10 @@ export default {
         },
         backgroundColor: '#0B284C',
         grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
+          left: '15%',
+          right: '5%',
+          top: '10%',
+          bottom: '0%'
         },
         xAxis: {
           show: false,
@@ -208,6 +239,12 @@ export default {
           data: ["福建", "重庆", "广东", "广西", "安徽", "江苏", "河北", "河南", "陕西", "江西"],
           axisTick: 'none',
           axisLine: 'none',
+          axisLabel: {
+            textStyle: {
+              color: '#fff',
+              fontSize: '14'
+            }
+          }
         },
         series: [
           {
@@ -227,7 +264,7 @@ export default {
             barMinWidth: 1,
             data: [150, 212, 201, 154, 190, 330, 410, 212, 201, 154],
             itemStyle: {
-              normal: {color: "#5A9F46", barBorderRadius: 10,}
+              normal: {color: "#5A9F46", barBorderRadius: 10}
             }
           }
         ]
@@ -256,14 +293,16 @@ export default {
         },
         backgroundColor: '#0B284C',
         grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
+          left: '15%',
+          right: '5%',
+          top: '20%',
+          bottom: '0%'
         },
         legend:{
           x: 'center',
-          data: ['\n','\n','\n','例外案件', '商品投诉','诉讼案件','食安舆情']
+          data: ['\n','\n','例外案件', '商品投诉','诉讼案件','食安舆情'],
+          top:'3%',
+          bottom:'3%'
         },
         xAxis: {
           show: false,
@@ -284,8 +323,7 @@ export default {
             }
           }
         },
-        series: [
-          {
+        series: [{
             name: '例外案件',
             type: 'bar',
             stack: 'stack',
@@ -295,13 +333,13 @@ export default {
                 position: 'inside',
                 textStyle: {
                   color: '#ffffff',
-                  fontSize: '14',
+                  fontSize: '16',
                 }
               }
             },
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
-              normal: {color: "#A35156", barBorderRadius: 20}
+              normal: {color: "#A35156", barBorderRadius: 10}
             }
           },{
             name: '商品投诉',
@@ -319,7 +357,7 @@ export default {
             },
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
-              normal: {color: "#AA594B", barBorderRadius: 20}
+              normal: {color: "#AA594B", barBorderRadius: 10}
             }
           },{
             name: '诉讼案件',
@@ -337,7 +375,7 @@ export default {
             },
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
-              normal: {color: "#B07267", barBorderRadius: 28}
+              normal: {color: "#B07267", barBorderRadius: 10}
             }
           },{
             name: '食安舆情',
@@ -356,7 +394,7 @@ export default {
             barMinWidth: 1,
             data: [150, 212, 201, 154, 190, 330, 410],
             itemStyle: {
-              normal: {color: "#E6CBC6", barBorderRadius: 28}
+              normal: {color: "#E6CBC6", barBorderRadius: 10}
             }
           }
         ]
@@ -373,6 +411,7 @@ export default {
   }
   table{
     width: 100%;
+    height: 100%;
   }
 
   td {
@@ -384,7 +423,7 @@ export default {
     background: #0066FF;
     text-align: center;
     border: 2px #797979 solid;
-    margin-left: 3px;
+    margin-left: 2px;
     width: 90%;
     font-weight: bold;
   }
@@ -394,7 +433,7 @@ export default {
     background: #0B284C;
     height: 50px;
     width: 90%;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     padding: 2px;
     margin: 2px;
@@ -402,11 +441,12 @@ export default {
     justify-content: center;
   }
 
+
   .blue-td{
     color: #14F2F3;
   }
   .yellow-td{
-    color: #14F2F3;
+    color: #F7C066;
   }
   .red-td{
     color: #FE7C72;

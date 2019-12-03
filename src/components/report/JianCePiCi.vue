@@ -66,7 +66,6 @@
             this.Util.timeout()
           ]);
           let _result = this.$store.state.checkBatchesData;
-          debugger
           this.result.checkBatchs = _result.checkBatchs;
           this.result.highRiskFruits = _result.highRiskFruits;
           this.result.highRiskAquatic = _result.highRiskAquatic;
@@ -88,7 +87,6 @@
           aquaticCount.push(item.aquaticCount);
           eggCount.push(item.eggCount);
         });
-        debugger
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_jcpc1'), 'dark');
         window.addEventListener("resize",function(){myChart.resize();});
@@ -107,14 +105,16 @@
             left: '4%',
             right: '4%',
             bottom: '10%',
-            top:'4%',
+            top:'10%',
           },
           tooltip: {
             trigger: "axis",
           },
           legend: {
             itemHeight: 15,
-            data: ['\n','\n', '蔬菜','水果','水产','蛋品'],
+            data: ['\n','\n','蔬菜','水果','水产','蛋品'],
+            top:'3%',
+            bottom:'3%'
           },
           xAxis: {
             data: xData,

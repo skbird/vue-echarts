@@ -259,7 +259,7 @@
             left: '4%',
             right: '4%',
             bottom: '10%',
-            top:'6%',
+            top:'10%',
           },
           tooltip: {
             trigger: "axis",
@@ -364,7 +364,7 @@
             left: '4%',
             right: '4%',
             bottom: '10%',
-            top:'4%',
+            top:'10%',
           },
           legend: {
             itemWidth: 15,
