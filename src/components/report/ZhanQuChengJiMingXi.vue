@@ -5,7 +5,6 @@
         <div class="table-title">战区成绩明细</div>
         <div style="height: 88.3%;padding: 10px">
           <el-table :data="tableData" :highlight-current-row="false"
-                    row-style="height:38px"
                     show-summary border :row-class-name="tableRowClassName" class="el-table-class">
             <el-table-column prop="date" label="时间"></el-table-column>
             <el-table-column prop="zone" label="战区"></el-table-column>

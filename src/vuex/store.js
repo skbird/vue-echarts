@@ -6,15 +6,19 @@ import ajaxAction from './actions/ajaxAction';
 import ajaxState from './state/ajaxState';
 import detectionDataCockpitAction from './actions/detectionDataCockpitAction';
 import detectionDataCockpitState from './state/detectionDataCockpitState';
+import dataReportAction from './actions/dataReportAction';
+import dataReportSate from './state/dataReportSate';
 
 const reducers = {
   ...detectionDataCockpitAction,
   ...ajaxAction,
+  ...dataReportAction,
 }
 
 const state = {
   ...detectionDataCockpitState,
   ...ajaxState,
+  ...dataReportSate,
 }
 
 const mutations = {

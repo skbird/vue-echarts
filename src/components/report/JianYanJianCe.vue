@@ -30,22 +30,22 @@
         <tr>
           <td>
             <div style="color: #00FF33" class="rightpart">
-              181
+              {{checkData.checkTotalNum}}
             </div>
           </td>
           <td>
             <div style="color: #14F2F3" class="rightpart">
-              298
+              {{checkData.todayNum}}
             </div>
           </td>
           <td>
             <div style="color: #F7C066" class="rightpart">
-              780
+              {{checkData.monthNum}}
             </div>
           </td>
           <td>
             <div style="color: #FE7C72" class="rightpart">
-              780190
+              {{checkData.yearNum}}
             </div>
           </td>
         </tr>
@@ -56,8 +56,47 @@
 
 <script>
 
+  let initData={
+    checkTotalNum:'',
+    todayNum:'',
+    monthNum:'',
+    yearNum:''
+  }
+
 export default {
-  name: "jian-yan-jian-ce"
+  name: "jian-yan-jian-ce",
+  data() {
+    return {
+      checkData: initData
+    }
+  },
+  mounted() {
+    this.getCheckData();
+  },
+  methods: {
+    async getCheckData() {
+      try {
+        await Promise.race([
+          this.$store.dispatch("ajaxRequest", {
+            state: ['checkReportData'],
+            type: 'getCheckData',
+            url: '/api/checking/dataReport/getCheckData',
+            params: {}
+          }),
+          this.Util.timeout()
+        ]);
+        let _result = this.$store.state.checkReportData;
+        this.checkData.checkTotalNum = _result.checkTotalNum;
+        this.checkData.todayNum = _result.todayNum;
+        this.checkData.monthNum = _result.monthNum;
+        this.checkData.yearNum = _result.yearNum;
+
+      }catch (ex) {
+        this.Util.doException(this, ex)
+      } finally {
+      }
+    }
+  }
 }
 
 </script>
