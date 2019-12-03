@@ -199,7 +199,15 @@ export default {
       } finally {
       }
     },
+
     myChart_ycjsqsb(){
+      let provinces = [];
+      let data = [];
+      this.spotCheckList.forEach((item,index,array)=>{
+        provinces.push(item.provinceName);
+        data.push(item.countValue);
+      });
+      debugger
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ycjsqsb'), 'dark');
       window.addEventListener("resize",function(){myChart.resize();});
@@ -236,7 +244,7 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ["福建", "重庆", "广东", "广西", "安徽", "江苏", "河北", "河南", "陕西", "江西"],
+          data: provinces,
           axisTick: 'none',
           axisLine: 'none',
           axisLabel: {
@@ -262,7 +270,7 @@ export default {
               }
             },
             barMinWidth: 1,
-            data: [150, 212, 201, 154, 190, 330, 410, 212, 201, 154],
+            data: data,
             itemStyle: {
               normal: {color: "#5A9F46", barBorderRadius: 10}
             }
