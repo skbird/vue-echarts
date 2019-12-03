@@ -28,18 +28,67 @@
 
   import Border from '@/components/report/Border'
 
+  let initData={
+    checkBatchs:[],
+    highRiskFruits:[],
+    highRiskAquatic:[]
+  }
+
   export default {
     name: "jianCePiCi",
+    data() {
+      return{
+        result: initData
+      }
+    },
     mounted() {
-      this.myChart_jcpc1();
-      this.myChart_jcpc2();
-      this.myChart_jcpc3();
+      this.refresh();
     },
     components: {
       Border
     },
     methods: {
+      async refresh(){
+        await this.getCheckBatches();
+        this.myChart_jcpc1();
+        this.myChart_jcpc2();
+        this.myChart_jcpc3();
+      },
+      async getCheckBatches() {
+        try {
+          await Promise.race([
+            this.$store.dispatch("ajaxRequest", {
+              state: ['checkBatchesData'],
+              type: 'getCheckBatches',
+              url: '/api/checking/dataReport/getCheckBatches',
+              params: {}
+            }),
+            this.Util.timeout()
+          ]);
+          let _result = this.$store.state.checkBatchesData;
+          debugger
+          this.result.checkBatchs = _result.checkBatchs;
+          this.result.highRiskFruits = _result.highRiskFruits;
+          this.result.highRiskAquatic = _result.highRiskAquatic;
+        }catch (ex) {
+          this.Util.doException(this, ex)
+        } finally {
+        }
+      },
       myChart_jcpc1() {
+        let xData = [];
+        let fruitCount = [];
+        let vegetableCount = [];
+        let aquaticCount = [];
+        let eggCount = [];
+        this.result.checkBatchs.forEach((item,index,array)=>{
+          xData.push(item.warZone);
+          fruitCount.push(item.fruitCount);
+          vegetableCount.push(item.vegetableCount);
+          aquaticCount.push(item.aquaticCount);
+          eggCount.push(item.eggCount);
+        });
+        debugger
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_jcpc1'), 'dark');
         window.addEventListener("resize",function(){myChart.resize();});
@@ -68,7 +117,7 @@
             data: ['\n','\n', '蔬菜','水果','水产','蛋品'],
           },
           xAxis: {
-            data: ["一区", "二区", "三区", "四区", "五区", "六区", "七区", "八区", "九区", "十区", "产地", "彩食鲜"],
+            data: xData,
             splitLine: {
               show: false,
             },
@@ -78,7 +127,7 @@
               interval:0,
               rotate:0
             },
-            max: 11
+            max: 12
           },
           yAxis: {
             show: false
@@ -87,7 +136,7 @@
             name: '蔬菜',
             type: 'bar',
             stack: 'stack',
-            data: [40, 22, 18, 35, 42, 40, 40, 22, 18, 35, 42, 40],
+            data: fruitCount,
             itemStyle: {
               normal: {color: "#0BB2CA", barBorderRadius: 1,}
             },
@@ -105,7 +154,7 @@
             name: '水果',
             type: 'bar',
             stack: 'stack',
-            data: [5, 20, 36, 10, 10, 20, 5, 20, 36, 10, 10, 20],
+            data: fruitCount,
             itemStyle: {
               normal: {color: "#F7C066", barBorderRadius: 1,}
             },
@@ -123,7 +172,7 @@
             name: '水产',
             type: 'bar',
             stack: 'stack',
-            data: [40, 22, 18, 35, 42, 40, 40, 22, 18, 35, 42, 40],
+            data: aquaticCount,
             itemStyle: {
               normal: {color: "#FE7C72", barBorderRadius: 1,}
             },
@@ -142,9 +191,9 @@
             type: 'bar',
             stack: 'stack',
             barMinWidth: 1,
-            data: [40, 22, 18, 35, 42, 40, 40, 22, 18, 35, 42, 40],
+            data: eggCount,
             itemStyle: {
-              normal: {color: "#00FF33", barBorderRadius: 1,},
+              normal: {color: "#61AA45", barBorderRadius: 1,},
             },
             label: {
               normal: {
@@ -160,6 +209,13 @@
         });
       },
       myChart_jcpc2() {
+        let data = [];
+        this.result.highRiskFruits.forEach((item,index,array)=>{
+          data.push({
+            name: item.cpName,
+            value: item.unqualified
+          });
+        });
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_jcpc2'), 'dark');
         window.addEventListener("resize",function(){myChart.resize();});
@@ -168,7 +224,7 @@
           backgroundColor: "#0B284C",
           tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b} : {c}%"
+            formatter: "{a} <br/>{b} : {c}"
           },
           title: {
             text: '月果蔬高危风险商品TOP10',
@@ -180,6 +236,7 @@
           },
           calculable: true,
           series: [{
+            color:['#B55D5E','#BC6D6D','#C37D7E','#CB8D8D','#CA8B8D','#CD9393','#CE9698','#E2C1C2','#DCB2B3','#E6CBCB'],
             name: '漏斗图',
             type: 'funnel',
             left: '10%',
@@ -205,53 +262,24 @@
                 }
               }
             },
-            labelLine: {
-              normal: {
-                length: 10,
-                lineStyle: {
-                  width: 1,
-                  type: 'solid'
-                }
-              }
-            },
             itemStyle: {
               normal: {
-                borderColor: '#fff',
-                borderWidth: 1
+                shadowColor: '#FE7C72'
               }
             },
-            data: [{
-              value: 90,
-              name: '韭菜'
-            }, {
-              value: 88,
-              name: '芹菜'
-            }, {
-              value: 78,
-              name: '菠菜'
-            }, {
-              value: 66,
-              name: '黄瓜'
-            }, {
-              value: 63,
-              name: '韭菜'
-            }, {
-              value: 56,
-              name: '芹菜'
-            }, {
-              value: 50,
-              name: '菠菜'
-            }, {
-              value: 45,
-              name: '黄瓜'
-            }, {
-              value: 40,
-              name: '黄瓜'
-            }]
+            data: data
           }]
         })
       },
       myChart_jcpc3() {
+        let data = [];
+        this.result.highRiskFruits.forEach((item,index,array)=>{
+          data.push({
+            name: item.cpName,
+            value: item.unqualified
+          });
+        });
+
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart_jcpc3'), 'dark');
 
@@ -262,7 +290,7 @@
           backgroundColor: "#0B284C",
           tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b} : {c}%"
+            formatter: "{a} <br/>{b} : {c}"
           },
           title: {
             text: '月水产高危风险商品TOP10',
@@ -274,6 +302,7 @@
           },
           calculable: true,
           series: [{
+            color: ['#FEC15A','#FCC56A','#FECD7A','#FDD28B','#FDDA9C','#FEE0AC','#FEE5BC','#FEECCC','#FEF2DE','#FEF7ED'],
             name: '漏斗图',
             type: 'funnel',
             left: '10%',
@@ -299,49 +328,7 @@
                 }
               }
             },
-            labelLine: {
-              normal: {
-                length: 10,
-                lineStyle: {
-                  width: 1,
-                  type: 'solid'
-                }
-              }
-            },
-            itemStyle: {
-              normal: {
-                borderColor: '#fff',
-                borderWidth: 1
-              }
-            },
-            data: [{
-              value: 90,
-              name: '韭菜'
-            }, {
-              value: 88,
-              name: '芹菜'
-            }, {
-              value: 78,
-              name: '菠菜'
-            }, {
-              value: 66,
-              name: '黄瓜'
-            }, {
-              value: 63,
-              name: '韭菜'
-            }, {
-              value: 56,
-              name: '芹菜'
-            }, {
-              value: 50,
-              name: '菠菜'
-            }, {
-              value: 45,
-              name: '黄瓜'
-            }, {
-              value: 40,
-              name: '黄瓜'
-            }]
+            data: data
           }]
         })
       }

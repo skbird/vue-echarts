@@ -8,5 +8,13 @@ export default {
       default:
         return state;
     }
+  },
+  checkBatchesData: (state = {...initData.checkReportData}, action) => {
+    switch (action.type) {
+      case 'getCheckBatches':
+        return action.response;
+      default:
+        return state;
+    }
   }
 }

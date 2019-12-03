@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <td>
-            <div style="color: #00FF33" class="rightpart">
+            <div style="color: #61AA45" class="rightpart">
               {{checkData.checkTotalNum}}
             </div>
           </td>

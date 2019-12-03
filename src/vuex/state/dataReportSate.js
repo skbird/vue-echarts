@@ -1,3 +1,4 @@
 export default {
-  checkReportData: undefined
+  checkReportData: undefined,
+  checkBatchesData: undefined,
 }
