@@ -108,6 +108,12 @@ export default {
             fontSize: 16,
           }
         },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '15%',
+          top: '10%'
+        },
         visualMap: {
           show: false,
           min: 500,
@@ -187,6 +193,12 @@ export default {
             fontSize: 16,
           }
         },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '15%',
+          top: '10%'
+        },
         tooltip: {
           trigger: 'item',
           formatter: function (params) {
@@ -258,6 +270,12 @@ export default {
             fontSize: 16,
           }
         },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '15%',
+          top: '10%'
+        },
         tooltip: {
           trigger: 'item',
           formatter: function (params) {
@@ -324,7 +342,7 @@ export default {
         grid: {
           left: '3%',
           right: '4%',
-          bottom: '10%',
+          bottom: '16%',
           top: '10%'
         },
         tooltip: {
@@ -342,6 +360,17 @@ export default {
           axisLine: 'none',
           axisLabel: {
             show: true,
+            // interval: 0,    //强制文字产生间隔
+            // rotate: 45,     //文字逆时针旋转45°
+            formatter:function(val){
+              var strs = val.split(''); //字符串数组
+              var str = ''
+              for (var i = 0, s; s = strs[i++];) { //遍历字符串数组
+                str += s;
+                if (!(i % 2)) str += '\n';
+              }
+              return str
+            },
             textStyle: {
               fontSize: 14
             }
