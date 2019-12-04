@@ -235,7 +235,8 @@ export default {
           left: '15%',
           right: '5%',
           top: '10%',
-          bottom: '0%'
+          bottom: '0%',
+          containLabel:false
         },
         xAxis: {
           show: false,
@@ -254,7 +255,8 @@ export default {
               color: '#fff',
               fontSize: '14'
             }
-          }
+          },
+          inverse: true,//倒叙
         },
         series: [
           {
@@ -281,6 +283,39 @@ export default {
       });
     },
     myChart_ycjsqtb(){
+      let provinces = [];
+      let lwajData = [];
+      let sptsData = [];
+      let ssajData = [];
+      let saYqData = [];
+
+      this.riskSpotList.forEach((item,index,array)=>{
+        if(item.type==1){  //例外案件
+          item.spotCheckList.forEach((item,index,array)=>{
+            lwajData.push(item.countValue);
+            provinces.push(item.provinceName);
+          });
+        }
+        if(item.type==2){  //例外案件
+          item.spotCheckList.forEach((item,index,array)=>{
+            sptsData.push(item.countValue);
+            provinces.push(item.provinceName);
+          });
+        }
+        if(item.type==3){  //例外案件
+          item.spotCheckList.forEach((item,index,array)=>{
+            ssajData.push(item.countValue);
+            provinces.push(item.provinceName);
+          });
+        }
+        if(item.type==4){  //例外案件
+          item.spotCheckList.forEach((item,index,array)=>{
+            saYqData.push(item.countValue);
+            provinces.push(item.provinceName);
+          });
+        }
+      });
+
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ycjsqtb'), 'dark');
       window.addEventListener("resize",function(){myChart.resize();});
@@ -303,7 +338,7 @@ export default {
         },
         backgroundColor: '#0B284C',
         grid: {
-          left: '15%',
+          left: '25%',
           right: '5%',
           top: '20%',
           bottom: '0%'
@@ -319,11 +354,11 @@ export default {
           type: 'value',
           splitLine: {
             show: false,
-          }
+          },
         },
         yAxis: {
           type: 'category',
-          data: ["重庆", "广东", "广西", "安徽", "江苏", "河北", "河南"],
+          data: provinces,
           axisTick: 'none',
           axisLine: 'none',
           axisLabel: {
@@ -331,7 +366,8 @@ export default {
               color: '#fff',
               fontSize: '14'
             }
-          }
+          },
+          inverse: true,//倒叙
         },
         series: [{
             name: '例外案件',
@@ -347,7 +383,7 @@ export default {
                 }
               }
             },
-            data: [150, 212, 201, 154, 190, 330, 410],
+            data: lwajData,
             itemStyle: {
               normal: {color: "#A35156", barBorderRadius: 10}
             }
@@ -365,7 +401,7 @@ export default {
                 }
               }
             },
-            data: [150, 212, 201, 154, 190, 330, 410],
+          data: sptsData,
             itemStyle: {
               normal: {color: "#AA594B", barBorderRadius: 10}
             }
@@ -383,7 +419,7 @@ export default {
                 }
               }
             },
-            data: [150, 212, 201, 154, 190, 330, 410],
+          data: ssajData,
             itemStyle: {
               normal: {color: "#B07267", barBorderRadius: 10}
             }
@@ -402,11 +438,11 @@ export default {
               }
             },
             barMinWidth: 1,
-            data: [150, 212, 201, 154, 190, 330, 410],
-            itemStyle: {
-              normal: {color: "#E6CBC6", barBorderRadius: 10}
+            data: saYqData,
+              itemStyle: {
+                normal: {color: "#E6CBC6", barBorderRadius: 10}
+              }
             }
-          }
         ]
       });
     }

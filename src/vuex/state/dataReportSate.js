@@ -1,6 +1,7 @@
 export default {
+  topContentData: undefined,
   checkReportData: undefined,
   checkBatchesData: undefined,
   riskCountReportData: undefined,
-  topContentData: undefined
+  monthComplaintData: undefined
 }

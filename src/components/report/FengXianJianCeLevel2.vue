@@ -30,19 +30,67 @@ require('echarts/theme/dark');
 
 import Border from '@/components/report/Border'
 
+let initData={
+  complaintCategory:[],
+  complaintProblem:[],
+  complaints:[],
+  complaintStores:[]
+}
+
 export default {
   name: "feng-xian-jian-ce-level2",
-  mounted() {
-    this.myChart_ylwsp();
-    this.myChart_ylwwt();
-    this.myChart_ylwts();
-    this.myChart_ylwaj();
-  },
   components: {
     Border
   },
+  data() {
+    return initData
+  },
+  mounted() {
+    this.refresh();
+  },
   methods: {
+    async refresh(){
+      await this.getMonthComplaintReport();
+      this.myChart_ylwsp();
+      this.myChart_ylwwt();
+      this.myChart_ylwts();
+      this.myChart_ylwaj();
+    },
+    async getMonthComplaintReport() {
+      try {
+        await Promise.race([
+          this.$store.dispatch("ajaxRequest", {
+            state: ['monthComplaintReportData'],
+            type: 'getMonthComplaintReportData',
+            url: '/api/checking/dataReport/getMonthComplaintReport',
+            params: {}
+          }),
+          this.Util.timeout()
+        ]);
+        let _result = this.$store.state.monthComplaintReportData;
+        this.complaintCategory = _result.complaintCategory;
+        this.complaintProblem = _result.complaintProblem;
+        this.complaints = _result.complaints;
+        this.complaintStores = _result.complaintStores;
+
+      }catch (ex) {
+        this.Util.doException(this, ex)
+      } finally {
+      }
+    },
     myChart_ylwsp() {
+      let data = [];
+      this.complaintCategory.forEach((item,index,array)=>{
+        data.push({
+          value: item.countValue,
+          name: item.bigCategoryName,
+          itemStyle: {
+            borderColor:'#FFF',
+            borderWidth:4
+          }
+        });
+      });
+
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwsp'), 'dark');
       window.addEventListener("resize",function(){myChart.resize();});
@@ -69,47 +117,18 @@ export default {
           }
         },
         series: [{
-          name: '访问来源',
+          name: '',
           type: 'pie',
           radius: '50%',
           center: ['50%', '50%'],
-          color: ['#E9AF61', '#EA97FB', '#65E2A0', '#3ACDFD'], //'#FBFE27','rgb(11,228,96)','#FE5050'
-          data: [{
-            value: 1,
-            name: '用品',
-            itemStyle: {
-              borderColor:'#FFF',
-              borderWidth:4
-            }
-          },{
-            value: 6,
-            name: '食品-生鲜',
-            itemStyle: {
-              borderColor:'#FFF',
-              borderWidth:4
-            }
-          },{
-            value: 3,
-            name: '食品-加工',
-            itemStyle: {
-              borderColor:'#FFF',
-              borderWidth:4
-            }
-          },{
-            value: 3,
-            name: '食品-食百',
-            itemStyle: {
-              borderColor:'#FFF',
-              borderWidth:4
-            }
-          }
-          ].sort(function (a, b) {
+          color: ['#61AA45', '#14F2F3', '#F7C066', '#FE7C72'],
+          data: data.sort(function (a, b) {
             return a.value - b.value
           }),
           roseType: 'radius',
           label: {
             normal: {
-              formatter: ['{c|{b}}', '{b|{d}}',].join('\n'),
+              formatter: ['{c|{b}}', '{b|{d}}%',].join('\n'),
               rich: {
                 c: {
                   color: '#fff',
@@ -139,7 +158,18 @@ export default {
       });
     },
     myChart_ylwwt() {
-      let colors = ['#EEEC0D', '#E55125', '#5EA6FE', '#F94ED2', '#67D670', '#67FFFC']
+      let data = [];
+      this.complaintProblem.forEach((item,index,array)=>{
+        data.push({
+          value: item.countValue,
+          name: item.comProAttr,
+          itemStyle: {
+            borderColor:'#FFF',
+            borderWidth:4
+          }
+        });
+      });
+
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwwt'), 'dark');
       window.addEventListener("resize",function(){myChart.resize();});
@@ -162,15 +192,11 @@ export default {
           formatter: function (params) {
             var color = params.color;//图例颜色
             var htmlStr ='<div>';
-            htmlStr += params.name + '<br/>';//x轴的名称
+            htmlStr += params.name + '：'+params.value + '件';//x轴的名称
             //为了保证和原来的效果一样，这里自己实现了一个点的效果
             htmlStr += '<span ></span>';
-
             //添加一个汉字，这里你可以格式你的数字或者自定义文本内容
-            htmlStr += params.seriesName + '：'+params.value + '笔';
-
             htmlStr += '</div>';
-
             return htmlStr;
           }
         },
@@ -180,10 +206,10 @@ export default {
           startAngle: 160,
           radius: ['60', '90'],
           roseType : 'radius',
-          color: [],
+          color: ['#61AA45', '#14F2F3', '#F7C066', '#FE7C72'],
           label: {
             normal: {
-              formatter: ['{c|{b}}', '{b|{d}}',].join('\n'),
+              formatter: ['{c|{b}}', '{b|{d}}%',].join('\n'),
               rich: {
                 c: {
                   color: '#fff',
@@ -198,86 +224,23 @@ export default {
               },
             }
           },
-          data: [
-            {
-              value:28, name:'酒后代驾',
-              labelLine: {
-                lineStyle: {
-                  color: colors[0]
-                }
-              },
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4,
-              }
-            },
-            {
-              value:22, name:'高铁接送',
-              labelLine: {
-                lineStyle: {
-                  color: colors[1]
-                }
-              },
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4,
-              }
-            },
-            {
-              value:16, name:'道路救援',
-              labelLine: {
-                lineStyle: {
-                  color: colors[2]
-                }
-              },
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4,
-              }
-            },
-            {
-              value:20, name:'年检代办',
-              labelLine: {
-                lineStyle: {
-                  color: colors[3]
-                }
-              },
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4,
-              }
-            },
-            {
-              value:14, name:'其他',
-              labelLine: {
-                lineStyle: {
-                  color: colors[4]
-                }
-              },
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4,
-              }
-            },
-            {
-              value:16, name:'机场接送',
-              labelLine: {
-                lineStyle: {
-                  color: colors[5]
-                }
-              },
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4,
-              }
-            }
-          ]
-        }
-        ]
+          data: data
+        }]
       });
     },
     myChart_ylwts() {
-      let colors = ['#EEEC0D', '#E55125', '#5EA6FE', '#F94ED2', '#67D670', '#67FFFC']
+      let data = [];
+      this.complaints.forEach((item,index,array)=>{
+        data.push({
+          value: item.countValue,
+          name: item.complaintType,
+          itemStyle: {
+            borderColor:'#FFF',
+            borderWidth:4
+          }
+        });
+      });
+
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwts'), 'dark');
       window.addEventListener("resize",function(){myChart.resize();});
@@ -295,82 +258,61 @@ export default {
             fontSize: 16,
           }
         },
+        tooltip: {
+          trigger: 'item',
+          formatter: function (params) {
+            var color = params.color;//图例颜色
+            var htmlStr ='<div>';
+            htmlStr += params.name + '：'+params.value + '件';//x轴的名称
+            //为了保证和原来的效果一样，这里自己实现了一个点的效果
+            htmlStr += '<span ></span>';
+            //添加一个汉字，这里你可以格式你的数字或者自定义文本内容
+            htmlStr += '</div>';
+            return htmlStr;
+          }
+        },
         series : [{
-          name:'访问来源',
+          name:'',
           type:'pie',
           radius: ['60', '80'],
           hoverAnimation: false,
           avoidLabelOverlap: false,
+          color: ['#61AA45', '#14F2F3', '#F7C066', '#FE7C72'],
           label: {
             normal: {
-              formatter: ['{c|{b}}', '{b|{d}}',].join('\n'),
+              formatter: ['{c|{b}}', '{b|{d}}%',].join('\n'),
               rich: {
                 c: {
-                  color: '#ffffff',
+                  color: '#fff',
                   fontSize: 14,
                   lineHeight: 5
                 },
                 b: {
-                  color: '#ffffff',
+                  color: '#fff',
                   fontSize: 14,
                   height: 40
                 },
               },
             }
           },
-          emphasis: {
-            label: {
-              show: true
-            }
-          },
-          labelLine: {
-            normal: {
-              show: true
-            }
-          },
-          data:[
-            {
-              value:12, name:'转介服务商',
-              highlight: true,
-              label: {
-                show: true
-              },
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4
-              }
-            },
-            {
-              value:20, name:'外部代理人',
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4
-              }
-            },
-            {
-              value:10, name:'战略合作伙伴',
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4
-              }
-            },
-            {
-              value:68, name:'内部销售代表',
-              itemStyle: {
-                borderColor:'#FFF',
-                borderWidth:4
-              }
-            },
-          ]}
-        ]
+          data:data
+        }]
       });
     },
     myChart_ylwaj() {
+      let data = [];
+      let storeName = [];
+      this.complaintStores.forEach((item,index,array)=>{
+        storeName.push(item.storeName);
+        data.push(item.countValue);
+      });
+
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ylwaj'), 'dark');
       window.addEventListener("resize",function(){myChart.resize();});
       // 绘制图表
       myChart.setOption({
+        backgroundColor: '#0B284C',
         title: {
           text: '月诉讼案件门店分布',
           left: '20px',
@@ -379,7 +321,12 @@ export default {
             fontSize: 16,
           }
         },
-        backgroundColor: '#0B284C',
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '10%',
+          top: '10%'
+        },
         tooltip: {
           trigger: "axis",
         },
@@ -387,7 +334,7 @@ export default {
           show: false
         },
         xAxis: {
-          data: ["黎明店", "象园店", "黎明店", "象园店", "黎明店"],
+          data: storeName,
           splitLine: {
             show: false,
           },
@@ -408,7 +355,7 @@ export default {
           type: 'bar',
           stack: 'stack',
           barMinWidth: 1,
-          data: [20, 40, 78, 50, 30],
+          data: data,
           itemStyle: {
             normal: {color: "#0DEDEE", barBorderRadius: 40}
           },

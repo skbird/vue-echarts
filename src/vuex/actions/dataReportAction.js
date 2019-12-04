@@ -1,6 +1,14 @@
 import initData from '../state/detectionDataCockpitState'
 
 export default {
+  topContentData: (state = {...initData.riskCountReportData}, action) => {
+    switch (action.type) {
+      case 'getTopContent':
+        return action.response;
+      default:
+        return state;
+    }
+  },
   checkReportData: (state = {...initData.checkReportData}, action) => {
     switch (action.type) {
       case 'getCheckData':
@@ -25,9 +33,9 @@ export default {
         return state;
     }
   },
-  topContentData: (state = {...initData.riskCountReportData}, action) => {
+  monthComplaintReportData: (state = {...initData.monthComplaintReportData}, action) => {
     switch (action.type) {
-      case 'getTopContent':
+      case 'getMonthComplaintReportData':
         return action.response;
       default:
         return state;

@@ -8,7 +8,7 @@
           <div class="flex-column" style="width: 100%;height: 80%">
 
             <ul class="flex-column infinite-list-wrapper">
-              <li v-for="item in ziXunData" class="infinite-list-item">
+              <li v-for="item in latestNews" class="infinite-list-item">
                 <a v-bind:href="item.url" target="_blank" class="title" v-text="item.title"></a>
               </li>
             </ul>
@@ -18,7 +18,7 @@
       </Border>
     </div>
 
-    <div class="flex" style="width: 44.3%;height: 100%;margin-top: 10px">
+    <div class="flex" style="width: 44.25%;height: 100%;margin-top: 10px">
       <div id="chartMap" class="chartGauge" :style="{width: '100%', height: '100%'}"></div>
     </div>
 
@@ -30,7 +30,7 @@
           <div class="flex-row" style="width: 100%;height: 80%">
 
             <ul class="flex-column infinite-list-wrapper">
-              <li v-for="item in faGuiData" class="infinite-list-item">
+              <li v-for="item in safetyRules" class="infinite-list-item">
                 <a href="item.url" target="_blank" class="title" v-text="item.title"></a>
               </li>
             </ul>
@@ -158,9 +158,9 @@ export default {
           trigger: 'item',
           formatter: function (params) {
             if (typeof(params.value)[2] == "undefined") {
-              return params.name + ' : ' + params.value;
-            } else {
-              return params.name + ' : ' + params.value[2];
+              if(params.value!=0){
+                return params.name + ' : ' + params.value;
+              }
             }
           }
         },
@@ -226,7 +226,7 @@ export default {
           /*组件的所有图形的z值。控制图形的前后顺序。z值小的图形会被z值大的图形覆盖。*/
           zoom: 1.2,
           /*是否开启鼠标缩放和平移漫游。默认不开启。*/
-          roam: false,
+          roam: true,
         },
         series: [
           {
@@ -239,7 +239,7 @@ export default {
             * */
             geoIndex: 0,
             /*这个参数用于 scale 地图的长宽比。*/
-            aspectScale: 0.75, //长宽比
+            aspectScale: 1, //长宽比
             /* 在图例相应区域显示图例的颜色标识（系列标识的小圆点），存在 legend 组件时生效。 */
             showLegendSymbol: true, // 存在legend时显示
             /*图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等*/
@@ -278,6 +278,7 @@ export default {
             symbolSize: function (val) {
               return val.length * 7;
             },
+            symbolOffset:['0%', '-55%'],
             label: {
               normal: {
                 show: false,
@@ -303,63 +304,6 @@ export default {
         ]
       };
       myChart.setOption(option);
-    }
-  },
-  data() {
-    return {
-      ziXunData: [{
-        'title': '海关总署关于《进口食品境外生产企业注册管理规定(征求意见稿）》公开征求意见的通知',
-        'url': 'http://news.foodmate.net/2019/11/542183.html'
-      }, {
-        'title': '农业农村部办公厅关于完善动物检疫出证有关事项的通知',
-        'url': 'http://news.foodmate.net/2019/11/541993.html'
-      }, {
-        'title': '国家发展改革委商务部关于印发《市场准入负面清单（2019年版）》的通知【发改体改〔2019〕1685号】',
-        'url': 'http://news.foodmate.net/2019/11/541699.html'
-      }, {
-        'title': '海关总署发布禁止从动物疫病流行国家地区输入的动物及其产品一览表',
-        'url': 'http://news.foodmate.net/2019/09/532357.html'
-      }, {
-        'title': '皓虹牌清风茶治疗痛风有奇效？其实是加了激素药',
-        'url': 'http://news.foodmate.net/2019/11/542091.html'
-      }, {
-        'title': '网传奶茶不含奶？西安市面9种样品有1种几乎不含',
-        'url': 'http://news.foodmate.net/2019/11/542264.html'
-      }, {
-        'title': '奶粉中检出矿物油&nbsp;还能放心吃吗',
-        'url':'http://news.foodmate.net/2019/11/542037.html'
-      }, {
-        'title': '老字号汤圆店被举报汤圆回锅再售&nbsp;&ldquo;口水汤圆&rdquo;将被严处',
-        'url':'http://news.foodmate.net/2019/11/541711.html'
-      }, {
-        'title': '案值37亿元，特大坚果走私案！部分来自疫区、黄曲霉素超标！最后竟生产成品牌坚果&hellip;',
-        'url':'http://news.foodmate.net/2019/11/541645.html'
-      }, {
-        'title': '西安男子吃了鹅蛋后拉肚子怀疑是假的&nbsp;老板称可能是不新鲜了',
-        'url':'http://news.foodmate.net/2019/11/541661.html'
-      }, {
-        'title': '市场监管总局：近三个月对保健食品虚假违法广告罚款1727万元',
-        'url':'http://news.foodmate.net/2019/11/542427.html'
-      }, {
-        'title': '农业农村部：近三个月取缔4471家不符合要求生猪定点屠宰企业',
-        'url':'http://news.foodmate.net/2019/11/542428.html'
-      }, {
-        'title': '吉野家跟风自助早餐引流',
-        'url':'http://news.foodmate.net/2019/11/542162.html'
-      }],
-      faGuiData: [{
-        'title': 'GB 31660.9-2019 食品安全国家标准 家禽可食性组织中乙氧酰胺苯甲酯残留量的测定 高效液相色谱法'
-      }, {
-        'title': 'GB 31660.9-2019 食品安全国家标准 家禽可食性组织中乙氧酰胺苯甲酯残留量的测定 高效液相色谱法'
-      }, {
-        'title': 'GB 31660.9-2019 食品安全国家标准 家禽可食性组织中乙氧酰胺苯甲酯残留量的测定 高效液相色谱法'
-      }, {
-        'title': 'GB 31660.9-2019 食品安全国家标准 家禽可食性组织中乙氧酰胺苯甲酯残留量的测定 高效液相色谱法'
-      }, {
-        'title': 'GB 31660.9-2019 食品安全国家标准 家禽可食性组织中乙氧酰胺苯甲酯残留量的测定 高效液相色谱法'
-      }, {
-        'title': 'GB 31660.9-2019 食品安全国家标准 家禽可食性组织中乙氧酰胺苯甲酯残留量的测定 高效液相色谱法'
-      }]
     }
   }
 }
