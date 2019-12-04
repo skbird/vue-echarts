@@ -160,7 +160,8 @@ import Border from '@/components/report/Border'
 
 let initData={
   riskCountList:[],
-  spotCheckList:[]
+  spotCheckList:[],
+  riskSpotList:[]
 }
 
 export default {
@@ -194,6 +195,8 @@ export default {
         let _result = this.$store.state.riskCountReportData;
         this.riskCountList = _result.riskCountList;
         this.spotCheckList = _result.spotCheckList;
+        this.riskSpotList = _result.riskSpotList;
+
       }catch (ex) {
         this.Util.doException(this, ex)
       } finally {
@@ -207,7 +210,6 @@ export default {
         provinces.push(item.provinceName);
         data.push(item.countValue);
       });
-      debugger
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_ycjsqsb'), 'dark');
       window.addEventListener("resize",function(){myChart.resize();});

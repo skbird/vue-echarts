@@ -24,5 +24,13 @@ export default {
       default:
         return state;
     }
-  }
+  },
+  topContentData: (state = {...initData.riskCountReportData}, action) => {
+    switch (action.type) {
+      case 'getTopContent':
+        return action.response;
+      default:
+        return state;
+    }
+  },
 }

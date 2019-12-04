@@ -224,7 +224,7 @@
           backgroundColor: "#0B284C",
           tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b} : {c}"
+            formatter: "{b} : {c}"
           },
           title: {
             text: '月果蔬高危风险商品TOP10',
@@ -237,15 +237,12 @@
           calculable: true,
           series: [{
             color:['#B55D5E','#BC6D6D','#C37D7E','#CB8D8D','#CA8B8D','#CD9393','#CE9698','#E2C1C2','#DCB2B3','#E6CBCB'],
-            name: '漏斗图',
+            name: '月果蔬高危风险商品TOP10',
             type: 'funnel',
             left: '10%',
             top: 60,
             bottom: 60,
             width: '80%',
-
-            min: 0,
-            max: 100,
             minSize: '0%',
             maxSize: '100%',
             sort: 'descending',
@@ -254,7 +251,10 @@
               normal: {
                 show: true,
                 formatter: "{b}/{c}",
-                position: 'inside'
+                position: 'inside',
+                textStyle: {
+                  color: '#000'
+                }
               },
               emphasis: {
                 textStyle: {
@@ -290,7 +290,7 @@
           backgroundColor: "#0B284C",
           tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b} : {c}"
+            formatter: "{b} : {c}"
           },
           title: {
             text: '月水产高危风险商品TOP10',
@@ -310,8 +310,6 @@
             bottom: 60,
             width: '80%',
 
-            min: 0,
-            max: 100,
             minSize: '0%',
             maxSize: '100%',
             sort: 'descending',
@@ -320,7 +318,10 @@
               normal: {
                 show: true,
                 formatter: "{b}/{c}",
-                position: 'inside'
+                position: 'inside',
+                textStyle: {
+                  color: '#000'
+                }
               },
               emphasis: {
                 textStyle: {
