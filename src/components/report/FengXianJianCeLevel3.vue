@@ -349,4 +349,7 @@ export default {
   .fxjc .el-table th.gutter {
     display: table-cell !important
   }
+  .fxjc .el-pagination button:disabled{
+    background-color: #002547;
+  }
 </style>

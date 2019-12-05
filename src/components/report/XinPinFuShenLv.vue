@@ -13,7 +13,6 @@
             :data="data"
             show-checkbox
             style="color: #B9BDC3;background-color: #194473;margin: 5px;margin-bottom: 50px"
-            check-on-click-node="false"
             node-key="id"
             :props="defaultProps">
           </el-tree>

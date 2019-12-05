@@ -37,9 +37,7 @@
   export default {
     name: "jianCePiCi",
     data() {
-      return{
-        result: initData
-      }
+      return initData
     },
     mounted() {
       this.refresh();
@@ -66,9 +64,9 @@
             this.Util.timeout()
           ]);
           let _result = this.$store.state.checkBatchesData;
-          this.result.checkBatchs = _result.checkBatchs;
-          this.result.highRiskFruits = _result.highRiskFruits;
-          this.result.highRiskAquatic = _result.highRiskAquatic;
+          this.checkBatchs = _result.checkBatchs;
+          this.highRiskFruits = _result.highRiskFruits;
+          this.highRiskAquatic = _result.highRiskAquatic;
         }catch (ex) {
           this.Util.doException(this, ex)
         } finally {
@@ -80,7 +78,7 @@
         let vegetableCount = [];
         let aquaticCount = [];
         let eggCount = [];
-        this.result.checkBatchs.forEach((item,index,array)=>{
+        this.checkBatchs.forEach((item,index,array)=>{
           xData.push(item.warZone);
           fruitCount.push(item.fruitCount);
           vegetableCount.push(item.vegetableCount);
@@ -210,7 +208,7 @@
       },
       myChart_jcpc2() {
         let data = [];
-        this.result.highRiskFruits.forEach((item,index,array)=>{
+        this.highRiskFruits.forEach((item,index,array)=>{
           data.push({
             name: item.cpName,
             value: item.unqualified
@@ -273,7 +271,7 @@
       },
       myChart_jcpc3() {
         let data = [];
-        this.result.highRiskFruits.forEach((item,index,array)=>{
+        this.highRiskAquatic.forEach((item,index,array)=>{
           data.push({
             name: item.cpName,
             value: item.unqualified

@@ -30,22 +30,22 @@
         <tr>
           <td>
             <div style="color: #61AA45" class="rightpart">
-              {{checkData.checkTotalNum}}
+              {{checkTotalNum}}
             </div>
           </td>
           <td>
             <div style="color: #14F2F3" class="rightpart">
-              {{checkData.todayNum}}
+              {{todayNum}}
             </div>
           </td>
           <td>
             <div style="color: #F7C066" class="rightpart">
-              {{checkData.monthNum}}
+              {{monthNum}}
             </div>
           </td>
           <td>
             <div style="color: #FE7C72" class="rightpart">
-              {{checkData.yearNum}}
+              {{yearNum}}
             </div>
           </td>
         </tr>
@@ -66,9 +66,7 @@
 export default {
   name: "jian-yan-jian-ce",
   data() {
-    return {
-      checkData: initData
-    }
+    return initData
   },
   mounted() {
     this.getCheckData();
@@ -86,10 +84,10 @@ export default {
           this.Util.timeout()
         ]);
         let _result = this.$store.state.checkReportData;
-        this.checkData.checkTotalNum = _result.checkTotalNum;
-        this.checkData.todayNum = _result.todayNum;
-        this.checkData.monthNum = _result.monthNum;
-        this.checkData.yearNum = _result.yearNum;
+        this.checkTotalNum = _result.checkTotalNum;
+        this.todayNum = _result.todayNum;
+        this.monthNum = _result.monthNum;
+        this.yearNum = _result.yearNum;
 
       }catch (ex) {
         this.Util.doException(this, ex)
