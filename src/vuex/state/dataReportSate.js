@@ -6,5 +6,6 @@ export default {
   checkBatchesData: {},
   riskCountReportData: {},
   monthComplaintData: {},
-  dataReportPage: initData()
+  dataReportProductPage: initData(),
+  dataReportSupplierPage: initData()
 }

@@ -41,7 +41,7 @@ export default {
         return state;
     }
   },
-  dataReportPage: (state = {...initData.dataReportPage}, action) => {
+  dataReportProductPage: (state = {...initData.dataReportProductPage}, action) => {
     switch (action.type) {
       case 'retrieve':
         state = Object.assign({}, state, action.response);
@@ -51,5 +51,16 @@ export default {
       default:
         return state;
     }
-  }
+  },
+  dataReportSupplierPage: (state = {...initData.dataReportSupplierPage}, action) => {
+    switch (action.type) {
+      case 'retrieve':
+        state = Object.assign({}, state, action.response);
+        return Object.assign({}, state, {
+          params: {...action.params}
+        });
+      default:
+        return state;
+    }
+  },
 }

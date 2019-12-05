@@ -8,54 +8,55 @@
       <div :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险商品</div>
         <el-table  ref="table"
-                  :data="page.results"
+                  :data="productPage.results"
                   :highlight-current-row="false"
-                  @selection-change="handleSelectionChange"
-                  v-loading="loading"
+                  v-loading="loadingProduct"
                   border :row-class-name="tableRowClassName"
                   class="el-table-class">
-          <el-table-column width="200" prop="productName" label="商品"></el-table-column>
-          <el-table-column width="90" prop="countValue" label="问題次数" ></el-table-column>
-          <el-table-column width="90" prop="comProAttr" label="问题大类"></el-table-column>
-          <el-table-column width="90" prop="comProAttrDetails" label="具体问题" ></el-table-column>
+          <el-table-column min-width="50%" prop="productName" label="商品" show-overflow-tooltip ></el-table-column>
+          <el-table-column min-width="16%" prop="countValue" label="问題次数" show-overflow-tooltip ></el-table-column>
+          <el-table-column min-width="17%" prop="comProAttr" label="问题大类" show-overflow-tooltip ></el-table-column>
+          <el-table-column min-width="17%" prop="comProAttrDetails" label="具体问题" show-overflow-tooltip ></el-table-column>
         </el-table>
 
         <div class="block" style="text-align: right;margin-right: 13px">
           <el-pagination
-            @current-change="handlePageChange"
-            @size-change="handleSizeChange"
-            :current-page="page.page.pageNum"
-            :page-size="page.page.numPerPage"
+            @current-change="handlePageChangeProduct"
+            :current-page="productPage.page.pageNum"
+            :page-size="productPage.page.numPerPage"
             layout="total,jumper,prev,next"
-            :total="page.page.totalCount">
+            :total="productPage.page.totalCount">
           </el-pagination>
         </div>
       </div>
     </Border>
 
-   <!-- <Border style="width: 33%;height: 400px">
+    <Border style="width: 33%;height: 400px">
       <div id="myChart_ygwfxgys" :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险供应商</div>
-        <el-table :data="page.results"
-                  border :row-class-name="tableRowClassName" class="el-table-class">
-          <el-table-column min-width="50%" prop="product" label="供应商"></el-table-column>
-          <el-table-column min-width="16%" prop="times" label="问題次数" ></el-table-column>
-          <el-table-column min-width="17%" prop="category" label="问题大类"></el-table-column>
-          <el-table-column min-width="17%" prop="detail" label="具体问题" ></el-table-column>
+        <el-table  ref="table"
+                   :data="supplierPage.results"
+                   :highlight-current-row="false"
+                   v-loading="loadingSupplier"
+                   border :row-class-name="tableRowClassName"
+                   class="el-table-class">
+          <el-table-column min-width="50%" prop="supplierName" label="供应商" show-overflow-tooltip ></el-table-column>
+          <el-table-column min-width="16%" prop="countValue" label="问題次数" show-overflow-tooltip ></el-table-column>
+          <el-table-column min-width="17%" prop="comProAttr" label="问题大类" show-overflow-tooltip ></el-table-column>
+          <el-table-column min-width="17%" prop="comProAttrDetails" label="具体问题" show-overflow-tooltip ></el-table-column>
         </el-table>
 
         <div class="block" style="text-align: right;margin-right: 13px">
           <el-pagination
-            @current-change="handlePageChange"
-            @size-change="handleSizeChange"
-            :current-page="page.page.pageNum"
-            :page-size="page.page.numPerPage"
+            @current-change="handlePageChangeSupplier"
+            :current-page="supplierPage.page.pageNum"
+            :page-size="supplierPage.page.numPerPage"
             layout="total,jumper,prev,next"
-            :total="page.page.totalCount">
+            :total="supplierPage.page.totalCount">
           </el-pagination>
         </div>
       </div>
-    </Border>-->
+    </Border>
   </div>
 </template>
 
@@ -80,43 +81,44 @@ export default {
     return {
       packageName: 'checking',
       beanName: 'dataReport',
-      loading: false,
-      params: {...this.$store.state.dataReportPage.params}
+      loadingProduct: false,
+      loadingSupplier: false,
+      productParams: {...this.$store.state.dataReportProductPage.params},
+      supplierParams: {...this.$store.state.dataReportSupplierPage.params}
     }
   },
   computed: {
-    page: function () {
-      return this.$store.state.dataReportPage;
-    }
+    productPage: function () {
+      return this.$store.state.dataReportProductPage;
+    },
+    supplierPage: function () {
+      return this.$store.state.dataReportSupplierPage;
+    },
   },
   methods: {
-    handleSelectionChange(val) {
-      this.selected = val;
+    handlePageChangeProduct(pageNum) {
+      this.productParams.pageNum = pageNum;
+      this.refreshProduct();
     },
-    handlePageChange(pageNum) {
-      this.params.pageNum = pageNum;
-      this.refresh(true);
+    handlePageChangeSupplier(pageNum) {
+      this.supplierParams.pageNum = pageNum;
+      this.refreshSupplier();
     },
-    handleSizeChange(numPerPage) {
-      this.params.numPerPage = numPerPage;
-      this.refresh(true);
-    },
-    async refresh(force) {
-      force = true === force ? true : false;
-      this.loading = true;
+    async refreshProduct() {
+      this.loadingProduct = true;
       let {beanName} = this;
       try {
-        this.params.dataType = 'product';
+        this.productParams.dataType = 'product';
 
         await Promise.race([
           this.$store.dispatch("ajaxRequest", {
-            state: [beanName + 'Page'],
+            state: [beanName + 'ProductPage'],
             type: 'retrieve',
             url: '/api/' + this.packageName + '/' + beanName + '/retrieve',
-            params: this.params,
+            params: this.productParams,
             shouldCallAPI: (state, params) => {
-              let page = eval('state.' + beanName + 'Page');
-              if (!page.results || 0 >= page.results.length || force) {
+              let page = eval('state.' + beanName + 'ProductPage');
+              if (!page.results || 0 >= page.results.length) {
                 return true;
               }
               if (!this.Util.myEqual(params, page.params)) {
@@ -133,7 +135,41 @@ export default {
       } catch (ex) {
         this.Util.doException(this, ex)
       } finally {
-        this.loading = false;
+        this.loadingProduct = false;
+      }
+    },
+    async refreshSupplier() {
+      this.loadingSupplier = true;
+      let {beanName} = this;
+      try {
+        this.supplierParams.dataType = 'supplier';
+
+        await Promise.race([
+          this.$store.dispatch("ajaxRequest", {
+            state: [beanName + 'SupplierPage'],
+            type: 'retrieve',
+            url: '/api/' + this.packageName + '/' + beanName + '/retrieve',
+            params: this.supplierParams,
+            shouldCallAPI: (state, params) => {
+              let page = eval('state.' + beanName + 'SupplierPage');
+              if (!page.results || 0 >= page.results.length) {
+                return true;
+              }
+              if (!this.Util.myEqual(params, page.params)) {
+                if (!this.Util.myEqual(params, page.params, ['pageNum'])) {
+                  params.pageNum = 1;
+                }
+                return true;
+              }
+              return false;
+            }
+          }),
+          this.Util.timeout()
+        ]);
+      } catch (ex) {
+        this.Util.doException(this, ex)
+      } finally {
+        this.loadingSupplier = false;
       }
     },
     myChart_yyqwt(){
@@ -242,7 +278,8 @@ export default {
     },
   },
   async mounted() {
-    this.refresh(false);
+    this.refreshProduct(false);
+    this.refreshSupplier(false);
     this.myChart_yyqwt();
   }
 }
