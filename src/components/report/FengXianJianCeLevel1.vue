@@ -1,6 +1,6 @@
 <template>
     <div class=""flex style="width: 100%">
-      <div style="background: #001E44;color: #fff;width: 50%">
+      <div style="background: #001E44;color: #fff;width: 50.8%">
         <table>
           <tr>
             <td style="padding: 0;margin: 0">
@@ -135,11 +135,11 @@
         </table>
       </div>
 
-      <Border style="width: 25%;height: 400px">
+      <Border style="width: 24.6%;height: 400px">
         <div id="myChart_ycjsqsb" :style="{width: '100%', height: '400px'}"></div>
       </Border>
 
-      <Border style="width: 25%;height: 400px">
+      <Border style="width: 24.6%;height: 400px">
         <div id="myChart_ycjsqtb" :style="{width: '100%', height: '400px'}"></div>
       </Border>
 

@@ -5,33 +5,38 @@
     </Border>
 
     <Border style="width: 33%;height: 400px">
-      <div id="myChart_ygwfxsp" :style="{width: '100%', height: '100%'}">
+      <div :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险商品</div>
-        <el-table :data="gwfxspData" :highlight-current-row="false"
-                  border :row-class-name="tableRowClassName" class="el-table-class">
-          <el-table-column prop="product" label="商品"></el-table-column>
-          <el-table-column prop="times" label="问題次数" ></el-table-column>
-          <el-table-column prop="category" label="问题大类"></el-table-column>
-          <el-table-column prop="detail" label="具体问题" ></el-table-column>
+        <el-table  ref="table"
+                  :data="page.results"
+                  :highlight-current-row="false"
+                  @selection-change="handleSelectionChange"
+                  v-loading="loading"
+                  border :row-class-name="tableRowClassName"
+                  class="el-table-class">
+          <el-table-column width="200" prop="productName" label="商品"></el-table-column>
+          <el-table-column width="90" prop="countValue" label="问題次数" ></el-table-column>
+          <el-table-column width="90" prop="comProAttr" label="问题大类"></el-table-column>
+          <el-table-column width="90" prop="comProAttrDetails" label="具体问题" ></el-table-column>
         </el-table>
 
         <div class="block" style="text-align: right;margin-right: 13px">
           <el-pagination
+            @current-change="handlePageChange"
             @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page.sync="currentPage1"
-            :page-size="10"
+            :current-page="page.page.pageNum"
+            :page-size="page.page.numPerPage"
             layout="total,jumper,prev,next"
-            :total="total">
+            :total="page.page.totalCount">
           </el-pagination>
         </div>
       </div>
     </Border>
 
-    <Border style="width: 33%;height: 400px">
+   <!-- <Border style="width: 33%;height: 400px">
       <div id="myChart_ygwfxgys" :style="{width: '100%', height: '100%'}">
         <div class="table-title">月高危风险供应商</div>
-        <el-table :data="gwfxgysData"
+        <el-table :data="page.results"
                   border :row-class-name="tableRowClassName" class="el-table-class">
           <el-table-column min-width="50%" prop="product" label="供应商"></el-table-column>
           <el-table-column min-width="16%" prop="times" label="问題次数" ></el-table-column>
@@ -41,16 +46,16 @@
 
         <div class="block" style="text-align: right;margin-right: 13px">
           <el-pagination
+            @current-change="handlePageChange"
             @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page.sync="currentPage1"
-            :page-size="10"
+            :current-page="page.page.pageNum"
+            :page-size="page.page.numPerPage"
             layout="total,jumper,prev,next"
-            :total="total">
+            :total="page.page.totalCount">
           </el-pagination>
         </div>
       </div>
-    </Border>
+    </Border>-->
   </div>
 </template>
 
@@ -67,125 +72,70 @@ require('echarts/theme/dark');
 import Border from '@/components/report/Border'
 
 export default {
-
   name: "feng-xian-jian-ce-level3",
-  mounted() {
-    this.myChart_yyqwt();
-    this.myChart_ygwfxsp();
-    this.myChart_ygwfxgys();
-  },
   components: {
     Border
   },
   data() {
     return {
-      gwfxspData: [{
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '411/上海青',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }],
-      currentPage1: 2,
-      total: 100,
-      gwfxgysData: [{
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }, {
-        product: '20001524/福建百利达食品有限公司',
-        times: '80',
-        category: '商品质量',
-        detail: '农残'
-      }],
+      packageName: 'checking',
+      beanName: 'dataReport',
+      loading: false,
+      params: {...this.$store.state.dataReportPage.params}
+    }
+  },
+  computed: {
+    page: function () {
+      return this.$store.state.dataReportPage;
     }
   },
   methods: {
+    handleSelectionChange(val) {
+      this.selected = val;
+    },
+    handlePageChange(pageNum) {
+      this.params.pageNum = pageNum;
+      this.refresh(true);
+    },
+    handleSizeChange(numPerPage) {
+      this.params.numPerPage = numPerPage;
+      this.refresh(true);
+    },
+    async refresh(force) {
+      force = true === force ? true : false;
+      this.loading = true;
+      let {beanName} = this;
+      try {
+        this.params.dataType = 'product';
+
+        await Promise.race([
+          this.$store.dispatch("ajaxRequest", {
+            state: [beanName + 'Page'],
+            type: 'retrieve',
+            url: '/api/' + this.packageName + '/' + beanName + '/retrieve',
+            params: this.params,
+            shouldCallAPI: (state, params) => {
+              let page = eval('state.' + beanName + 'Page');
+              if (!page.results || 0 >= page.results.length || force) {
+                return true;
+              }
+              if (!this.Util.myEqual(params, page.params)) {
+                if (!this.Util.myEqual(params, page.params, ['pageNum'])) {
+                  params.pageNum = 1;
+                }
+                return true;
+              }
+              return false;
+            }
+          }),
+          this.Util.timeout()
+        ]);
+      } catch (ex) {
+        this.Util.doException(this, ex)
+      } finally {
+        this.loading = false;
+      }
+    },
     myChart_yyqwt(){
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById('myChart_yyqwt'), 'dark');
@@ -282,9 +232,6 @@ export default {
         ]
       });
     },
-    myChart_ygwfxsp(){
-
-    },
     tableRowClassName({row, rowIndex}) {
       if (rowIndex%2==0) {
         return 'even-row';
@@ -293,15 +240,10 @@ export default {
       }
       return '';
     },
-    handleSizeChange(val) {
-      console.log(`每页 ${val} 条`);
-    },
-    handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
-    },
-    myChart_ygwfxgys(){
-
-    }
+  },
+  async mounted() {
+    this.refresh(false);
+    this.myChart_yyqwt();
   }
 }
 </script>

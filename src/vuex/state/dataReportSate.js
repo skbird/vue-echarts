@@ -1,7 +1,10 @@
+import {initData} from './util';
+
 export default {
-  topContentData: undefined,
-  checkReportData: undefined,
-  checkBatchesData: undefined,
-  riskCountReportData: undefined,
-  monthComplaintData: undefined
+  topContentData: {},
+  checkReportData: {},
+  checkBatchesData: {},
+  riskCountReportData: {},
+  monthComplaintData: {},
+  dataReportPage: initData()
 }
